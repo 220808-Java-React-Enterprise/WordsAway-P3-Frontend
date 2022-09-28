@@ -5,6 +5,8 @@ import Login from './components/Login'
 import Game from './components/Game'
 import Home from './components/Home'
 import Lobby from './components/Lobby'
+import Profile from './components/Profile'
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Login />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/' element={<Home />} />
           <Route path='/lobby' element={<Lobby />} />
           {/* <Route path="/setup" element={<Setup />} /> */}
