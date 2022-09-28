@@ -47,7 +47,7 @@ const Login = () => {
       sessionStorage.setItem('token', response.headers.authorization)
       sessionStorage.setItem('username', username)
       axios.defaults.headers.common.Authorization = response.headers.authorization
-      window.location.href = '/'
+      window.location.href = '/lobby'
     })
     .catch((response) => alert(response))
   }
@@ -69,7 +69,7 @@ const Login = () => {
       salt: salt,
       password: hash
     })
-    .then(() => (window.location.href = 'login'))
+    .then(() => (window.location.href = 'lobby'))
     .catch(() => alert('Error'))
   }
 
@@ -84,14 +84,14 @@ const Login = () => {
 
         <div className='floating'>
         {isLogin? <>
-          <form className='form' onSubmit={login}>
+          <form onSubmit={login}>
             <input type='text' placeholder='Username' onChange={updateUsername} />
             <br />
             <input type='password' placeholder='Password' onChange={updatePassword} />
             <br />
-            <button type='submit'>Login</button>
+            <button type='submit' className="form-button">Login</button>
           </form>
-          <button onClick={toggleLogin}>Sign Up</button>
+            <button className="redirect-button" onClick={toggleLogin}>Sign Up</button>
           </>
         
       : 
@@ -105,9 +105,9 @@ const Login = () => {
         <br />
         <input type='password' placeholder='Confirm Password' autoComplete='new-password' onChange={updateConfirm} />
         <br />
-        <button type='submit'>Signup</button>
+        <button type='submit' className="form-button">Signup</button>
       </form>
-      <button onClick={toggleLogin}>Login</button>
+        <button className="redirect-button" onClick={toggleLogin}>Login</button>
     </div>
       }
       </div>

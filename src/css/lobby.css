@@ -1,25 +1,60 @@
+h1{
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
 #lobbycontainer{
     height: 100vh;
     width:100vw;
-    margin: 0;
     background-color: rgb(204, 99,0, .2);
-    padding: 0;
+    padding-top: 5rem;
+}
+
+#lobby{
     display: flex;
-    flex-direction: column;
     align-content: center;
 }
 
-
-#floatlobby{
+#leaderboard{
+    float: left;
     border-style: solid;
     margin: auto;
     border-radius: 1rem;
     height: 30rem;
+    width: 15%;
     background-color: azure;
     padding: 2rem;
-
-    
 }
+
+#floatlobby{
+    border-style: solid;
+    /* margin: auto; */
+    border-radius: 1rem;
+    height: 30rem;
+    width: 40%;
+    background-color: azure;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* align-content: center;     */
+}
+
+#table-buttons {
+    display:flex;
+    margin-bottom: 2rem;
+}
+
+.table-button {
+    padding: 1rem 4rem 1rem 4rem;
+    height: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
 #floatlobby table {
     width:90%;
     height: 100%;
@@ -46,4 +81,14 @@
     height: 80%;
     background-color: rgba(45, 58, 231, 0.178);
     overflow: auto;
+}
+
+#rules{
+    border-style: solid;
+    margin: auto;
+    border-radius: 1rem;
+    height: 30rem;
+    width: 15%;
+    background-color: azure;
+    padding: 2rem;
 }
