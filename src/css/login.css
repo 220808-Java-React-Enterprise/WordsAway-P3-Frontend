@@ -1,0 +1,59 @@
+@import url(//db.onlinewebfonts.com/c/bb57f40297999b4fb873f9dda6c313dc?family=Bookworm);
+@font-face {
+    font-family: "Bookworm";
+    src:  url("//db.onlinewebfonts.com/t/bb57f40297999b4fb873f9dda6c313dc.svg#Bookworm") format("svg");
+}
+.logincontainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    
+}
+
+.floating{
+    margin: auto;
+    background-color: burlywood;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+.form{
+    padding: 3rem;
+}
+
+form input{
+    padding: .75rem;
+    margin-top: .1rem;
+    margin: .75rem;
+    font-size: 1.25rem;
+}
+
+form button{
+    padding: 1rem 4rem 1rem 4rem;
+    width: 80%;
+    margin-top: 1rem;
+    margin-left: 10%;
+}
+
+.title{
+    
+    width: 40rem;
+    height: 10rem;
+    background-color: burlywood;
+    margin: auto;
+    margin-bottom: 0;
+    border-radius: 1rem;
+    display: flex;
+}
+
+.title div{
+    font-family:Bookworm;
+    margin: auto;
+    font-size: 5rem;
+    color: skyblue;
+    font-weight:bolder;
+    -webkit-text-stroke: .01rem black;
+}
