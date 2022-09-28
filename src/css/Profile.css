@@ -99,7 +99,7 @@ background-color: #5ca7df;
 
 }
 
-.title{
+.titleProf{
   width: 30vw;
   height: 30%;
   margin: 2vh;
@@ -109,7 +109,7 @@ background-color: #5ca7df;
   display:table;
 }
 
-.title h1{
+.titleProf h1{
   display:table-cell;
   vertical-align:middle;
   padding-left: 5%;

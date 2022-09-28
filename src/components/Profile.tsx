@@ -13,12 +13,12 @@ const Profile = () => {
 
 <div className ="topholder">
 <div className  = "icon">
-<img alt=":(" src="lancer.png"></img>
+<img alt=":(" src="images/lancer.png"></img>
 </div>
 
 <div className  = "intro">
-<div className  = "title">
-<h1>PoliceLettuce</h1>
+<div className  = "titleProf">
+<h1>{sessionStorage.getItem("username")}</h1>
 </div>
 </div>
 </div>
