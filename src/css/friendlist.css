@@ -42,9 +42,6 @@
     margin-bottom: .2rem;
 }
 #floverlay{
-    position: relative;
-    bottom: 32rem;
-    right: 15rem;
     background-color: rgb(84, 58, 171);
     width: 20rem;
     height: 30rem;
