@@ -3,8 +3,6 @@ import WORDS_API from '../utils/ApiConfig'
 import { AxiosResponse } from 'axios'
 import CryptoJS from 'crypto-js'
 
-import '../css/login.css'
-
 const Signup = () => {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
