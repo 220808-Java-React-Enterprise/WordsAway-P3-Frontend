@@ -47,7 +47,7 @@ const Login = () => {
       sessionStorage.setItem('token', response.headers.authorization)
       sessionStorage.setItem('username', username)
       axios.defaults.headers.common.Authorization = response.headers.authorization
-      window.location.href = '/'
+      window.location.href = '/lobby'
     })
     .catch((response) => alert(response))
   }

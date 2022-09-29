@@ -92,6 +92,12 @@
       "winner": "you"
     }
   ],
-  "getOpponents":[]
+  "getOpponents":[],
+
+  "getUser":[
+  {
+    "name": "name1"
+  }
+]
 
 }
