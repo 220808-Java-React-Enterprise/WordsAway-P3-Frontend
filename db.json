@@ -31,6 +31,50 @@
     {
       "name": "name11"
     }
-  ]
+  ],
 
+  "getLeaderboard":[ {
+    "id": "1",
+    "username": "name1",
+    "elo": "1234"
+  },{
+    "id": "2",
+    "username": "name2",
+    "elo": "2345"
+  },{
+    "id": "3",
+    "username": "name3",
+    "elo": "1132"
+  },{
+    "id": "4",
+    "username": "name4",
+    "elo": "2432"
+  },{
+    "id": "5",
+    "username": "name5",
+    "elo": "1432"
+  },{
+    "id": "6",
+    "username": "name6",
+    "elo": "1236"
+  },{
+    "id": "7",
+    "username": "name7",
+    "elo": "2341"
+  },{
+    "id": "8",
+    "username": "name8",
+    "elo": "2100"
+  },{
+    "id": "9",
+    "username": "name9",
+    "elo": "2109"
+  },{
+    "id": "10",
+    "username": "name10",
+    "elo": "2111"
+  }
+
+
+  ]
 }

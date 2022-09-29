@@ -6,6 +6,7 @@ import Game from './components/Game'
 import Home from './components/Home'
 import Lobby from './components/Lobby'
 import FriendsList from './components/test/FriendsList'
+import Leaderboard from './components/Leaderboard'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           {/* <Route path="/setup" element={<Setup />} /> */}
           <Route path='/game' element={<Game />} />
           <Route path='/friends' element={<FriendsList />} />
+          <Route path='/leaderboard' element={<Leaderboard />} />
         </Routes>
       </BrowserRouter>
     </div>
