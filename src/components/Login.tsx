@@ -28,7 +28,7 @@ const Login = () => {
     setConfirm(event.target.value)
   }
 
-  function toggleLogin(){
+  function toggleLogin() {
     setIsLogin(!isLogin);
   }
 
@@ -43,13 +43,13 @@ const Login = () => {
       username: username,
       password: hash
     })
-    .then((response) => {
-      sessionStorage.setItem('token', response.headers.authorization)
-      sessionStorage.setItem('username', username)
-      axios.defaults.headers.common.Authorization = response.headers.authorization
-      window.location.href = '/'
-    })
-    .catch((response) => alert(response))
+      .then((response) => {
+        sessionStorage.setItem('token', response.headers.authorization)
+        sessionStorage.setItem('username', username)
+        axios.defaults.headers.common.Authorization = response.headers.authorization
+        window.location.href = '/'
+      })
+      .catch((response) => alert(response))
   }
 
   async function signup(event: React.FormEvent<HTMLFormElement>) {
@@ -69,13 +69,13 @@ const Login = () => {
       salt: salt,
       password: hash
     })
-    .then((response) => {
-      // sessionStorage.setItem('token', response.headers.authorization)
-      // sessionStorage.setItem('username', username)
-      // axios.defaults.headers.common.Authorization = response.headers.authorization
+      .then((response) => {
+      sessionStorage.setItem('token', response.headers.authorization)
+      sessionStorage.setItem('username', username)
+      axios.defaults.headers.common.Authorization = response.headers.authorization
       window.location.href = '/'
-    })
-    .catch(() => alert('Error'))
+      })
+      .catch(() => alert('Error'))
   }
 
 
@@ -84,38 +84,38 @@ const Login = () => {
       <div className='logincontainer'>
         <div className='title'>
           <div>WORDS AWAY</div>
-          
+
         </div>
 
         <div className='floating'>
-        {isLogin? <>
-          <form onSubmit={login}>
-            <input type='text' placeholder='Username' onChange={updateUsername} />
-            <br />
-            <input type='password' placeholder='Password' onChange={updatePassword} />
-            <br />
-            <button type='submit' className="form-button">Login</button>
-          </form>
+          {isLogin ? <>
+            <form onSubmit={login}>
+              <input type='text' placeholder='Username' onChange={updateUsername} />
+              <br />
+              <input type='password' placeholder='Password' onChange={updatePassword} />
+              <br />
+              <button type='submit' className="form-button">Login</button>
+            </form>
             <button className="redirect-button" onClick={toggleLogin}>Sign Up</button>
           </>
-        
-      : 
-      <div>
-      <form onSubmit={signup}>
-        <input type='text' placeholder='Username' autoComplete='username' onChange={updateUsername} />
-        <br />
-        <input type='text' placeholder='Email' autoComplete='email' onChange={updateEmail} />
-        <br />
-        <input type='password' placeholder='Password' autoComplete='new-password' onChange={updatePassword} />
-        <br />
-        <input type='password' placeholder='Confirm Password' autoComplete='new-password' onChange={updateConfirm} />
-        <br />
-        <button type='submit' className="form-button">Signup</button>
-      </form>
-        <button className="redirect-button" onClick={toggleLogin}>Login</button>
-    </div>
-      }
-      </div>
+
+            :
+            <div>
+              <form onSubmit={signup}>
+                <input type='text' placeholder='Username' autoComplete='username' onChange={updateUsername} />
+                <br />
+                <input type='text' placeholder='Email' autoComplete='email' onChange={updateEmail} />
+                <br />
+                <input type='password' placeholder='Password' autoComplete='new-password' onChange={updatePassword} />
+                <br />
+                <input type='password' placeholder='Confirm Password' autoComplete='new-password' onChange={updateConfirm} />
+                <br />
+                <button type='submit' className="form-button">Signup</button>
+              </form>
+              <button className="redirect-button" onClick={toggleLogin}>Login</button>
+            </div>
+          }
+        </div>
       </div>
     </>
   )

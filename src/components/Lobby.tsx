@@ -11,8 +11,8 @@ const Lobby = () => {
   if (player == null) {
     window.location.href = 'login'
   }
-  async function getOpponents() {
-    await WORDS_API.get('/getOpponents')
+  async function getPlayers() {
+    await WORDS_API.get('/getOpponents?type=human')
       .then((response: AxiosResponse<User[]>) => {
         console.log(response.data)
         setUsers(response.data)
@@ -20,7 +20,19 @@ const Lobby = () => {
       .catch(() => (window.location.href = '/login'))
   }
   useEffect(() => {
-    getOpponents()
+    getPlayers()
+  }, [])
+
+  async function getBots() {
+    await WORDS_API.get('/getOpponents?type=bot')
+      .then((response: AxiosResponse<User[]>) => {
+        console.log(response.data)
+        setUsers(response.data)
+      })
+      .catch(() => (window.location.href = '/login'))
+  }
+  useEffect(() => {
+    getBots()
   }, [])
 
   async function displayTable() {
@@ -53,23 +65,23 @@ const Lobby = () => {
       </div>
       <div id='floatlobby'>
         <div id="table-buttons">
-          <button className = "table-button">Challenge</button>
-          <button className = "table-button">Practice</button>
+          <button onClick={() => getPlayers()} className = "table-button">Challenge</button>
+          <button onClick={() => getBots()} className = "table-button">Practice</button>
         </div>
-        <div id='tablediv' style = {{visibility: "hidden"}}>
+        <div id='tablediv'>
           <table>
-            <thead>
+            <thead id = "table-header">
               <tr>
                 <th>Username</th>
                 <th>ELO</th>
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id = "table-body">
               {users.map((user) => (
                 <tr key={user.username}>
-                  <td>{user.username}</td>
-                  <td>{user.elo.toFixed(0)}</td>
+                  <td className = "usernames-column">{user.username}</td>
+                  <td className = "elo-column">{user.elo.toFixed(0)}</td>
                   <td>
                     {user.board_id == null ? (
                       <button onClick={() => startGame(user.username)}>Challenge!</button>

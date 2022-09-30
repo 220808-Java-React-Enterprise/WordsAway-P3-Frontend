@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1664548185537" clover="3.2.0">
-  <project timestamp="1664548185538" name="All files">
-    <metrics statements="49" coveredstatements="17" conditionals="7" coveredconditionals="1" methods="16" coveredmethods="1" elements="72" coveredelements="19" complexity="0" loc="49" ncloc="49" packages="2" files="2" classes="2"/>
+<coverage generated="1664479346901" clover="3.2.0">
+  <project timestamp="1664479346901" name="All files">
+    <metrics statements="49" coveredstatements="11" conditionals="7" coveredconditionals="0" methods="16" coveredmethods="0" elements="72" coveredelements="11" complexity="0" loc="49" ncloc="49" packages="2" files="2" classes="2"/>
     <package name="components">
-      <metrics statements="39" coveredstatements="12" conditionals="3" coveredconditionals="1" methods="14" coveredmethods="1"/>
+      <metrics statements="39" coveredstatements="6" conditionals="3" coveredconditionals="0" methods="14" coveredmethods="0"/>
       <file name="Login.tsx" path="C:\Users\leigh\Revature\projects\WordsAway-P3-Frontend\src\components\Login.tsx">
-        <metrics statements="39" coveredstatements="12" conditionals="3" coveredconditionals="1" methods="14" coveredmethods="1"/>
+        <metrics statements="39" coveredstatements="6" conditionals="3" coveredconditionals="0" methods="14" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
@@ -43,7 +43,7 @@
         <line num="66" count="0" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
         <line num="73" count="0" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
         <line num="119" count="1" type="stmt"/>
       </file>
     </package>
