@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { AxiosResponse } from 'axios'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
+// import LobbyTable from '../components/LobbyTable'
 
 import '../css/lobby.css'
+import ReactDOM from 'react-dom'
 
 const Lobby = () => {
   const [users, setUsers] = useState<User[]>([])
@@ -35,9 +37,9 @@ const Lobby = () => {
     getBots()
   }, [])
 
-  async function displayTable() {
-    
-  }
+  // async function renderTable(props) {
+  //   ReactDOM.render(<LobbyTable(props) />)
+  // }
 
   async function startGame(username: string) {
     await WORDS_API.post('makeGame', {
@@ -64,7 +66,7 @@ const Lobby = () => {
         <h3>Leaderboard go here</h3>
       </div>
       <div id='floatlobby'>
-        <div id="table-buttons">
+        <div id="selection-buttons">
           <button onClick={() => getPlayers()} className = "table-button">Challenge</button>
           <button onClick={() => getBots()} className = "table-button">Practice</button>
         </div>
