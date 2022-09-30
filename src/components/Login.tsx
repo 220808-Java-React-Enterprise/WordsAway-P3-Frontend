@@ -3,7 +3,7 @@ import WORDS_API from '../utils/ApiConfig'
 import axios, { AxiosResponse } from 'axios'
 import CryptoJS from 'crypto-js'
 
-// import '../css/login.css'
+import '../css/login.css'
 
 const Login = () => {
   const [username, setUsername] = useState('')
@@ -47,7 +47,7 @@ const Login = () => {
       sessionStorage.setItem('token', response.headers.authorization)
       sessionStorage.setItem('username', username)
       axios.defaults.headers.common.Authorization = response.headers.authorization
-      window.location.href = '/lobby'
+      window.location.href = '/'
     })
     .catch((response) => alert(response))
   }
@@ -69,7 +69,12 @@ const Login = () => {
       salt: salt,
       password: hash
     })
-    .then(() => (window.location.href = 'lobby'))
+    .then((response) => {
+      // sessionStorage.setItem('token', response.headers.authorization)
+      // sessionStorage.setItem('username', username)
+      // axios.defaults.headers.common.Authorization = response.headers.authorization
+      window.location.href = '/'
+    })
     .catch(() => alert('Error'))
   }
 
