@@ -3,4 +3,5 @@ export type User = {
   elo: number
   gamesPlayed: number
   gamesWon: number
+  avatar: number
 }
