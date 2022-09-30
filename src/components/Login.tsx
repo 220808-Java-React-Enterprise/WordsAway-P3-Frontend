@@ -55,14 +55,12 @@ const Login = () => {
       sessionStorage.setItem('token', response.headers.authorization)
       sessionStorage.setItem('username', username)
       axios.defaults.headers.common.Authorization = response.headers.authorization
-<<<<<<< HEAD
-      window.location.href = '/lobby'
-=======
+
       
       storeUser();
 
-      console.log("stupid")
->>>>>>> manuel-branch
+
+
     })
     .catch((response) => alert(response))
 
