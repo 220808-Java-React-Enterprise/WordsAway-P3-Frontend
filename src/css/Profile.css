@@ -133,12 +133,7 @@ background-color: #5ca7df;
   line-height: 12vh;
 
 }
-.links a{
-  background-color: lightgreen;
-}
-.links a:hover{
-  background-color: pink;
-}
+
 
 .history{
 background-color: grey;
@@ -158,6 +153,29 @@ width: 100%;
 border-top: 2px solid #555;
 border-bottom: 2px solid #555;
 
+}
+.addfriend {
+  float: left;
+  height: 31.5%;
+  margin-left: 1%;
+  margin-top: 7vh;
+}
+.addfriend button {
+  background-color: grey;
+  text-align: center;
+    /*padding: 0px 16px;*/
+    height: 100%;
+    width: 100%;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.winrate{
+  border-bottom: 2px solid #555;
+}
+
+.addfriend button:active{
+  background-color: pink;
 }
 
 #win{
