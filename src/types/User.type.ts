@@ -1,5 +1,7 @@
 export type User = {
-  elo: number
   username: string
-  board_id: string
+  elo: number
+  gamesPlayed: number
+  gamesWon: number
+  avatar: number
 }

@@ -39,17 +39,43 @@ const Login = () => {
       salt = response.data
     })
     let hash = CryptoJS.HmacSHA512(password, salt).toString()
-    WORDS_API.post('login', {
+    await WORDS_API.post('login', {
       username: username,
       password: hash
     })
     .then((response) => {
+
+      console.log("yeah")
+      console.log(username)
+      
+      
+      
+      
+     console.log("stupid")
       sessionStorage.setItem('token', response.headers.authorization)
       sessionStorage.setItem('username', username)
       axios.defaults.headers.common.Authorization = response.headers.authorization
+<<<<<<< HEAD
       window.location.href = '/lobby'
+=======
+      
+      storeUser();
+
+      console.log("stupid")
+>>>>>>> manuel-branch
     })
     .catch((response) => alert(response))
+
+  }
+
+  async function storeUser(){
+    
+    await WORDS_API.get('findUser', { params: { username: username } }).then((response: AxiosResponse) => {
+      let user = { ...response.data};
+      window.sessionStorage.setItem("user", JSON.stringify(user))
+      window.location.href = '/'
+    })
+    .catch((response) => console.log("wack"))
   }
 
   async function signup(event: React.FormEvent<HTMLFormElement>) {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { User } from "../types/User.type";
+import { Opponent } from "../types/Opponent.type";
 import '../css/Profile.css'
 
 
@@ -11,6 +11,9 @@ export default function Navbar() {
 
     function logout(){
         window.sessionStorage.removeItem("username");
+        window.sessionStorage.removeItem("user");
+        window.sessionStorage.removeItem("token");
+
         navigate("/login");
         window.location.reload();
     }
@@ -21,10 +24,11 @@ export default function Navbar() {
     }
 
     function profile(){
-      /*
-      var teee = window.sessionStorage.getItem("username");
-      window.sessionStorage.setItem("profileUser",teee);
-      */
+      
+      var teee = window.sessionStorage.getItem("user");
+      teee ? window.sessionStorage.setItem("profileUser",teee) : <></>
+      
+     
         navigate("/profile");
         window.location.reload();
 
