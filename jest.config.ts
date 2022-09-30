@@ -42,7 +42,14 @@ export default {
   // ],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: undefined,
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: -10,
+    },
+  },
 
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,
@@ -132,12 +139,12 @@ export default {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
+  setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [
-
-  // ],
+  setupFilesAfterEnv: [
+    "../jest.setup.js"
+  ],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
