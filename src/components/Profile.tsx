@@ -12,11 +12,11 @@ interface UserProp{
 
 
 export default function Profile({profileUser}: UserProp){
- 
-
+ console.log(profileUser?.username);
+  
   async function addFriend(){
-    await WORDS_API.post('login', {
-      username: profileUser?.username,
+    await WORDS_API.post('addFriend', {
+      params: { username: profileUser?.username }
     })
     .then((response) => {
       window.location.reload();
@@ -24,6 +24,7 @@ export default function Profile({profileUser}: UserProp){
      
     })
     .catch((response) => alert(response))
+
     console.log("Friend added!");
   }
 
@@ -44,8 +45,8 @@ export default function Profile({profileUser}: UserProp){
 </div>
 
 <div className = "addfriend">
+{profileUser?.username == sessionStorage.getItem("username") ? <></> : <button onClick={addFriend}>Add Friend</button>}
 
-<button onClick={addFriend}>Add Friend</button>
 </div>
 </div>
 

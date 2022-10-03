@@ -5,14 +5,14 @@ import { URL } from 'react-dnd-html5-backend/dist/NativeTypes';
 import { URLSearchParams } from 'url';
 import  "../../css/FUser.css"
 import WORDS_API from '../../utils/ApiConfig';
-
+import { useNavigate } from "react-router-dom";
 
 
 
 
 
 const FindUser = () => {
-
+  const navigate = useNavigate();
  
   const [findUsername,setFindUserName]= useState("");
   const [dataTable,setdataTable]=useState("");
@@ -43,8 +43,11 @@ WORDS_API.get('/findUser',
   {
     let foundUser = response.data.username
    sessionStorage.setItem(foundUser, JSON.stringify(foundUser))
+   sessionStorage.setItem("profileUser",JSON.stringify(response.data));
+
    updateData(foundUser)
   console.log(response.data)
+  
   }).catch((error: { response: { data: { message: any; }; }; }) => {
     alert(error.response.data.message);
 });
@@ -55,10 +58,15 @@ useEffect(() =>{
   console.log('effected')
   function updateData(FoundUser:String)
 {
-setdataTable(findUsername)
-
+setdataTable(findUsername);
+console.log(dataTable);
 }
   },[findUsername])
+
+  function toProfile(){
+    navigate("/profile");
+    window.location.reload();
+  }
   
 
 
@@ -78,6 +86,7 @@ setdataTable(findUsername)
     <tbody>
       <tr>
     <td>{dataTable}</td>
+    <a href="#" onClick={toProfile}>{dataTable}</a>
       </tr>
     </tbody>
   </table>
