@@ -5,7 +5,6 @@ import WORDS_API from '../utils/ApiConfig'
 // import LobbyTable from '../components/LobbyTable'
 
 import '../css/lobby.css'
-import ReactDOM from 'react-dom'
 
 const Lobby = () => {
   const [users, setUsers] = useState<User[]>([])
