@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import { AxiosResponse } from 'axios'
-import { User } from '../types/User.type'
+import { Opponent } from '../types/Opponent.type'
 import WORDS_API from '../utils/ApiConfig'
-
+import { User } from "../../src/types/User.type";
 import '../css/lobby.css'
 
-const Lobby = () => {
-  const [users, setUsers] = useState<User[]>([])
+interface UserProp{
+  currentUser: User | null;
+}
+
+
+export default function Lobby({currentUser}: UserProp){
+  
+  const [users, setUsers] = useState<Opponent[]>([])
   async function getOpponents() {
     await WORDS_API.get('/getOpponents')
-    .then((response: AxiosResponse<User[]>) => {
+    .then((response: AxiosResponse<Opponent[]>) => {
       console.log(response.data)
       setUsers(response.data)
     })
@@ -72,4 +78,4 @@ const Lobby = () => {
     
   )
 }
-export default Lobby
+

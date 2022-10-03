@@ -94,6 +94,12 @@
   ],
   "getOpponents":[],
 
+  "getUser":[
+  {
+    "name": "name1"
+  }
+],
+
   "getLeaderboard":[ {
     "id": "1",
     "username": "name1",

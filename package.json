@@ -37,6 +37,7 @@
     "eject": "react-scripts eject",
     "pretty": "prettier --write \"./**/*.{ts,tsx}\"",
     "server": "json-server --watch db.json --port 5000"
+    
   },
   "eslintConfig": {
     "extends": [
