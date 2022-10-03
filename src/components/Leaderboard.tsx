@@ -2,9 +2,8 @@ import { AxiosResponse } from "axios"
 import { useEffect, useState } from "react"
 import { User } from "../types/User.type"
 import WORDS_API from "../utils/ApiConfig"
-import FAKEWORDS_API from "../utils/FakeApiConfig"
 import '../css/leaderboard.css'
-import { Navigate } from "react-router-dom"
+
 
 
 
@@ -13,21 +12,21 @@ const Leaderboard = () => {
     const [user, setUser] = useState<User | null>(null);
 
     useEffect(()=>{
+      console.log('useeffect1');
       const data = sessionStorage.getItem("username");
       if(data != null) setUser(JSON.parse(data));
       //else Navigate("/login")
     }, [])
+
     
 
     async function getLeaders() {
-        await FAKEWORDS_API.get('getLeaderboard')
-        .then((response: AxiosResponse<User[]>) => {
+        await WORDS_API.get('/getTopTenElo')
+        .then((response: AxiosResponse) => {
           console.log(response.data)
           setUsers(response.data)
         })
-        // .catch(() => (window.location.href = '/login'))
-        .catch((error)=> (console.error()));
-        // ))
+        .catch(() => (window.location.href = '/login'))
       }
       useEffect(() => {
         getLeaders()
@@ -35,14 +34,6 @@ const Leaderboard = () => {
       }, [])
 
       
-
-      // for(var i = 0; i < users.length; i++){
-      //     if((users[i].username).match(user?.username))
-          
-      // }
-
-
-
 
       return (
         <div className="leaderboard">
@@ -62,7 +53,7 @@ const Leaderboard = () => {
             <tbody>
               <tr>
                 <td className="rank">1</td>
-                <td className="username">{users?.[0].username}</td>
+                <td className="username">{users[0].username}</td>
                 <td className="mmr">{users[0].elo}</td>
                 <td className="winstreak">10</td>
               </tr>
@@ -122,8 +113,8 @@ const Leaderboard = () => {
                 </tr>
                 <tr>
                 <td className="rank">you</td>
-                {/* <td className="username">{user?.username}</td> */}
-                {/* <td className="mmr">{user?.elo}</td> */}
+                <td className="username">{user?.username}</td>
+                <td className="mmr">{user?.elo}</td>
                 <td className="winstreak">10</td>
               </tr>
             </tbody>

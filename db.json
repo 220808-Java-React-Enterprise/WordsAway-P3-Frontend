@@ -1,37 +1,98 @@
 {
     "getFriends":[
-    {"name": "name1"},
     {
-      "name": "name2"
+      "name": "name1",
+      "pending": true
     },
     {
-      "name": "name3"
+      "name": "name2",
+      "pending": false
     },
     {
-      "name": "name4"
+      "name": "name3",
+      "pending": false
     },
     {
-      "name": "name5"
+      "name": "name4",
+      "pending": false
     },
     {
-      "name": "name6"
+      "name": "name5",
+      "pending": true
     },
     {
-      "name": "name7"
+      "name": "name6",
+      "pending": false
     },
     {
-      "name": "name8"
+      "name": "name7",
+      "pending": false
     },
     {
-      "name": "name9"
+      "name": "name8",
+      "pending": false
     },
     {
-      "name": "name10"
+      "name": "name9",
+      "pending": true
     },
     {
-      "name": "name11"
+      "name": "name10",
+      "pending": false
+    },
+    {
+      "name": "name11",
+      "pending": false
+    },
+    {
+      "name": "name12",
+      "pending": false
+    },
+    {
+      "name": "name13",
+      "pending": false
+    },
+    {
+      "name": "name14",
+      "pending": false
+    },
+    {
+      "name": "name15",
+      "pending": true
+    },
+    {
+      "name": "name16",
+      "pending": true
+    },
+    {
+      "name": "name17",
+      "pending": true
     }
   ],
+  
+  "getHistory":[
+    {
+      "opponent":"player1",
+      "winner":"you"
+    },
+    {
+      "opponent": "player2",
+      "winner": "you"
+    },
+    {
+      "opponent": "player3",
+      "winner": "you"
+    },
+    {
+      "opponent": "player4",
+      "winner": "you"
+    },
+    {
+      "opponent": "player5",
+      "winner": "you"
+    }
+  ],
+  "getOpponents":[],
 
   "getLeaderboard":[ {
     "id": "1",
