@@ -1,0 +1,192 @@
+
+
+
+.topnav {
+  background-color: #269faf;
+  height: 10vh;
+  overflow: hidden;
+}
+
+#test{
+  float: left;
+  height: 100px;
+  width: 100px;
+}
+/* Style the links inside the navigation bar */
+
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+    /*padding: 0px 16px;*/
+  line-height: 10vh;
+    height: 100%;
+    width: 12%;
+
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.mainBody{
+
+  margin: 0 auto;
+  background-color: #ddd;
+  min-height:100%;
+}
+
+
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.profile{
+background-color: lightgrey;
+width: 70vw;
+height: 80vh;
+margin: 0 auto;
+margin-top: 2%;
+backdrop-filter: blur(10px);
+border: 2px solid rgba(0, 0, 0, 0.1);
+box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+.profile h1{
+  color: blue;
+}
+
+.topholder{
+height: 33%;
+background-color: #5ca7df;
+
+}
+
+
+.icon {
+  padding-left: 5vw;
+  padding-top: 5vh;
+  float: left;
+  width: 20vh;
+  height: 20vh;
+}
+
+.icon img {
+  border: 10px solid #555;
+  width: 15vh;
+  height: 15vh;
+}
+.intro{
+  float: left;
+  width: 30vw;
+  height: 100%;
+
+}
+
+.titleProf{
+  width: 30vw;
+  height: 30%;
+  margin: 2vh;
+  margin-top: 7vh;
+  border: 2px solid #555;
+  background-color: lightgreen;
+  display:table;
+}
+
+.titleProf h1{
+  display:table-cell;
+  vertical-align:middle;
+  padding-left: 5%;
+
+}
+
+
+
+.rest{
+  background-color:lightblue;
+  height: 67%;
+  display: flex;
+}
+
+.links{
+  float: right;
+  font-size: 20px;
+  height: 25%;
+  width: 25%;
+  text-align: center;
+  line-height: 12vh;
+
+}
+
+
+.history{
+background-color: grey;
+text-align: center;
+height: 100%;
+width: 25%;
+font-size: 75%;
+}
+
+.match{
+background-color: tan;
+height: 20%;
+text-align: center;
+width: 100%;
+
+
+border-top: 2px solid #555;
+border-bottom: 2px solid #555;
+
+}
+.addfriend {
+  float: left;
+  height: 31.5%;
+  margin-left: 1%;
+  margin-top: 7vh;
+}
+.addfriend button {
+  background-color: grey;
+  text-align: center;
+    /*padding: 0px 16px;*/
+    height: 100%;
+    width: 100%;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.winrate{
+  border-bottom: 2px solid #555;
+}
+
+.addfriend button:active{
+  background-color: pink;
+}
+
+#win{
+color: green;
+}
+#lose{
+color: darkred;
+}
+
+footer {
+    margin-top: auto;
+    height: 20vh;
+    background-color: #0d4249;
+}

@@ -39,7 +39,7 @@ const Login = () => {
       salt = response.data
     })
     let hash = CryptoJS.HmacSHA512(password, salt).toString()
-    WORDS_API.post('login', {
+    await WORDS_API.post('login', {
       username: username,
       password: hash
     })
