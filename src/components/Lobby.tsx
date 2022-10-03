@@ -37,10 +37,6 @@ export default function Lobby({currentUser}: UserProp){
     getBots()
   }, [])
 
-  // async function renderTable(props) {
-  //   ReactDOM.render(<LobbyTable(props) />)
-  // }
-
   async function startGame(username: string) {
     await WORDS_API.post('makeGame', {
       username: username

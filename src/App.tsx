@@ -12,7 +12,7 @@ import FindUser from './components/test/FindUser'
 import Profile from './components/Profile'
 import Navbar from './components/Navbar'
 import FriendsList from './components/test/FriendsList';
-
+import Rules from './components/Rules'
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -27,12 +27,13 @@ function App() {
   return (
     <div className='container'>
       <BrowserRouter>
-      <Navbar/>
+      <Navbar />
         <Routes>
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/logout' element={<Login />} />
-          <Route path='/profile' element={<Profile profileUser={profileUser}/>} />
+          <Route path='/profile' element={<Profile  profileUser={profileUser}/>} />
+          <Route path='/rules' element={<Rules />} />
           <Route path='/' element={<Home />} />
           <Route path='/lobby' element={<Lobby currentUser={user}/>} />
           {/* <Route path="/setup" element={<Setup />} /> */}
