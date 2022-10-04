@@ -243,7 +243,7 @@ const Game = () => {
 
   return (
     <>
-    <div className='game'>
+    <div data-testid = "gameScreen" className='game'>
       <DndProvider backend={HTML5Backend}>
         <TopBanner name={users[1].username} active={!isActive} />
         <div className='boards'>

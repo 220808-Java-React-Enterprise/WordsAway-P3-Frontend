@@ -51,7 +51,7 @@ export default function Navbar() {
 
   return (
     <>
-      <body>
+      <body data-testid = "navbar">
         <div className="topnav">
           <ul>
             <li>
