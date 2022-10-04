@@ -56,7 +56,7 @@ export default function Lobby({currentUser}: UserProp){
 
   return (
     <div id='lobbycontainer'>
-      <h1>Welcome, {currentUser?.username}</h1>
+      <h1 data-testid = 'title'>Welcome, {currentUser?.username}</h1>
       <div id="lobby">
       <div id="leaderboard">
         <h3>Leaderboard go here</h3>
