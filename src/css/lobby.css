@@ -1,0 +1,113 @@
+h1{
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+#lobbycontainer{
+    height: 100vh;
+    width:100vw;
+    background-color: rgb(204, 99,0, .2);
+    padding-top: 5rem;
+}
+
+#lobby{
+    display: flex;
+    align-content: center;
+}
+
+#leaderboard{
+    float: left;
+    border-style: solid;
+    margin: auto;
+    border-radius: 1rem;
+    height: 30rem;
+    width: 15%;
+    background-color: azure;
+    padding: 2rem;
+}
+
+#floatlobby{
+    border-style: solid;
+    /* margin: auto; */
+    border-radius: 1rem;
+    height: 30rem;
+    width: 40%;
+    background-color: azure;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* align-content: center;     */
+}
+
+#selection-buttons {
+    display:flex;
+    margin-bottom: 2rem;
+}
+
+.table-button {
+    padding: 1rem 4rem 1rem 4rem;
+    height: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+#floatlobby table {
+    width:90%;
+    /* height: 100%; */
+    padding-left: 10%;
+    overflow:scroll;    
+
+}
+
+#table-body {
+    padding-top: 2rem;
+}
+
+#floatlobby th {
+    border-bottom: 2px solid;
+}
+
+#floatlobby tr {
+    height: 1rem;
+}
+
+#floatlobby td {
+    height: 30px;
+}
+
+#tablediv{
+    border-style: solid;
+    border-radius: 1rem;
+    width: 80%;
+    margin: 0 10% 0 10%;
+    height: 80%;
+    background-color: rgba(45, 58, 231, 0.178);
+    overflow: auto;
+}
+
+#table-header {
+    height: 50px;
+}
+
+.usernames-column {
+    width: 230px;
+}
+
+.elo-column {
+    width: 85px;
+    text-align: center;
+}
+
+#rules{
+    border-style: solid;
+    margin: auto;
+    border-radius: 1rem;
+    height: 30rem;
+    width: 15%;
+    background-color: azure;
+    padding: 2rem;
+}

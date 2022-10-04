@@ -1,0 +1,61 @@
+
+.simple{
+    background-color: grey;
+    width: 5rem;
+    height: 5rem;
+    border-style: solid;
+    border-radius: .5rem;
+}
+
+#flall{
+    
+}
+
+#fldiv{
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+}
+
+#flcontainer{
+    background-color: rgb(175, 175, 175);
+    width: 90%;
+    height: 40%;
+    border-radius: 0.5rem;
+    overflow: auto;
+    margin: auto;
+}
+#flpcontainer {
+    background-color: rgb(175, 175, 175);
+    width: 90%;
+    height: 40%;
+    border-radius: 0.5rem;
+    overflow: auto;
+    margin: auto;
+}
+
+.friend{
+    height: 1.5rem;
+    width: 10rem;
+    background-color: rgb(153, 153, 153);
+    border-radius: .25rem;
+    margin-bottom: .2rem;
+}
+#floverlay{
+    background-color: rgb(84, 58, 171);
+    width: 20rem;
+    height: 30rem;
+    border-radius: 1rem;
+    flex-direction: column;
+}
+
+#flrow{
+    display: flex;
+}
+
+.frtitle{
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    color: white;
+}
+
