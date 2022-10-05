@@ -1,11 +1,16 @@
 import React from 'react'
-import { fireEvent, render, screen } from '@testing-library/react'
-import { mount } from 'enzyme'
+import { fireEvent, render, screen, cleanup } from '@testing-library/react'
 import Lobby from '../components/Lobby'
+import { User } from "../../src/types/User.type";
+
 
 describe('Lobby module', () => {
     beforeEach(() => {
-        render(<Lobby />)
+        render(<Lobby currentUser={null} />)
+    })
+
+    afterEach(() => {
+        cleanup()
     })
 
     test('renders lobby title', () => {

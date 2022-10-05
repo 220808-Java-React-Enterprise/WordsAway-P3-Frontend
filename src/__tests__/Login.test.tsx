@@ -1,10 +1,14 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, cleanup } from '@testing-library/react'
 import Login from '../components/Login'
 
 describe('Login module', () => {
     beforeEach(() => {
         render(<Login />)
+    })
+
+    afterEach(() => {
+        cleanup()
     })
 
     test('renders login screen title', () => {
