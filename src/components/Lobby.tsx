@@ -4,6 +4,7 @@ import { Opponent } from '../types/Opponent.type'
 import WORDS_API from '../utils/ApiConfig'
 import { User } from "../../src/types/User.type";
 import '../css/lobby.css'
+import Leaderboard from './Leaderboard';
 
 interface UserProp{
   currentUser: User | null;
@@ -58,9 +59,7 @@ export default function Lobby({currentUser}: UserProp){
     <div id='lobbycontainer'>
       <h1>Welcome, {currentUser?.username}</h1>
       <div id="lobby">
-      <div id="leaderboard">
-        <h3>Leaderboard go here</h3>
-      </div>
+        <Leaderboard/>
       <div id='floatlobby'>
         <div id="selection-buttons">
           <button onClick={() => getPlayers()} className = "table-button">Challenge</button>

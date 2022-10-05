@@ -1,8 +1,8 @@
 import axios, { Axios, AxiosResponse } from "axios"
 import { useEffect, useState } from "react"
-import { User } from "../../types/User.type"
-import WORDS_API from "../../utils/ApiConfig"
-import '../../css/leaderboard.css'
+import { User } from "../types/User.type"
+import WORDS_API from "../utils/ApiConfig"
+import '../css/leaderboard.css'
 
 
 
@@ -50,7 +50,7 @@ const Leaderboard = () => {
  
 
       return (
-        <div className="leaderboard">
+        <div data-testid="leaderboard" className="leaderboard">
           <header>
             <h1>Leader Board</h1>
             <img src="assets\wizard3.png" alt="?"></img>

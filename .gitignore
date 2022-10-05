@@ -7,6 +7,8 @@
 
 # testing
 src/coverage
+/coverage
+/__snapshots__
 
 # production
 /build
@@ -23,3 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea/
+.vscode/
