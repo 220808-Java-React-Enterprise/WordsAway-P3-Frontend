@@ -102,13 +102,13 @@ const Login = () => {
     <>
       <div className='logincontainer'>
         <div className='title'>
-          <div>WORDS AWAY</div>
+          <div data-testid='title'>WORDS AWAY</div>
           
         </div>
 
         <div className='floating'>
         {isLogin? <>
-          <form className='form' onSubmit={login}>
+          <form role = 'loginForm' className='form' onSubmit={login}>
             <input type='text' placeholder='Username' onChange={updateUsername} />
             <br />
             <input type='password' placeholder='Password' onChange={updatePassword} />
