@@ -43,10 +43,14 @@ export default function Challengeboard({ userList, gameType }: BoardProps) {
         console.log(friendslist)
     }
 
-    async function startGame(username: string, type: string) {
+    async function startGame(username: string, gameType: string) {
         await WORDS_API.post('makeGame', {
             username: username,
-            type: type
+        },
+        {
+            params: {
+                type: gameType
+            }
         })
             .then((response) => {
                 sessionStorage.setItem('board_id', response.data)
