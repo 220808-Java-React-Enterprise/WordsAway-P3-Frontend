@@ -1,35 +1,42 @@
 
 .simple{
-    background-color: grey;
-    width: 5rem;
-    height: 5rem;
-    border-style: solid;
-    border-radius: .5rem;
+    background-color: rgb(84, 58, 171);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0rem 0rem .5rem .5rem;
+    
 }
 
 #flall{
     
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    user-select: none;
+    
+    
 }
 
 #fldiv{
-    position: absolute;
-    bottom: 3rem;
-    right: 3rem;
+
+    display: flex;
+    position: relative;
+    float: right;
 }
 
 #flcontainer{
     background-color: rgb(175, 175, 175);
     width: 90%;
-    height: 40%;
-    border-radius: 0.5rem;
+    height: 90%;
+    border-radius: 0.25rem;
     overflow: auto;
     margin: auto;
 }
 #flpcontainer {
     background-color: rgb(175, 175, 175);
     width: 90%;
-    height: 40%;
-    border-radius: 0.5rem;
+    height: 80%;
+    border-radius: 0.25rem;
     overflow: auto;
     margin: auto;
 }
@@ -45,17 +52,101 @@
     background-color: rgb(84, 58, 171);
     width: 20rem;
     height: 30rem;
-    border-radius: 1rem;
+    border-radius: 1rem 1rem 0rem 1rem;
     flex-direction: column;
 }
 
 #flrow{
     display: flex;
+    margin-left: 4px;
+    /* width: 90%; */
+    
+
+}
+
+#flrow div {
+    user-select: text;
+    padding-left: 5px;
+    width: 100%;
 }
 
 .frtitle{
     font-size: 1.5rem;
+    margin: auto;
     margin-left: 1rem;
     color: white;
 }
 
+#flall ::-webkit-scrollbar {
+    width: 10px;   
+
+}
+
+#flall ::-webkit-scrollbar-thumb {
+    background: rgb(84, 58, 171);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(175, 175, 175);
+ }
+
+ #flrow button{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+ }
+#flrow button svg {
+    margin: auto;
+}
+
+#flconfirm{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+    top: 0;
+    left:0;
+    display: flex;
+}
+#flconfirm div{
+    width: 50rem;
+    height: 9rem;
+    background-color: rgb(84, 58, 171);
+    margin: auto;
+    border-radius: 1rem;
+    display: flex;
+}
+#flconfirm div div {
+    height: auto;
+    font-size: 1.2rem;
+    color: white;
+    height: 2rem;
+    width: auto;
+    text-align: center;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+
+}
+#flconfirm div div div{
+    display: block;
+
+}
+#flconfirm button {
+    font-size: 1.25rem;
+    width: 5rem;
+    height: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: .8rem;
+
+}
+
+#fl-invis{
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+
+}
