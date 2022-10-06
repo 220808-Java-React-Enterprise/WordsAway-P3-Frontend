@@ -6,18 +6,46 @@
     user-select: none;
     
 }
-.titleRules{
-    width: 40rem;
+.titleRules h1{
+    width: 65rem;
     height: 10rem;
     margin: auto;
     display: flex;
-}
-
-.titleRules div{
+    margin-right: 450px;
     font-family:Bookworm;
-    margin: auto;
-    font-size: 5rem;
+    font-size: 6rem;
     color: skyblue;
     font-weight:bolder;
     -webkit-text-stroke: .01rem black;
+}
+
+.titleRules h2{
+    width: 65rem;
+    /* height: 10rem; */
+    margin: auto;
+    display: flex;
+    margin-right: 450px;
+    font-family:Bookworm;
+    font-size: 3rem;
+    color: skyblue;
+    font-weight:bolder;
+    -webkit-text-stroke: .01rem black;
+}
+
+.titleRules ul{
+    width: 60rem;
+    /* height: 10rem; */
+    font-size: 2rem;
+    color: rgb(33, 98, 124);
+    margin: auto;
+    
+}
+
+.titleRules p{
+    width: 60rem;
+    /* height: 10rem; */
+    font-size: 2rem;
+    color: rgb(33, 98, 124);
+    margin: auto;
+    
 }

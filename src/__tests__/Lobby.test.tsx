@@ -2,7 +2,10 @@ import React from 'react'
 import { fireEvent, render, screen, cleanup } from '@testing-library/react'
 import Lobby from '../components/Lobby'
 import { User } from "../../src/types/User.type";
+<<<<<<< HEAD
 import userEvent from '@testing-library/user-event'
+=======
+>>>>>>> 9baadb1b9ccd7895b0fc23a4cd406cf084689e36
 
 
 describe('Lobby module', () => {
