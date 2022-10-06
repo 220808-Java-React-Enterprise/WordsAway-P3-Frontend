@@ -5,6 +5,7 @@ import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
 
 import '../css/Profile.css'
+import { Navigate } from 'react-router-dom'
 
 interface UserProp{
   profileUser: User | null;
@@ -12,30 +13,56 @@ interface UserProp{
 
 
 export default function Profile({profileUser}: UserProp){
- const [users, setUsers] = useState<User[]>([]);
  const [isShown2, setIsShown2] = useState(false);
- const [unfriendName, setUnfriendName] = useState("")
+ const [userFriends, setUserFriends] = useState<User[]>([]);
+ const [userOutgoing, setUserOutgoing] = useState<User[]>([]);
+ const [test, setTest] = useState('')
  var friends: { outgoingRequests: any[], incomingRequests: any[], friends: any[] } = { outgoingRequests: [], incomingRequests: [], friends: []}
 
+ 
+ 
  useEffect(() => {
   getFriends()
+ getMatches()
 }, [])
   
-async function getFriends() {
-  await WORDS_API.get('/getFriendsList')
+ async function getFriends() {
+   WORDS_API.get('/getFriendsList')
   .then((response: AxiosResponse<User[]>) => {
+    /*
     console.log(response.data)
-    setUsers(response.data)
-    sessionStorage.setItem('friends', JSON.stringify(response.data))
-    
+    console.log(JSON.stringify(response.data));
     console.log(friends)
+    */
+    const test = JSON.parse(JSON.stringify(response.data));
+    setUserOutgoing(test.outgoingRequests);
+    setUserFriends(test.friends);
+ 
+
+    
+    //setUserFriends(response.data);
+    console.log(JSON.stringify(userFriends));
+    
     
   })
   .catch(() => (window.location.href = '/login'))
 }
 
+async function getMatches() {
+  
+  await WORDS_API.get('/gameHistory')
+  .then((response) => {
+    console.log(response.data)
+    
+    
+    
+  })
+  .catch(() => (window.location.href = '/login'))
+  
+  setTest("wack");
+}
+
   async function addFriend(){
-    console.log(profileUser?.username);
     await WORDS_API.post('addFriend',{}, {
       params: { username: profileUser?.username } 
     })
@@ -47,7 +74,6 @@ async function getFriends() {
   }
 
   async function removeFriend(){
-    console.log(profileUser?.username);
     await WORDS_API.post('removeFriend',{}, {
       params: { username: profileUser?.username } 
     })
@@ -65,7 +91,6 @@ async function getFriends() {
 }
 
   async function cancelRequest(){
-    console.log(profileUser?.username);
     await WORDS_API.post('cancelFriend',{}, {
       params: { username: profileUser?.username } 
     })
@@ -75,10 +100,13 @@ async function getFriends() {
     .catch((response) => alert(response))
 
   }
-  friends = JSON.parse(sessionStorage.friends)
-  console.log("prof: " + JSON.stringify(profileUser))
-  console.log("requests: " + friends?.outgoingRequests)
-  console.log("status: " + friends.outgoingRequests.includes(profileUser))
+
+
+
+ 
+  
+
+
   return (
     <div className ="profile">
 
@@ -96,7 +124,7 @@ async function getFriends() {
 </div>
 
 <div className = "addfriend">
-{profileUser?.username == sessionStorage.getItem("username") ? <></> : JSON.stringify(friends?.friends).includes(JSON.stringify(profileUser)) ? <button onClick={removeFriendPrompt}>Remove Friend</button> : JSON.stringify(friends?.outgoingRequests).includes(JSON.stringify(profileUser)) ? <button onClick={cancelRequest}>Cancel Friend Request</button> : <button onClick={addFriend}>Add Friend</button> }
+{profileUser?.username == sessionStorage.getItem("username") ? <></> : JSON.stringify(userFriends).includes(JSON.stringify(profileUser)) ? <button onClick={removeFriendPrompt}>Remove Friend</button> : JSON.stringify(userOutgoing).includes(JSON.stringify(profileUser)) ? <button onClick={cancelRequest}>Cancel Friend Request</button> : <button onClick={addFriend}>Add Friend</button> }
 
 </div>
 </div>
