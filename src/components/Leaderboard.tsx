@@ -3,7 +3,8 @@ import { useEffect, useState } from "react"
 import { User } from "../types/User.type"
 import WORDS_API from "../utils/ApiConfig"
 import '../css/leaderboard.css'
-
+export function getLeaders() {}
+export function getRank() {}
 
 
 
@@ -11,6 +12,7 @@ const Leaderboard = () => {
     const [users, setUsers] = useState<User[]>([])
     const [user, setUser] = useState<User | null>(null);
     const [rank, setRank] = useState<number | null>(null);
+    
 
     useEffect(()=>{
       const data = sessionStorage.getItem("user");
@@ -21,7 +23,7 @@ const Leaderboard = () => {
 
 
 
-    async function getLeaders() {
+     async function getLeaders() {
         await WORDS_API.get('/getTopTenElo')
         .then((response: AxiosResponse) => {
           console.log(response.data)
