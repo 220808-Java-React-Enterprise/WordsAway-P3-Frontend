@@ -8,6 +8,7 @@ export function getRank() {}
 
 
 
+
 const Leaderboard = () => {
     const [users, setUsers] = useState<User[]>([])
     const [user, setUser] = useState<User | null>(null);
