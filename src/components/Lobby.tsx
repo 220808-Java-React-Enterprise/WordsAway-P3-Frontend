@@ -5,22 +5,27 @@ import WORDS_API from '../utils/ApiConfig'
 import { User } from "../../src/types/User.type";
 import '../css/lobby.css'
 import Leaderboard from './Leaderboard';
+import Challengeboard from './Challengeboard'
 
-interface UserProp{
+interface UserProp {
   currentUser: User | null;
 }
 
 
-export default function Lobby({currentUser}: UserProp){
-  
+export default function Lobby({ currentUser }: UserProp) {
+
   const [users, setUsers] = useState<Opponent[]>([])
+  const [gameType, setGameType] = useState('')
+  const [tableVis, setTableVis] =  useState("hidden")
+
   async function getPlayers() {
     await WORDS_API.get('/getOpponents?type=human')
-    .then((response: AxiosResponse<Opponent[]>) => {
-      console.log(response.data)
-      setUsers(response.data)
-    })
-    .catch(() => (window.location.href = '/login'))
+      .then((response: AxiosResponse<Opponent[]>) => {
+        console.log(response.data)
+        setUsers(response.data)
+        setGameType('ranked')
+      })
+      .catch(() => (window.location.href = '/login'))
   }
   useEffect(() => {
     getPlayers()
@@ -31,6 +36,7 @@ export default function Lobby({currentUser}: UserProp){
       .then((response: AxiosResponse<Opponent[]>) => {
         console.log(response.data)
         setUsers(response.data)
+        setGameType('practice')
       })
       .catch(() => (window.location.href = '/login'))
   }
@@ -38,64 +44,24 @@ export default function Lobby({currentUser}: UserProp){
     getBots()
   }, [])
 
-  async function startGame(username: string) {
-    await WORDS_API.post('makeGame', {
-      username: username
-    })
-      .then((response) => {
-        sessionStorage.setItem('board_id', response.data)
-        window.location.href = '/game'
-      })
-      .catch((response) => alert(response))
-  }
-
-  function continueGame(board_id: string) {
-    // alert('Board ID: ' + board_id)
-    sessionStorage.setItem('board_id', board_id)
-    window.location.href = '/game'
-  }
-
   return (
     <div id='lobbycontainer'>
-      <h1 data-testid = 'title'>Welcome, {currentUser?.username}</h1>
+      <h1 data-testid='title'>Welcome, {currentUser?.username}</h1>
       <div id="lobby">
-        <Leaderboard/>
-      <div id='floatlobby'>
-        <div id="selection-buttons">
-          <button onClick={() => getPlayers()} className = "table-button" role = 'rankedMatchBtn'>Challenge</button>
-          <button onClick={() => getBots()} className = "table-button">Practice</button>
+        <Leaderboard />
+        <div id='floatlobby'>
+          <div id="selection-buttons">
+            <button onClick={() => getPlayers()} className="table-button" role='rankedMatchBtn'>Challenge</button>
+            <button onClick={() => getBots()} className="table-button">Practice</button>
+          </div>
+          <div id='tablediv'>
+            <Challengeboard userList={users} gameType={gameType} />
+          </div>
         </div>
-        <div id='tablediv'>
-          <table data-testid = 'userTable'>
-            <thead id = "table-header">
-              <tr>
-                <th>Username</th>
-                <th>ELO</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id = "table-body">
-              {users.map((user) => (
-                <tr key={user.username}>
-                  <td className = "usernames-column">{user.username}</td>
-                  <td className = "elo-column">{user.elo.toFixed(0)}</td>
-                  <td>
-                    {user.board_id == null ? (
-                      <button onClick={() => startGame(user.username)} role = 'challengePlayerBtn'>Challenge!</button>
-                    ) : (
-                      <button onClick={() => continueGame(user.board_id)} role = 'continueGameBtn'>Continue!</button>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div id="rules">
+          <h3>Rules go here</h3>
         </div>
-      </div>
-      <div id="rules">
-        <h3>Rules go here</h3>
-      </div>
-      <div onClick={() => { window.location.href = '/login' }} id='backbutton'>← Back</div>
+        {/* <div onClick={() => { window.location.href = '/login' }} id='backbutton'>← Back</div> */}
       </div>
     </div>
 

@@ -58,7 +58,8 @@ h3 {
 #floatlobby table {
     width:90%;
     /* height: 100%; */
-    padding-left: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     overflow:scroll;    
 
 }
@@ -87,6 +88,10 @@ h3 {
     height: 80%;
     background-color: rgba(45, 58, 231, 0.178);
     overflow: auto;
+}
+
+#tables {
+    display: flex;
 }
 
 #table-header {

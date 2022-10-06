@@ -115,7 +115,7 @@ const Login = () => {
             <br />
             <button data-testid = "loginButton" type='submit'>Login</button>
           </form>
-          <button role = 'switchMenu' onClick={toggleLogin}>Sign Up</button>
+          <button role = 'switchMenu' className="redirect-button" onClick={toggleLogin}>Sign Up</button>
           </>
         
       : 
@@ -131,7 +131,7 @@ const Login = () => {
         <br />
         <button type='submit'>Signup</button>
       </form>
-      <button onClick={toggleLogin}>Login</button>
+      <button className="redirect-button" onClick={toggleLogin}>Login</button>
     </div>
       }
       </div>
