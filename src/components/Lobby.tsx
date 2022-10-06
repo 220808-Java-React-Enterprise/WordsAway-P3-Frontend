@@ -63,11 +63,11 @@ export default function Lobby({currentUser}: UserProp){
       </div>
       <div id='floatlobby'>
         <div id="selection-buttons">
-          <button onClick={() => getPlayers()} className = "table-button">Challenge</button>
+          <button onClick={() => getPlayers()} className = "table-button" role = 'rankedMatchBtn'>Challenge</button>
           <button onClick={() => getBots()} className = "table-button">Practice</button>
         </div>
         <div id='tablediv'>
-          <table>
+          <table data-testid = 'userTable'>
             <thead id = "table-header">
               <tr>
                 <th>Username</th>
@@ -82,9 +82,9 @@ export default function Lobby({currentUser}: UserProp){
                   <td className = "elo-column">{user.elo.toFixed(0)}</td>
                   <td>
                     {user.board_id == null ? (
-                      <button onClick={() => startGame(user.username)}>Challenge!</button>
+                      <button onClick={() => startGame(user.username)} role = 'challengePlayerBtn'>Challenge!</button>
                     ) : (
-                      <button onClick={() => continueGame(user.board_id)}>Continue!</button>
+                      <button onClick={() => continueGame(user.board_id)} role = 'continueGameBtn'>Continue!</button>
                     )}
                   </td>
                 </tr>

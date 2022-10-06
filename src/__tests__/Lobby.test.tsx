@@ -2,6 +2,7 @@ import React from 'react'
 import { fireEvent, render, screen, cleanup } from '@testing-library/react'
 import Lobby from '../components/Lobby'
 import { User } from "../../src/types/User.type";
+import userEvent from '@testing-library/user-event'
 
 
 describe('Lobby module', () => {
@@ -19,16 +20,17 @@ describe('Lobby module', () => {
         expect(linkElement).toHaveTextContent("Welcome,")
     })
 
-    // test('mocks get players function', () => {
-        // const wrapper = mount(<Lobby />)
-        // const container = wrapper.find("#lobbycontainer")
-    //     const challengeButton = container.find('#challengeButton')
+    test('mocks get players function', () => {
+        fireEvent.click(screen.getByRole('rankedMatchBtn'))
+        expect(screen.getByTestId('userTable')).toBeInTheDocument
         
-        
-    //     const mockGetPlayers = jest.fn();
+        fireEvent.click(screen.getByText(/practice/i))
+        expect(screen.getByTestId('userTable')).toBeInTheDocument
+    })
 
-    //     expect(mockGetPlayers).not.toHaveBeenCalled()
-    //     challengeButton.simulate("click")
-    //     expect(mockGetPlayers).toHaveBeenCalled()
-    // })
+    test('mocks game initiation', () => {
+        fireEvent.click(screen.getByRole('challengePlayerBtn'))
+        
+
+    })
 })
