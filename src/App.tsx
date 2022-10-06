@@ -12,6 +12,7 @@ import Profile from './components/Profile'
 import Navbar from './components/Navbar'
 import FriendsList from './components/test/FriendsList';
 import Rules from './components/Rules'
+import SocketTest from './components/SocketTest';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -38,8 +39,9 @@ function App() {
           {/* <Route path="/setup" element={<Setup />} /> */}
           <Route path='/game' element={<Game />} />
           <Route path='/friends' element={<FriendsList />} />
-          <Route path='/friends' element={<FriendsList/>} />
-          <Route path='/finduser' element={<FindUser/>} />
+          <Route path='/friends' element={<FriendsList />} />
+          <Route path='/finduser' element={<FindUser />} />
+          <Route path='/socketTest' element={<SocketTest />} />
 
         </Routes>
       </BrowserRouter>
