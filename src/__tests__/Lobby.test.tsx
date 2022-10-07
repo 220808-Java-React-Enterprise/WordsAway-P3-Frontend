@@ -27,10 +27,4 @@ describe('Lobby module', () => {
         fireEvent.click(screen.getByText(/practice/i))
         expect(screen.getByTestId('userTable')).toBeInTheDocument
     })
-
-    test('mocks game initiation', () => {
-        fireEvent.click(screen.getByRole('challengePlayerBtn'))
-        
-
-    })
 })
