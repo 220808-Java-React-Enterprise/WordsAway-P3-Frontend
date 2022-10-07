@@ -1,10 +1,24 @@
+[data-theme="light"] {
+    --background: #fff;
+    --color: skyblue;
+
+}
+
+[data-theme="dark"] {
+    --background: #72268e;
+    --color: #6a79b1;
+} 
+
+
+
 .rulescontainer{
+    background: var(--background);
     width: 100vw;
     height: 100vh;
     /* display: flex; */
     flex-direction: column;
     user-select: none;
-    
+    transition: all .5s;
 }
 .titleRules{
     width: 40rem;
@@ -17,7 +31,8 @@
     font-family:Bookworm;
     margin: auto;
     font-size: 5rem;
-    color: skyblue;
+    color: var(--color);
     font-weight:bolder;
     -webkit-text-stroke: .01rem black;
 }
+

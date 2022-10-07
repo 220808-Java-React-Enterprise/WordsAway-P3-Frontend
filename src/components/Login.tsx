@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import WORDS_API from '../utils/ApiConfig'
 import axios, { AxiosResponse } from 'axios'
 import CryptoJS from 'crypto-js'
@@ -31,6 +31,11 @@ const Login = () => {
   function toggleLogin(){
     setIsLogin(!isLogin);
   }
+
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
 
   async function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()

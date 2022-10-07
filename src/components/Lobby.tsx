@@ -54,8 +54,13 @@ export default function Lobby({currentUser}: UserProp){
     window.location.href = '/game'
   }
 
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
+
   return (
-    <div id='lobbycontainer'>
+    <div id='lobbycontainer' data-theme={theme}>
       <h1>Welcome, {currentUser?.username}</h1>
       <div id="lobby">
       <div id="leaderboard">

@@ -12,6 +12,10 @@ interface UserProp{
 
 
 export default function Profile({profileUser}: UserProp){
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
  console.log(profileUser?.username);
   
   async function addFriend(){
@@ -26,8 +30,8 @@ export default function Profile({profileUser}: UserProp){
   }
 
   return (
-    <div className ="profile">
-
+    
+    <div className ="profile" data-theme={theme}>
 <div className ="topholder">
 <div className  = "icon">
 <img alt=":(" src="images/lancer.png"></img>
