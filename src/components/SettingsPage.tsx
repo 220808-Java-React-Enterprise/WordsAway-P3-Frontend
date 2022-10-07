@@ -64,13 +64,23 @@ WORDS_API.put('/settings/updateUser/',
 });
 
 }
+
+function emptyFunction() {
+  
+}
+
+
   return (
     <div>
         <h1> SettingsPage</h1>
         <br/>
         <section>
           
-        <input type="checkbox" value="Toggle DarkMode"/>
+
+        <input type="Button" value="Profile" onClick={emptyFunction}/>
+
+
+
           <br/>
           <form>
           <label>New Email</label>
