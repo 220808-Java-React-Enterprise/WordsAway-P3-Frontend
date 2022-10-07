@@ -12,6 +12,7 @@ import Profile from './components/Profile'
 import Navbar from './components/Navbar'
 import FriendsList from './components/test/FriendsList';
 import Rules from './components/Rules'
+import SettingsPage from './components/SettingsPage';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -40,7 +41,7 @@ function App() {
           <Route path='/friends' element={<FriendsList />} />
           <Route path='/friends' element={<FriendsList/>} />
           <Route path='/finduser' element={<FindUser/>} />
-
+          <Route path='/settingspage' element={<SettingsPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
