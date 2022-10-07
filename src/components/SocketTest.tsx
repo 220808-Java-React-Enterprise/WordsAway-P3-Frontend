@@ -4,7 +4,7 @@ import ChatWindow from './chat/ChatWindow'
 import Chat from './chat/Chat'
 import { User } from '../types/User.type'
 //import URL from '../utils/ApiConfig'
-// const URL = 'ws://localhost:9000'
+//const URL = 'ws://localhost:9000'
 const URL = 'wss://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway'
 
 interface UserProp{
