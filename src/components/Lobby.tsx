@@ -19,6 +19,7 @@ export default function Lobby({ currentUser }: UserProp) {
   const [tableVis, setTableVis] =  useState("hidden")
 
   async function getPlayers() {
+    setTableVis('visible')
     await WORDS_API.get('/getOpponents?type=human')
       .then((response: AxiosResponse<Opponent[]>) => {
         console.log(response.data)
@@ -32,6 +33,7 @@ export default function Lobby({ currentUser }: UserProp) {
   }, [])
 
   async function getBots() {
+    setTableVis('visible')
     await WORDS_API.get('/getOpponents?type=bot')
       .then((response: AxiosResponse<Opponent[]>) => {
         console.log(response.data)
@@ -44,18 +46,24 @@ export default function Lobby({ currentUser }: UserProp) {
     getBots()
   }, [])
 
+  const challengeTable = document.getElementById('tablediv')
+
+  if (challengeTable != null) {
+    challengeTable.style.visibility = tableVis
+  }
+
   return (
     <div id='lobbycontainer'>
       <h1 data-testid='title'>Welcome, {currentUser?.username}</h1>
       <div id="lobby">
         <Leaderboard />
-        <div id='floatlobby'>
+        <div id='playerBoard'>
           <div id="selection-buttons">
             <button onClick={() => getPlayers()} className="table-button" role='rankedMatchBtn'>Challenge</button>
             <button onClick={() => getBots()} className="table-button">Practice</button>
           </div>
           <div id='tablediv'>
-            <Challengeboard userList={users} gameType={gameType} />
+            <Challengeboard userList={users} gameType={gameType}/>
           </div>
         </div>
         <div id="rules">
