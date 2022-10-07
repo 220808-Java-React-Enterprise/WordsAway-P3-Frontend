@@ -78,12 +78,18 @@ WORDS_API.put('/settings/updateUser/',
 {
   currentPassword:oldHash,
   email : newEmail,
-  newPassword : newHash
- 
+  newPassword : newHash,
+  avatarIdx: Number(icon)
 
 })
 .then((response : AxiosResponse) =>
 {
+   WORDS_API.get('findUser', { params: { username: user?.username } }).then((response: AxiosResponse) => {
+    let user2 = { ...response.data};
+    window.sessionStorage.setItem("user", JSON.stringify(user2))
+    window.location.href = '/lobby'
+  })
+  .catch((response) => console.log("wack"))
   alert('Change successful!');
   console.log(response)
 }).catch((error: { response: { data: { message: any; }; }; }) => {
@@ -113,7 +119,7 @@ function iconPrompt() {
   }
 
 //function that takes a buttons value and sends a request to the server to update the user's settings
-  console.log("user: " + user);
+  console.log(user);
   console.log("icon: " + icon);
 
   return (

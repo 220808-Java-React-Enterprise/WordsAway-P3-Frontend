@@ -77,7 +77,7 @@ const Login = () => {
     await WORDS_API.get('findUser', { params: { username: username } }).then((response: AxiosResponse) => {
       let user = { ...response.data};
       window.sessionStorage.setItem("user", JSON.stringify(user))
-      window.location.href = '/'
+      window.location.href = '/lobby'
     })
     .catch((response) => console.log("wack"))
   }
