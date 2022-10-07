@@ -104,7 +104,7 @@ async function getMatches() {
 
 
  
-  
+  console.log(profileUser?.avatar);
 
 
   return (
@@ -112,7 +112,8 @@ async function getMatches() {
 
 <div className ="topholder">
 <div className  = "icon">
-<img alt=":(" src="images/lancer.png"></img>
+{profileUser?.avatar ? <img alt=":(" src={"images/icon" + (profileUser.avatar).toString() +".png"}></img> : <></> } 
+{profileUser?<img alt=":(" src={"images/icon0.png"}></img> : <></> } 
 </div>
 
 <div className  = "intro">
