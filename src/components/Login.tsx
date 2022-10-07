@@ -38,7 +38,13 @@ const Login = () => {
     await WORDS_API.get('salt', { params: { username: username } }).then((response: AxiosResponse) => {
       salt = response.data
     })
+    
     let hash = CryptoJS.HmacSHA512(password, salt).toString()
+
+  
+
+
+
     await WORDS_API.post('login', {
       username: username,
       password: hash
