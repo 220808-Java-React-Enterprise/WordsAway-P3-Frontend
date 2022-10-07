@@ -5,9 +5,10 @@ import { AxiosResponse } from 'axios'
 // import { ReactComponent as XMarkSVG } from '../icons/xmark-solid.svg'
 // import { ReactComponent as TrashSVG } from '../icons/trash-can-solid.svg'
 
-
+import '../../css/chatWindow.css'
 import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
+import SocketTest from '../SocketTest'
 
 type Props = {}
 
@@ -42,9 +43,11 @@ const FriendsList = (props: Props) => {
                     <div className='friend'>{friends.incomingRequests[i].username}</div>
                     <button id='acceptfr' onClick={() => (acceptFR(friends.incomingRequests[i].username))}>
                         {/* <CheckSVG style={{ fill: 'green', height: '90%' }} /> */}
+                        ✔
                     </button>
                     <button id='rejectfr' onClick={() => (rejectFR(friends.incomingRequests[i].username))}>
                         {/* <XMarkSVG style={{ fill: 'red', height: '90%' }} /> */}
+                        ✘
                     </button>
                 </div>
             )
@@ -55,8 +58,9 @@ const FriendsList = (props: Props) => {
                     <div className='friend'>{friends.friends[i].username}</div>
                     <button id='deletefr' onClick={() => (unfriendprompt(friends.friends[i].username))}>
                         {/* <TrashSVG style={{ fill: 'red', height: '80%' }} /> */}
+                        <p>🗑️</p>
                     </button>
-
+                    <SocketTest{...friends.friends[i].username}/>
                 </div>
             )
         }
@@ -109,6 +113,7 @@ const FriendsList = (props: Props) => {
                 </div>
                 <div style={{ borderRadius: (isShown) ? '0rem 0rem 1rem 1rem' : '1rem' }} onClick={() => (setIsShown(!isShown))} id='fldiv' className='simple'>
                     {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
+                    <p className='emoji'>🧙</p>
                 </div>
             </div>
             <div style={{ display: (isShown2) ? 'flex' : 'none' }} id='flconfirm'>

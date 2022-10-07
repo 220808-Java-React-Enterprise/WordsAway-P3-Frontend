@@ -5,6 +5,7 @@ import WORDS_API from '../utils/ApiConfig'
 import { User } from "../../src/types/User.type";
 import '../css/lobby.css'
 import Leaderboard from './Leaderboard';
+import FriendsList from './test/FriendsList';
 
 interface UserProp{
   currentUser: User | null;
@@ -97,7 +98,9 @@ export default function Lobby({currentUser}: UserProp){
       </div>
       <div onClick={() => { window.location.href = '/login' }} id='backbutton'>← Back</div>
       </div>
+      <FriendsList/>
     </div>
+    
 
   )
 }

@@ -2,13 +2,12 @@ import { useState } from 'react'
 import MessageType from '../../types/Message.type'
 
 interface ChatProp {
-  webSocket: WebSocket
   chatID: string
   messages: string[]
   send: (params: string) => any
 }
 
-const ChatWindow = ({ webSocket, chatID, messages, send }: ChatProp) => {
+const ChatWindow = ({ chatID, messages, send }: ChatProp) => {
   const [message, setMessage] = useState('')
   const username = window.sessionStorage.getItem('username')
   var i = 0
