@@ -52,7 +52,7 @@ async function getMatches() {
   
   await WORDS_API.get('/gameHistory')
   .then((response) => {
-    console.log(response.data)
+    console.log("games: " + JSON.stringify(response.data));
     
     
     
