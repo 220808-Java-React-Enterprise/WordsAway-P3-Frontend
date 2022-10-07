@@ -41,7 +41,7 @@ function App() {
           <Route path='/friends' element={<FriendsList />} />
           <Route path='/friends' element={<FriendsList/>} />
           <Route path='/finduser' element={<FindUser/>} />
-          <Route path='/settingspage' element={<SettingsPage/>} />
+          <Route path='/settings' element={<SettingsPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
