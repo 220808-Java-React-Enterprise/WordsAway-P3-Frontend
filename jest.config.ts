@@ -42,7 +42,14 @@ export default {
   ],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: undefined,
+  coverageThreshold: {
+    global: {
+      branches: 0,
+      functions: 0,
+      lines: 70,
+      statements: -10,
+    },
+  },
 
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,
