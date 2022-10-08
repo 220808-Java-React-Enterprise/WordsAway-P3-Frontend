@@ -148,3 +148,46 @@ footer {
     height: 20vh;
     background-color: #0d4249;
 }
+
+#removeConfirm{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.329);
+  position: absolute;
+  top: 0;
+  left:0;
+  display: flex;
+}
+#removeConfirm div{
+  width: 50rem;
+  height: 9rem;
+  background-color: rgb(84, 58, 171);
+  margin: auto;
+  border-radius: 1rem;
+  display: flex;
+}
+#removeConfirm div div {
+  height: auto;
+  font-size: 1.2rem;
+  color: white;
+  height: 2rem;
+  width: auto;
+  text-align: center;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+
+}
+#removeConfirm div div div{
+  display: block;
+
+}
+#removeConfirm button {
+  font-size: 1.25rem;
+  width: 5rem;
+  height: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: .8rem;
+
+}
