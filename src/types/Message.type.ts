@@ -1,5 +1,6 @@
 export default class MessageType {
   static LOGIN = 'LOGIN'
+  static LOGIN_ACK = 'LOGIN_ACK'
   static START_CHAT = 'START_CHAT'
   static START_CHAT_ACK = 'START_CHAT_ACK'
   static ADD_USER = 'ADD_USER'

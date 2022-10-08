@@ -2,22 +2,20 @@ import React, { useState, useEffect } from 'react'
 import { AxiosResponse } from 'axios'
 import { Opponent } from '../types/Opponent.type'
 import WORDS_API from '../utils/ApiConfig'
-import { User } from "../../src/types/User.type";
+import { User } from '../../src/types/User.type'
 import '../css/lobby.css'
-import Leaderboard from './Leaderboard';
-import FriendsList from './test/FriendsList';
-import Challengeboard from './Challengeboard';
+import Leaderboard from './Leaderboard'
+import FriendsList from './test/FriendsList'
+import Challengeboard from './Challengeboard'
 
-interface UserProp {
-  currentUser: User | null;
+interface LobbyProp {
+  currentUser: User | null
 }
 
-
-export default function Lobby({ currentUser }: UserProp) {
-
+export default function Lobby({ currentUser }: LobbyProp) {
   const [users, setUsers] = useState<Opponent[]>([])
   const [gameType, setGameType] = useState('')
-  const [tableVis, setTableVis] =  useState("hidden")
+  const [tableVis, setTableVis] = useState('hidden')
 
   async function getPlayers() {
     setTableVis('visible')
@@ -56,25 +54,26 @@ export default function Lobby({ currentUser }: UserProp) {
   return (
     <div id='lobbycontainer'>
       <h1 data-testid='title'>Welcome, {currentUser?.username}</h1>
-      <div id="lobby">
+      <div id='lobby'>
         <Leaderboard />
         <div id='playerBoard'>
-          <div id="selection-buttons">
-            <button onClick={() => getPlayers()} className="table-button" role='rankedMatchBtn'>Challenge</button>
-            <button onClick={() => getBots()} className="table-button">Practice</button>
+          <div id='selection-buttons'>
+            <button onClick={() => getPlayers()} className='table-button' role='rankedMatchBtn'>
+              Challenge
+            </button>
+            <button onClick={() => getBots()} className='table-button'>
+              Practice
+            </button>
           </div>
           <div id='tablediv'>
-            <Challengeboard userList={users} gameType={gameType}/>
+            <Challengeboard userList={users} gameType={gameType} />
           </div>
         </div>
-        <div id="rules">
+        <div id='rules'>
           <h3>Rules go here</h3>
         </div>
         {/* <div onClick={() => { window.location.href = '/login' }} id='backbutton'>← Back</div> */}
       </div>
-      <FriendsList/>
     </div>
-
   )
 }
-
