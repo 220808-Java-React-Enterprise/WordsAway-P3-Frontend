@@ -61,8 +61,8 @@ export default function Navbar() {
 
   return (
     <>
-      <body>
-        <div className="topnav" data-theme={theme}>
+      <body data-testid = "navbar">
+        <div className="topnav">
           <ul>
             <li>
               {window.sessionStorage.getItem("username") ? <a className="cta" onClick={logout}>Sign Out</a>
@@ -79,11 +79,6 @@ export default function Navbar() {
             <li>
               {window.sessionStorage.getItem("username") ? <a className="cta" onClick={rules}>Rules</a>
                 : <></>}
-            </li>
-          
-            <li className="switch">
-            <a className='=switch'>Dark/Light Mode</a>
-              <input onClick={switchTheme} type="checkbox" checked={theme==='dark'}/>
             </li>
           </ul>
 

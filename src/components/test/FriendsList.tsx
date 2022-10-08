@@ -1,78 +1,124 @@
 import React, { useState } from 'react'
-import FAKEWORDS_API from '../../utils/FakeApiConfig'
 import { AxiosResponse } from 'axios'
-import { get } from 'https'
+// import { ReactComponent as UserSVG } from '../icons/user-solid.svg'
+// import { ReactComponent as CheckSVG } from '../icons/check-solid.svg'
+// import { ReactComponent as XMarkSVG } from '../icons/xmark-solid.svg'
+// import { ReactComponent as TrashSVG } from '../icons/trash-can-solid.svg'
+
 
 import '../../css/friendlist.css'
+import WORDS_API from '../../utils/ApiConfig'
 
 type Props = {}
 
 const FriendsList = (props: Props) => {
     const [isShown, setIsShown] = useState(false);
+    const [isShown2, setIsShown2] = useState(false);
+    const [unfriendName, setUnfriendName] = useState("")
+    const friendslist: any = []
+    const pendinglist: any = []
+    var friends: { outgoingRequests: any[], incomingRequests: any[], friends: any[] } = { outgoingRequests: [], incomingRequests: [], friends: []}
     sessionStorage.setItem('username', "test")
-    getFriends()
-    function getFriends(){
-        FAKEWORDS_API.get('getFriends')
+
+    async function getFriends() {
+        await WORDS_API.get('getFriendsList')
             .then((response: AxiosResponse) => {
-                sessionStorage.setItem('friends',JSON.stringify(response.data))
+                sessionStorage.setItem('friends', JSON.stringify(response.data))
+                
+                console.log(response.data)
+                
+            })
+            .catch((error) => {
+                console.log(error)
             })
     }
 
-    function acceptFR(name:string){
-        console.log("ACCEPT " + name)
-    }
-    function rejectFR(name: string){
-        console.log("REJECT " + name)
-    }
-    function unfriend(name: string){
-        console.log("UNFRIEND " + name)
-    }
+    function populateList(){
+        friends = JSON.parse(sessionStorage.friends)
 
-    const friends = JSON.parse(sessionStorage.friends)
-
-    const friendslist = []
-    const pendinglist = []
-    for (let i = 0; i < friends.length; i++) {
-        if (!friends[i].pending){
-            friendslist.push(
-                <div id='flrow' key={i}>
-                    <div className='friend'>{friends[i].name}</div><button onClick={() => (acceptFR(friends[i].name))}>Accept</button><button onClick={() => (rejectFR(friends[i].name))}>Dismiss</button>
-                </div>
-            ) 
-        }else{
+        for (let i = 0; i < friends.incomingRequests.length; i++) {
             pendinglist.push(
                 <div id='flrow' key={i}>
-                    <div className='friend'>{friends[i].name}</div><button onClick={() => (unfriend(friends[i].name))}>Unfriend</button>
+                    <div className='friend'>{friends.incomingRequests[i].username}</div>
+                    <button id='acceptfr' onClick={() => (acceptFR(friends.incomingRequests[i].username))}>
+                        {/* <CheckSVG style={{ fill: 'green', height: '90%' }} /> */}
+                    </button>
+                    <button id='rejectfr' onClick={() => (rejectFR(friends.incomingRequests[i].username))}>
+                        {/* <XMarkSVG style={{ fill: 'red', height: '90%' }} /> */}
+                    </button>
+                </div>
+            )
+        }
+        for (let i = 0; i < friends.friends.length; i++) {
+            friendslist.push(
+                <div id='flrow' key={i}>
+                    <div className='friend'>{friends.friends[i].username}</div>
+                    <button id='deletefr' onClick={() => (unfriendprompt(friends.friends[i].username))}>
+                        {/* <TrashSVG style={{ fill: 'red', height: '80%' }} /> */}
+                    </button>
+
                 </div>
             )
         }
     }
 
+    async function acceptFR(name: string) {
+        console.log("ACCEPT " + name)
+        const params = { username: name }
+        WORDS_API.post('addFriend', {}, { params })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
 
-  return (
-    <><div id='flall'>
-          <div onClick={() => (setIsShown(!isShown))} id='fldiv' className='simple'>
-                 
-          </div>
-          <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
-              <div className='frtitle'>Friend Requests</div>
+    function rejectFR(name: string) {
+        console.log("REJECT " + name)
+    }
+    function unfriendprompt(name: string) {
+        setIsShown2(true)
+        console.log("UNFRIEND Pending" + name)
+        setUnfriendName(name)
+    }
 
-              <div id='flcontainer'>
-                  <div id='fl'></div>
-                  {friendslist}
-              </div>
-              <div className='frtitle'>Friends</div>
-              <div id='flpcontainer'>
-                  <div id='fl'></div>
-                  {pendinglist}
-              </div>
-          </div>         
-      </div>
+    function unfriend(name: string) {
+        const params = { username: unfriendName }
+        WORDS_API.post('removeFriend', {}, { params })
+    }
+
+
+    getFriends()
+    populateList()
+
+    return (
+        <>  
+            <div id='fl-invis' style={{ display: isShown ? 'block' : 'none' }} onClick={()=>(setIsShown(false))} />
+            <div id='flall'>
+                <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
+                    <div style={{ height: '30%', display: (pendinglist.length > 0) ? 'block' : 'none' }}>
+                        <div className='frtitle'>Friend Requests</div>
+                        <div id='flpcontainer'>
+                            {pendinglist}
+                        </div>
+                    </div>
+                    <div style={{ height: (pendinglist.length > 0) ? '65%' : '100%' }}>
+                        <div className='frtitle'>Friends</div>
+                        <div id='flcontainer'>
+                            {friendslist}
+                        </div>
+                    </div>
+                </div>
+                <div style={{ borderRadius: (isShown) ? '0rem 0rem 1rem 1rem' : '1rem' }} onClick={() => (setIsShown(!isShown))} id='fldiv' className='simple'>
+                    {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
+                </div>
+            </div>
+            <div style={{ display: (isShown2) ? 'flex' : 'none' }} id='flconfirm'>
+                <div>
+                    <div>Are You sure You want to delete {unfriendName} from your friends List? <div><button id='confirm-uf-yes' onClick={() => { unfriend(unfriendName); setIsShown2(false) }}>Yes</button><button id='confirm-uf-no' onClick={() => (setIsShown2(false))}>No</button></div></div>
+                </div>
+            </div>
             
-          
-    </>
-    
-  )
+        </>
+    )
 }
 
 export default FriendsList

@@ -7,7 +7,6 @@ import Login from './components/Login'
 import Game from './components/Game'
 import Home from './components/Home'
 import Lobby from './components/Lobby'
-import Leaderboard from './components/Leaderboard'
 import FindUser from './components/test/FindUser'
 import Profile from './components/Profile'
 import Navbar from './components/Navbar'
@@ -44,7 +43,6 @@ function App() {
           {/* <Route path="/setup" element={<Setup />} /> */}
           <Route path='/game' element={<Game />} />
           <Route path='/friends' element={<FriendsList />} />
-          <Route path='/leaderboard' element={<Leaderboard />} />
           <Route path='/friends' element={<FriendsList/>} />
           <Route path='/finduser' element={<FindUser/>} />
 
