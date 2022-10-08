@@ -1,6 +1,6 @@
 name: Code Coverage
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [18.x]
 
     steps:
     - name: Checkout repository
@@ -24,4 +24,4 @@ jobs:
       run: npm install
 
     - name: Run the tests
-      run: npm test -- --coverage
+      run: npm test -- --coverage --collectCoverageFrom="components/**"

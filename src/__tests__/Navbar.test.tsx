@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import { cleanup } from '@testing-library/react'
+import { cleanup, act } from '@testing-library/react'
 import Navbar from '../components/Navbar'
 
 afterEach(() => {

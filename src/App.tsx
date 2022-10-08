@@ -12,6 +12,7 @@ import Profile from './components/Profile'
 import Navbar from './components/Navbar'
 import FriendsList from './components/test/FriendsList'
 import Rules from './components/Rules'
+import SettingsPage from './components/SettingsPage'
 import SocketTest from './components/SocketTest'
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path='/friends' element={<FriendsList />} />
           <Route path='/finduser' element={<FindUser />} />
           <Route path='socketTest' element={<SocketTest />} />
+          <Route path='/settings' element={<SettingsPage />} />
         </Routes>
       </BrowserRouter>
     </div>

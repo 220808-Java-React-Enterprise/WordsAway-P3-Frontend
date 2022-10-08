@@ -85,7 +85,6 @@ console.log(dataTable);
     </thead>
     <tbody>
       <tr>
-    <td>{dataTable}</td>
     <a href="#" onClick={toProfile}>{dataTable}</a>
       </tr>
     </tbody>
