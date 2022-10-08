@@ -114,7 +114,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
 
   return (
     <>
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
         {chats.map((m) => (
           //   <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
           <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
