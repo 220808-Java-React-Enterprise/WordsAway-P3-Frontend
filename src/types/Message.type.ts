@@ -6,4 +6,5 @@ export default class MessageType {
   static MESSAGE = 'MESSAGE'
   static LEAVE_CHAT = 'LEAVE_CHAT'
   static LEAVE_CHAT_ACK = 'LEAVE_CHAT_ACK'
+  static ERROR = 'ERROR'
 }
