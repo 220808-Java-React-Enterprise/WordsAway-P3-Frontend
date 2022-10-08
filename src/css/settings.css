@@ -1,0 +1,78 @@
+
+#iconSelect{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.329);
+  position: absolute;
+  top: 0;
+  left:0;
+  display: flex;
+}
+#iconSpace{
+  width: 70%;
+  height: 70%;
+  background-color: rgb(84, 58, 171);
+  margin: auto;
+  border-radius: 1rem;
+  display: flex;
+}
+
+#grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  margin: auto;
+
+  width: 85%;
+  height: 85%;
+  background-color: red;
+}
+
+#grid img{
+  width: 10vw;
+  height: 10vw;
+  margin-left: 15%;
+  margin-top: 20%;
+}
+
+#closeIcons{
+  height: 5%;
+  width: 10%;
+  float: right;
+  position: absolute;
+}
+#settingIcon{
+  height: 5%;
+  width: 10%;
+
+}
+/*
+#iconSelect div div {
+  height: auto;
+  font-size: 1.2rem;
+  color: white;
+  height: 2rem;
+  width: auto;
+  text-align: center;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+
+}
+#iconSelect div div div{
+  display: block;
+
+}
+
+
+#iconSelect button {
+  font-size: 1.25rem;
+  width: 20%;
+  height: 20%;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: .8rem;
+  float: left;
+
+}
+*/

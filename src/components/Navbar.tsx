@@ -64,9 +64,12 @@ export default function Navbar() {
       <body data-testid = "navbar">
         <div className="topnav">
           <ul>
+            
+            
+            
             <li>
-              {window.sessionStorage.getItem("username") ? <a className="cta" onClick={logout}>Sign Out</a>
-                : <a className="cta" onClick={login}>Sign In</a>}
+              {window.sessionStorage.getItem("username") ? <a className="cta" onClick={rules}>Rules</a>
+                : <></>}
             </li>
             <li>
               {window.sessionStorage.getItem("username") ? <a className="cta" onClick={notifications}>Notifications</a>
@@ -77,13 +80,13 @@ export default function Navbar() {
                 : <></>}
             </li>
             <li>
-              {window.sessionStorage.getItem("username") ? <a className="cta" onClick={rules}>Rules</a>
-                : <></>}
+              {window.sessionStorage.getItem("username") ? <a className="cta" onClick={logout}>Sign Out</a>
+                : <a className="cta" onClick={login}>Sign In</a>}
             </li>
           </ul>
 
-          {window.sessionStorage.getItem("username") ? <a className="navtitle" onClick={lobby}>Words Away</a>
-            : <></>}
+          <a className="navtitle" onClick={lobby}>Words Away</a>
+            
 
         </div>
 

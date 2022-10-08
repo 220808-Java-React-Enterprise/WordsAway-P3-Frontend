@@ -43,7 +43,13 @@ const Login = () => {
     await WORDS_API.get('salt', { params: { username: username } }).then((response: AxiosResponse) => {
       salt = response.data
     })
+    
     let hash = CryptoJS.HmacSHA512(password, salt).toString()
+
+  
+
+
+
     await WORDS_API.post('login', {
       username: username,
       password: hash
@@ -76,7 +82,7 @@ const Login = () => {
     await WORDS_API.get('findUser', { params: { username: username } }).then((response: AxiosResponse) => {
       let user = { ...response.data};
       window.sessionStorage.setItem("user", JSON.stringify(user))
-      window.location.href = '/'
+      window.location.href = '/lobby'
     })
     .catch((response) => console.log("wack"))
   }
@@ -118,14 +124,14 @@ const Login = () => {
             <br />
             <input type='password' placeholder='Password' onChange={updatePassword} />
             <br />
-            <button type='submit'>Login</button>
+            <button data-testid = "loginButton" type='submit'>Login</button>
           </form>
-          <button onClick={toggleLogin}>Sign Up</button>
+          <button role = 'switchMenu' className="redirect-button" onClick={toggleLogin}>Sign Up</button>
           </>
         
       : 
       <div>
-      <form onSubmit={signup}>
+      <form role = 'signupForm' onSubmit={signup}>
         <input type='text' placeholder='Username' autoComplete='username' onChange={updateUsername} />
         <br />
         <input type='text' placeholder='Email' autoComplete='email' onChange={updateEmail} />
@@ -136,7 +142,7 @@ const Login = () => {
         <br />
         <button type='submit'>Signup</button>
       </form>
-      <button onClick={toggleLogin}>Login</button>
+      <button className="redirect-button" onClick={toggleLogin}>Login</button>
     </div>
       }
       </div>

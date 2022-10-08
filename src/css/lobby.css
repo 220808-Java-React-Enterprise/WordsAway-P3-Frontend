@@ -23,8 +23,7 @@ h3 {
 #lobbycontainer{
     height: 100vh;
     width:100vw;
-    background-color: var(--lobby-background);
-    padding-top: 5rem;
+    padding-top: 2rem;
 }
 
 #lobby{
@@ -43,14 +42,10 @@ h3 {
     padding: 2rem;
 }
 
-#floatlobby{
-    border-style: solid;
-    /* margin: auto; */
-    border-radius: 1rem;
-    height: 30rem;
+#playerBoard{
+    height: 35rem;
     width: 40%;
-    background-color: var(--lobby-box);
-    padding: 2rem;
+    padding: 1rem 2rem 0rem 2rem;
     display: flex;
     flex-direction: column;
     /* align-content: center;     */
@@ -69,51 +64,14 @@ h3 {
     font-weight: bold;
 }
 
-#floatlobby table {
-    width:90%;
-    /* height: 100%; */
-    padding-left: 10%;
-    overflow:scroll;    
-
-}
-
-#table-body {
-    padding-top: 2rem;
-}
-
-#floatlobby th {
-    border-bottom: 2px solid;
-}
-
-#floatlobby tr {
-    height: 1rem;
-}
-
-#floatlobby td {
-    height: 30px;
-}
-
 #tablediv{
-    border-style: solid;
     border-radius: 1rem;
-    width: 80%;
-    margin: 0 10% 0 10%;
-    height: 80%;
-    background-color: var(--lobby-table);
+    box-shadow: 2px 2px 6px #111;
+    /* width: 80%; */
+    /* margin: 0 10% 0 10%; */
+    height: 100%;
+    background-color: rgba(45, 58, 231, 0.178);
     overflow: auto;
-}
-
-#table-header {
-    height: 50px;
-}
-
-.usernames-column {
-    width: 230px;
-}
-
-.elo-column {
-    width: 85px;
-    text-align: center;
 }
 
 #rules{
@@ -124,12 +82,5 @@ h3 {
     width: 15%;
     background-color: var(--lobby-box);
     padding: 2rem;
-}
-
-.table-button{
-    background: var(--lobby-button);
-}
-
-#lobby{
-    background: var(--lobby-background);
+    visibility: hidden;
 }
