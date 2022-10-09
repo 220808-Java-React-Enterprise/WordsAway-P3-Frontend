@@ -32,10 +32,27 @@ const Login = () => {
     setIsLogin(!isLogin);
   }
 
-  var [theme, getTheme] = useState('')
+
+var [theme, getTheme] = useState('')
   useEffect(() => {
     getTheme(localStorage.getItem("theme") || '');
   },[]);
+  async function loginFromSignup(password: string) {
+    console.log("Test")
+    await WORDS_API.post('login', {
+      username: username,
+      password: password
+    })
+    .then((response) => {
+      sessionStorage.setItem('token', response.headers.authorization)
+      sessionStorage.setItem('username', username)
+      axios.defaults.headers.common.Authorization = response.headers.authorization
+      storeUser()
+      console.log(username)
+    })
+    .then(() => (window.location.href = 'lobby'))
+  }
+
 
   async function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -58,29 +75,25 @@ const Login = () => {
 
       console.log("yeah")
       console.log(username)
-      
-      
-      
-      
-     console.log("stupid")
+      console.log("stupid")
+
       sessionStorage.setItem('token', response.headers.authorization)
       sessionStorage.setItem('username', username)
       axios.defaults.headers.common.Authorization = response.headers.authorization
-
       
-      storeUser();
-
-
-
+      storeUser()
     })
-    .catch((response) => alert(response))
-
+    .catch((response) => { 
+      if (response.response.status === 401)
+        alert("Incorrect username or password!")
+      else
+        alert("Username doen't exist")
+    })
   }
 
-  async function storeUser(){
-    
+  async function storeUser(){    
     await WORDS_API.get('findUser', { params: { username: username } }).then((response: AxiosResponse) => {
-      let user = { ...response.data};
+      let user = { ...response.data}
       window.sessionStorage.setItem("user", JSON.stringify(user))
       window.location.href = '/lobby'
     })
@@ -104,7 +117,7 @@ const Login = () => {
       salt: salt,
       password: hash
     })
-    .then(() => (window.location.href = 'login'))
+    .then(() => (loginFromSignup(hash)))
     .catch(() => alert('Error'))
   }
 
