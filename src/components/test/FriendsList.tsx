@@ -20,6 +20,7 @@ type Props = {
 const FriendsList = ({ chats, sendMSG }: Props) => {
   const [isShown, setIsShown] = useState(false)
   const [isShown2, setIsShown2] = useState(false)
+  const [isShown3, setIsShown3] = useState(true)
   const [unfriendName, setUnfriendName] = useState('')
   const friendslist: any = []
   const pendinglist: any = []
@@ -116,11 +117,24 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     <>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         {chats.map((m) => (
-          //   <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
+          <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay'>
           <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
-          //   </div>
+            </div>
         ))}
+        <div
+          style={{ borderRadius: isShown3 ? '0rem 0rem 1rem 1rem' : '1rem' }}
+          onClick={() => setIsShown3(!isShown3)}
+          id='fldiv'
+          className='simple'
+        >
+          {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
+          <p className='emoji'>💬</p>
+        </div>
       </div>
+
+
+
+
       <div id='fl-invis' style={{ display: isShown ? 'block' : 'none' }} onClick={() => setIsShown(false)} />
       <div id='flall'>
         <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>

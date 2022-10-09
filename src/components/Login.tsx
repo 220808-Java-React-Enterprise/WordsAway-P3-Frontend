@@ -32,6 +32,22 @@ const Login = () => {
     setIsLogin(!isLogin)
   }
 
+  async function loginFromSignup(password: string) {
+    console.log('Test')
+    await WORDS_API.post('login', {
+      username: username,
+      password: password
+    })
+      .then((response) => {
+        sessionStorage.setItem('token', response.headers.authorization)
+        sessionStorage.setItem('username', username)
+        axios.defaults.headers.common.Authorization = response.headers.authorization
+        storeUser()
+        console.log(username)
+      })
+      .then(() => (window.location.href = 'lobby'))
+  }
+
   async function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     let salt = ''
@@ -48,6 +64,7 @@ const Login = () => {
       .then((response) => {
         console.log('yeah')
         console.log(username)
+        console.log('stupid')
 
         sessionStorage.setItem('token', response.headers.authorization)
         sessionStorage.setItem('username', username)
@@ -55,7 +72,10 @@ const Login = () => {
 
         storeUser()
       })
-      .catch((response) => alert(response))
+      .catch((response) => {
+        if (response.response.status === 401) alert('Incorrect username or password!')
+        else alert("Username doen't exist")
+      })
   }
 
   async function storeUser() {
@@ -85,7 +105,7 @@ const Login = () => {
       salt: salt,
       password: hash
     })
-      .then(() => (window.location.href = 'login'))
+      .then(() => loginFromSignup(hash))
       .catch(() => alert('Error'))
   }
 
