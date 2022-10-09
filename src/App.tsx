@@ -26,8 +26,13 @@ function App() {
     if(data2 != null) setProfileUser(JSON.parse(data2));
   }, [])
 
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
+
   return (
-    <div className='container'>
+    <div className='container' data-theme={theme}>
       <BrowserRouter>
       <Navbar />
         <Routes>

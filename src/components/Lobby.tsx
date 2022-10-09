@@ -53,6 +53,11 @@ export default function Lobby({ currentUser }: UserProp) {
     challengeTable.style.visibility = tableVis
   }
 
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
+
   return (
     <div id='lobbycontainer'>
       <h1 data-testid='title'>Welcome, {currentUser?.username}</h1>

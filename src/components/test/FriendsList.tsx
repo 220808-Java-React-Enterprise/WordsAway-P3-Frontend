@@ -5,7 +5,7 @@ import { AxiosResponse } from 'axios'
 // import { ReactComponent as XMarkSVG } from '../icons/xmark-solid.svg'
 // import { ReactComponent as TrashSVG } from '../icons/trash-can-solid.svg'
 
-import '../../css/chatWindow.css'
+import '../../css/ChatWindow.css'
 import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
 import SocketTest from '../SocketTest'
