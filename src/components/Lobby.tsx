@@ -5,7 +5,8 @@ import WORDS_API from '../utils/ApiConfig'
 import { User } from "../../src/types/User.type";
 import '../css/lobby.css'
 import Leaderboard from './Leaderboard';
-import Challengeboard from './Challengeboard'
+import FriendsList from './test/FriendsList';
+import Challengeboard from './Challengeboard';
 
 interface UserProp {
   currentUser: User | null;
@@ -52,6 +53,11 @@ export default function Lobby({ currentUser }: UserProp) {
     challengeTable.style.visibility = tableVis
   }
 
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
+
   return (
     <div id='lobbycontainer'>
       <h1 data-testid='title'>Welcome, {currentUser?.username}</h1>
@@ -71,6 +77,7 @@ export default function Lobby({ currentUser }: UserProp) {
         </div>
         {/* <div onClick={() => { window.location.href = '/login' }} id='backbutton'>← Back</div> */}
       </div>
+      <FriendsList/>
     </div>
 
   )

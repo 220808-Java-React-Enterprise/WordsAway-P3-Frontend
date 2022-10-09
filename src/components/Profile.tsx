@@ -49,7 +49,7 @@ export default function Profile({profileUser}: UserProp){
 }
 
 async function getMatches() {
-  
+  /*
   await WORDS_API.get('/gameHistory')
   .then((response) => {
     console.log("games: " + JSON.stringify(response.data));
@@ -57,9 +57,10 @@ async function getMatches() {
     
     
   })
-  .catch(() => (window.location.href = '/login'))
+  .catch(() => (console.log("broke")))
   
   setTest("wack");
+  */
 }
 
   async function addFriend(){
@@ -101,18 +102,21 @@ async function getMatches() {
 
   }
 
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
 
-
- 
   
+  console.log("icon: " + profileUser?.avatar);
 
 
   return (
-    <div className ="profile">
-
+    
+    <div className ="profile" data-theme={theme}>
 <div className ="topholder">
 <div className  = "icon">
-<img alt=":(" src="images/lancer.png"></img>
+{profileUser?.avatar == 0 ? <img alt=":(" src={"images/icon0.png"}></img>: profileUser?.avatar ? <img alt=":(" src={"images/icon" + (profileUser.avatar).toString() +".png"}></img> : <></> } 
 </div>
 
 <div className  = "intro">

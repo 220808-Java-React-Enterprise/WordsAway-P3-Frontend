@@ -1,6 +1,15 @@
+[data-theme="light"] {
+  --background-color: #269faf;
+  --ul-color: #fff;
+}
+
+[data-theme="dark"] {
+  --background-color: #410559;
+  --ul-color: rgb(113, 101, 219);
+}
 
 .topnav {
-  background-color: #269faf;
+  background-color: var(--background-color);
   height: 10vh;
   overflow: hidden;
   text-align: center;
@@ -31,7 +40,7 @@
     text-decoration: none;
   font-size: 25px;
   align-items: center;
-  color:rgb(255, 255, 255);
+  color: var(--ul-color)
 }
 
 .topnav a {
@@ -59,5 +68,6 @@
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: #04AA6D;
-  color: white;
+  color: rgb(255, 114, 114);
 }
+

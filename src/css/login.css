@@ -1,3 +1,13 @@
+[data-theme="light"] {
+    --login-background: brown;
+    --box-color: burlywood; 
+  }
+  
+  [data-theme="dark"] {
+    --login-background: #72268e;
+    --box-color: rgb(34, 63, 148);
+  }
+
 @import url(//db.onlinewebfonts.com/c/bb57f40297999b4fb873f9dda6c313dc?family=Bookworm);
 @font-face {
     font-family: "Bookworm";
@@ -6,7 +16,7 @@
 .logincontainer{
     width: 100vw;
     height: 100vh;
-    background-color: brown;
+    background-color: var(--login-background);
     display: flex;
     flex-direction: column;
     user-select: none;
@@ -15,7 +25,7 @@
 
 .floating{
     margin: auto;
-    background-color: burlywood;
+    background-color: var(--box-color);
     border-radius: 1rem;
     margin-top: 2rem;
     padding: 3rem;
@@ -50,7 +60,7 @@ form button{
     
     width: 40rem;
     height: 10rem;
-    background-color: burlywood;
+    background-color: var(--box-color);
     margin: auto;
     margin-bottom: 0;
     border-radius: 1rem;

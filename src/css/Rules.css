@@ -1,10 +1,26 @@
+[data-theme="light"] {
+    --background: #fff;
+    --color: skyblue;
+    --rules-color: rgb(33, 98, 124);
+
+}
+
+[data-theme="dark"] {
+    --background: #72268e;
+    --color: #6a79b1;
+    --rules-color: #6a79b1;
+} 
+
+
+
 .rulescontainer{
+    background: var(--background);
     width: 100vw;
     height: 100vh;
     /* display: flex; */
     flex-direction: column;
     user-select: none;
-    
+    transition: all .5s;
 }
 .titleRules h1{
     width: 65rem;
@@ -36,7 +52,7 @@
     width: 60rem;
     /* height: 10rem; */
     font-size: 2rem;
-    color: rgb(33, 98, 124);
+    color: var(--rules-color);
     margin: auto;
     
 }
@@ -45,7 +61,12 @@
     width: 60rem;
     /* height: 10rem; */
     font-size: 2rem;
-    color: rgb(33, 98, 124);
+    color: var(--rules-color);
     margin: auto;
     
 }
+
+.titleRules{
+    background-color: var(--background);
+}
+
