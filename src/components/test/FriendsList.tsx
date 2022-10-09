@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { AxiosResponse } from 'axios'
 import MessageType from '../../types/Message.type'
 // import { ReactComponent as UserSVG } from '../icons/user-solid.svg'
@@ -11,7 +11,7 @@ import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
 import Chat from '../chat/Chat'
 import ChatWindow from '../chat/ChatWindow'
-import internal from 'stream'
+//import internal from 'stream'
 
 type Props = {
   chats: Chat[]

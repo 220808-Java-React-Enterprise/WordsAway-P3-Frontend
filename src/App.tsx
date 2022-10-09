@@ -77,7 +77,7 @@ function App() {
             break
           case MessageType.MESSAGE:
             const chat = getChat(message.id)
-            chat.messages.push(message.data)
+            chat.messages.push(message.user + ': ' + message.data)
             setChats([...chats])
             break
           case MessageType.LEAVE_CHAT_ACK:
