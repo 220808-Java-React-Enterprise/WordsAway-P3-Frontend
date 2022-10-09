@@ -119,9 +119,13 @@ function App() {
   function sendMSG(message: string) {
     connection.current?.send(message)
   }
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
 
   return (
-    <div className='container'>
+    <div className='container' data-theme={theme}>
       <BrowserRouter>
         <Navbar />
         {sessionStorage.getItem('username') && <FriendsList sendMSG={sendMSG} chats={chats} />}
