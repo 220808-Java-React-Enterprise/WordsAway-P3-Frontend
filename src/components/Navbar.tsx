@@ -12,12 +12,15 @@ export default function Navbar() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light")
-  
+  const [buttonText, setButtonText] = useState(localStorage.getItem("themeText") || "Dark Mode");
 
   const switchTheme = () => {
     const newTheme = (theme === "light" ? "dark" : "light");
+    const newText = (buttonText === "Light Mode" ? "Dark Mode" : "Light Mode");
+    setButtonText(newText)
     setTheme(newTheme)
     localStorage.setItem("theme", newTheme)
+    localStorage.setItem("themeText", newText)
     window.location.reload();
   }
 
@@ -82,6 +85,9 @@ export default function Navbar() {
             <li>
               {window.sessionStorage.getItem("username") ? <a className="cta" onClick={logout}>Sign Out</a>
                 : <a className="cta" onClick={login}>Sign In</a>}
+            </li>
+            <li>
+            <button onClick={switchTheme} className="switch">{localStorage.getItem("themeText")}</button> 
             </li>
           </ul>
 
