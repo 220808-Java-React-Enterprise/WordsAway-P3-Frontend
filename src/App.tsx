@@ -25,8 +25,8 @@ function App() {
   const [isOpen, setIsOpen] = useState(false)
   const [chats, setChats] = useState<Chat[]>([])
   const username = window.sessionStorage.getItem('username')
-  //const WS_URL = 'ws://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway/chat'
-  const WS_URL = 'ws://localhost:8080/wordsaway/chat'
+  const WS_URL = 'ws://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway/chat'
+  //const WS_URL = 'ws://localhost:8080/wordsaway/chat'
 
   useEffect(() => {
     setupWebSocket()
@@ -60,6 +60,9 @@ function App() {
       client.onmessage = (event) => {
         const message = JSON.parse(event.data)
         switch (message.type) {
+          case MessageType.NOTIFICATION:
+            alert(message.data)
+            break
           case MessageType.LOGIN:
             console.log('Logging in with server.')
             break
