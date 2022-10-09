@@ -5,8 +5,8 @@ import WORDS_API from '../utils/ApiConfig'
 import { User } from '../../src/types/User.type'
 import '../css/lobby.css'
 import Leaderboard from './Leaderboard'
-import FriendsList from './test/FriendsList'
-import Challengeboard from './Challengeboard'
+import FriendsList from './test/FriendsList';
+import Challengeboard from './Challengeboard';
 
 interface LobbyProp {
   currentUser: User | null

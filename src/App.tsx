@@ -124,7 +124,7 @@ function App() {
     <div className='container'>
       <BrowserRouter>
         <Navbar />
-        <FriendsList sendMSG={sendMSG} chats={chats} />
+        {sessionStorage.getItem('username') && <FriendsList sendMSG={sendMSG} chats={chats} />}
         <Routes>
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
