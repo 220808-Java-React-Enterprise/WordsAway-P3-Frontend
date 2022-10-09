@@ -102,15 +102,18 @@ async function getMatches() {
 
   }
 
-
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
 
   
   console.log("icon: " + profileUser?.avatar);
 
 
   return (
-    <div className ="profile">
-
+    
+    <div className ="profile" data-theme={theme}>
 <div className ="topholder">
 <div className  = "icon">
 {profileUser?.avatar == 0 ? <img alt=":(" src={"images/icon0.png"}></img>: profileUser?.avatar ? <img alt=":(" src={"images/icon" + (profileUser.avatar).toString() +".png"}></img> : <></> } 

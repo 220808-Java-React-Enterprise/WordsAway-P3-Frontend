@@ -1,16 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Opponent } from "../types/Opponent.type";
 import '../css/Profile.css'
 import { User } from "../types/User.type";
 //import '../css/Profile.css';
 import '../css/Navbar.css'
-
+import useLocalStorage from 'use-local-storage'
 
 
 export default function Navbar() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light")
+  const [buttonText, setButtonText] = useState(localStorage.getItem("themeText") || "Dark Mode");
+
+  const switchTheme = () => {
+    const newTheme = (theme === "light" ? "dark" : "light");
+    const newText = (buttonText === "Light Mode" ? "Dark Mode" : "Light Mode");
+    setButtonText(newText)
+    setTheme(newTheme)
+    localStorage.setItem("theme", newTheme)
+    localStorage.setItem("themeText", newText)
+    window.location.reload();
+  }
 
   function logout() {
     window.sessionStorage.removeItem("username");
@@ -38,6 +50,7 @@ export default function Navbar() {
     window.location.reload();
   }
 
+  
   function profile(){
       
     var teee = window.sessionStorage.getItem("user");
@@ -72,6 +85,9 @@ export default function Navbar() {
             <li>
               {window.sessionStorage.getItem("username") ? <a className="cta" onClick={logout}>Sign Out</a>
                 : <a className="cta" onClick={login}>Sign In</a>}
+            </li>
+            <li>
+            <button onClick={switchTheme} className="switch">{localStorage.getItem("themeText")}</button> 
             </li>
           </ul>
 

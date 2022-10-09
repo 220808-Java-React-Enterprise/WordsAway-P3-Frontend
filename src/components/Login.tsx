@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import WORDS_API from '../utils/ApiConfig'
 import axios, { AxiosResponse } from 'axios'
 import CryptoJS from 'crypto-js'
@@ -32,6 +32,11 @@ const Login = () => {
     setIsLogin(!isLogin)
   }
 
+
+var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
   async function loginFromSignup(password: string) {
     console.log('Test')
     await WORDS_API.post('login', {
@@ -47,6 +52,7 @@ const Login = () => {
       })
       .then(() => (window.location.href = 'lobby'))
   }
+
 
   async function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()

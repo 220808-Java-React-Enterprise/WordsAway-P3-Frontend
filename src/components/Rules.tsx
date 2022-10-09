@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import { AxiosResponse } from 'axios'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
-
 import '../css/Rules.css'
+import useLocalStorage from 'use-local-storage'
 
 const Rules = () => {
-
+ 
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
 
 return (
     <>

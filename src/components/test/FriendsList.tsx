@@ -6,7 +6,7 @@ import MessageType from '../../types/Message.type'
 // import { ReactComponent as XMarkSVG } from '../icons/xmark-solid.svg'
 // import { ReactComponent as TrashSVG } from '../icons/trash-can-solid.svg'
 
-import '../../css/chatWindow.css'
+import '../../css/ChatWindow.css'
 import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
 import Chat from '../chat/Chat'

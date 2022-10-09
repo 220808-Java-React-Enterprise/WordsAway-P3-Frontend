@@ -32,6 +32,11 @@ function App() {
     setupWebSocket()
   }, [])
 
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem("theme") || '');
+  },[]);
+
   function setupWebSocket() {
     if (!connection.current) {
       const client = new WebSocket(WS_URL)
@@ -121,7 +126,7 @@ function App() {
   }
 
   return (
-    <div className='container'>
+    <div className='container' data-theme={theme}>
       <BrowserRouter>
         <Navbar />
         {sessionStorage.getItem('username') && <FriendsList sendMSG={sendMSG} chats={chats} />}
