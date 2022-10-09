@@ -6,7 +6,7 @@ import MessageType from '../../types/Message.type'
 // import { ReactComponent as XMarkSVG } from '../icons/xmark-solid.svg'
 // import { ReactComponent as TrashSVG } from '../icons/trash-can-solid.svg'
 
-import '../../css/ChatWindow.css'
+import '../../css/chatWindow.css'
 import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
 import Chat from '../chat/Chat'
@@ -118,8 +118,8 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         {chats.map((m) => (
           <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay'>
-          <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
-            </div>
+            <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
+          </div>
         ))}
         <div
           style={{ borderRadius: isShown3 ? '0rem 0rem 1rem 1rem' : '1rem' }}
@@ -131,9 +131,6 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
           <p className='emoji'>💬</p>
         </div>
       </div>
-
-
-
 
       <div id='fl-invis' style={{ display: isShown ? 'block' : 'none' }} onClick={() => setIsShown(false)} />
       <div id='flall'>

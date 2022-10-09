@@ -34,8 +34,8 @@ function App() {
 
   var [theme, getTheme] = useState('')
   useEffect(() => {
-    getTheme(localStorage.getItem("theme") || '');
-  },[]);
+    getTheme(localStorage.getItem('theme') || 'light')
+  }, [])
 
   function setupWebSocket() {
     if (!connection.current) {

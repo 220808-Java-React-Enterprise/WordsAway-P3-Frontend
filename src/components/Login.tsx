@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import WORDS_API from '../utils/ApiConfig'
 import axios, { AxiosResponse } from 'axios'
 import CryptoJS from 'crypto-js'
-
 import '../css/login.css'
 
 const Login = () => {
@@ -12,33 +11,11 @@ const Login = () => {
   const [confirm, setConfirm] = useState('')
   const [isLogin, setIsLogin] = useState(true)
 
-  function updateUsername(event: React.ChangeEvent<HTMLInputElement>) {
-    setUsername(event.target.value)
-  }
-
-  function updatePassword(event: React.ChangeEvent<HTMLInputElement>) {
-    setPassword(event.target.value)
-  }
-
-  function updateEmail(event: React.ChangeEvent<HTMLInputElement>) {
-    setEmail(event.target.value)
-  }
-
-  function updateConfirm(event: React.ChangeEvent<HTMLInputElement>) {
-    setConfirm(event.target.value)
-  }
-
   function toggleLogin() {
     setIsLogin(!isLogin)
   }
 
-
-var [theme, getTheme] = useState('')
-  useEffect(() => {
-    getTheme(localStorage.getItem("theme") || '');
-  },[]);
   async function loginFromSignup(password: string) {
-    console.log('Test')
     await WORDS_API.post('login', {
       username: username,
       password: password
@@ -53,29 +30,21 @@ var [theme, getTheme] = useState('')
       .then(() => (window.location.href = 'lobby'))
   }
 
-
   async function login(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     let salt = ''
     await WORDS_API.get('salt', { params: { username: username } }).then((response: AxiosResponse) => {
       salt = response.data
     })
-
     let hash = CryptoJS.HmacSHA512(password, salt).toString()
-
     await WORDS_API.post('login', {
       username: username,
       password: hash
     })
       .then((response) => {
-        console.log('yeah')
-        console.log(username)
-        console.log('stupid')
-
         sessionStorage.setItem('token', response.headers.authorization)
         sessionStorage.setItem('username', username)
         axios.defaults.headers.common.Authorization = response.headers.authorization
-
         storeUser()
       })
       .catch((response) => {
@@ -91,7 +60,7 @@ var [theme, getTheme] = useState('')
         window.sessionStorage.setItem('user', JSON.stringify(user))
         window.location.href = '/lobby'
       })
-      .catch((response) => console.log('wack'))
+      .catch((response) => console.log(response))
   }
 
   async function signup(event: React.FormEvent<HTMLFormElement>) {
@@ -101,7 +70,7 @@ var [theme, getTheme] = useState('')
       salt = response.data
     })
     if (password !== confirm) {
-      alert("Passwords don't match")
+      alert("Passwords don't match.")
       return
     }
     let hash = CryptoJS.HmacSHA512(password, salt).toString()
@@ -126,9 +95,9 @@ var [theme, getTheme] = useState('')
           {isLogin ? (
             <>
               <form role='loginForm' className='form' onSubmit={login}>
-                <input type='text' placeholder='Username' onChange={updateUsername} />
+                <input type='text' placeholder='Username' onChange={(event) => setUsername(event.target.value)} />
                 <br />
-                <input type='password' placeholder='Password' onChange={updatePassword} />
+                <input type='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
                 <br />
                 <button data-testid='loginButton' type='submit'>
                   Login
@@ -141,17 +110,32 @@ var [theme, getTheme] = useState('')
           ) : (
             <div>
               <form role='signupForm' onSubmit={signup}>
-                <input type='text' placeholder='Username' autoComplete='username' onChange={updateUsername} />
+                <input
+                  type='text'
+                  placeholder='Username'
+                  autoComplete='username'
+                  onChange={(event) => setUsername(event.target.value)}
+                />
                 <br />
-                <input type='text' placeholder='Email' autoComplete='email' onChange={updateEmail} />
+                <input
+                  type='text'
+                  placeholder='Email'
+                  autoComplete='email'
+                  onChange={(event) => setEmail(event.target.value)}
+                />
                 <br />
-                <input type='password' placeholder='Password' autoComplete='new-password' onChange={updatePassword} />
+                <input
+                  type='password'
+                  placeholder='Password'
+                  autoComplete='new-password'
+                  onChange={(event) => setPassword(event.target.value)}
+                />
                 <br />
                 <input
                   type='password'
                   placeholder='Confirm Password'
                   autoComplete='new-password'
-                  onChange={updateConfirm}
+                  onChange={(event) => setConfirm(event.target.value)}
                 />
                 <br />
                 <button type='submit'>Signup</button>
