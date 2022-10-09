@@ -11,6 +11,7 @@ import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
 import Chat from '../chat/Chat'
 import ChatWindow from '../chat/ChatWindow'
+import internal from 'stream'
 
 type Props = {
   chats: Chat[]
@@ -20,7 +21,7 @@ type Props = {
 const FriendsList = ({ chats, sendMSG }: Props) => {
   const [isShown, setIsShown] = useState(false)
   const [isShown2, setIsShown2] = useState(false)
-  const [isShown3, setIsShown3] = useState(true)
+  const [isShown3, setIsShown3] = useState(false)
   const [unfriendName, setUnfriendName] = useState('')
   const friendslist: any = []
   const pendinglist: any = []
@@ -30,14 +31,14 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     friends: []
   }
   const username = window.sessionStorage.getItem('username')
-  const [chatVisible, setChatVisible] = useState(-1)
+
+  //TODO make one chat visable at a time maybe using this number as an id
+  //const [chatVisible, setChatVisible] = useState<number | null>(null)
 
   async function getFriends() {
     await WORDS_API.get('getFriendsList')
       .then((response: AxiosResponse) => {
         sessionStorage.setItem('friends', JSON.stringify(response.data))
-
-        //console.log(response.data)
       })
       .catch((error) => {
         console.log(error)
@@ -49,7 +50,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
 
     for (let i = 0; i < friends.incomingRequests.length; i++) {
       pendinglist.push(
-        <div id='flrow' key={i}>
+        <div id='flrow' key={'IR' + i}>
           <div className='friend'>{friends.incomingRequests[i].username}</div>
           <button id='acceptfr' onClick={() => acceptFR(friends.incomingRequests[i].username)}>
             {/* <CheckSVG style={{ fill: 'green', height: '90%' }} /> */}✔
@@ -62,7 +63,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     }
     for (let i = 0; i < friends.friends.length; i++) {
       friendslist.push(
-        <div id='flrow' key={i}>
+        <div id='flrow' key={'F' + i}>
           <div className='friend'>{friends.friends[i].username}</div>
           <button id='deletefr' onClick={() => unfriendprompt(friends.friends[i].username)}>
             {/* <TrashSVG style={{ fill: 'red', height: '80%' }} /> */}
