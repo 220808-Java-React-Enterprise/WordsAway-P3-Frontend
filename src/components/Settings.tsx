@@ -166,7 +166,6 @@ function iconPrompt() {
 
 
         <input type="button" value="Enter" onClick={handleUpdatePassword}/>
-        <input type="button" value="Wack" onClick={emptyFunction}/>
         </form>
         <br/>
         </section>
