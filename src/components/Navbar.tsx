@@ -27,9 +27,8 @@ export default function Navbar() {
     window.location.reload()
   }
 
-  function notifications() {
-    //needs to be implemented
-    //navigate("/lobby");
+  function finduser() {
+    navigate('/finduser')
     window.location.reload()
   }
 
@@ -48,8 +47,8 @@ export default function Navbar() {
           <ul>
             <li>
               {window.sessionStorage.getItem('username') ? (
-                <a className='cta' onClick={rules}>
-                  Rules
+                <a className='cta' onClick={finduser}>
+                  FindUser
                 </a>
               ) : (
                 <></>
@@ -57,8 +56,8 @@ export default function Navbar() {
             </li>
             <li>
               {window.sessionStorage.getItem('username') ? (
-                <a className='cta' onClick={notifications}>
-                  Notifications
+                <a className='cta' onClick={rules}>
+                  Rules
                 </a>
               ) : (
                 <></>

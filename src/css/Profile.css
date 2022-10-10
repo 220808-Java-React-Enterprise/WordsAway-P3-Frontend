@@ -208,3 +208,12 @@ footer {
   margin-top: .8rem;
 
 }
+
+.gears {
+  position:relative;
+  height: 70px;
+  width: 70px;
+  left: 22px;
+  top: 75px
+
+}
