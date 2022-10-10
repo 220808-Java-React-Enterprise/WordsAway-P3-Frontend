@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import '../css/Profile.css'
 import '../css/Navbar.css'
 
+
 export default function Navbar() {
   const navigate = useNavigate()
 

@@ -21,6 +21,7 @@ const ChatWindow = ({ chatID, messages, sendMSG }: ChatProp) => {
     setMessage('')
   }
 
+
   function addUser(playerToAdd: string) {
     sendMSG(JSON.stringify({ user: username, id: chatID, type: MessageType.ADD_USER, data: playerToAdd }))
     alert('Added ' + friend + ' to the chat!')
@@ -28,14 +29,17 @@ const ChatWindow = ({ chatID, messages, sendMSG }: ChatProp) => {
 
   function leaveChat() {
     sendMSG(JSON.stringify({ user: username, id: chatID, type: MessageType.LEAVE_CHAT, data: '' }))
+    alert('You left the chat!')
   }
+
+
 
   return (
     <>
       <button className='leavebutton' onClick={() => leaveChat()}>
         <p>❌</p>
       </button>
-      <h2 className='chatheader'>Chatting with {username} !</h2>
+      <h2 className='chatheader'>Chat{currentChat}</h2>
       <div>
         <input
           className='friendfind'
