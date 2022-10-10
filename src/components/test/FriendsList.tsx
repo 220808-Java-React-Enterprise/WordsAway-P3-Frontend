@@ -46,6 +46,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
   }
 
   function populateList() {
+    if (!friends) return
     friends = JSON.parse(sessionStorage.friends)
 
     for (let i = 0; i < friends.incomingRequests.length; i++) {

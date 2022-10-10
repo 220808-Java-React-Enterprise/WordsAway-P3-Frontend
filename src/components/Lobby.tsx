@@ -34,8 +34,6 @@ export default function Lobby() {
       .catch(() => (window.location.href = '/login'))
   }
 
-  const challengeTable = document.getElementById('tablediv')
-
   return (
     <div id='lobbycontainer'>
       <h1 data-testid='title'>Welcome, {username}</h1>
