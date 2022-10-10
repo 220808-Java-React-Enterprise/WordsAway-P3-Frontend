@@ -117,7 +117,7 @@ function App() {
   }
 
   function sendMSG(message: string) {
-    if (connection.current?.readyState === 1) connection.current.send(message)
+    if (isOpen && connection.current) connection.current.send(message)
     else {
       setTimeout(() => {
         sendMSG(message)
