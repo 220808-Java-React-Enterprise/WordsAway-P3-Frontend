@@ -213,8 +213,10 @@ font-size: 250%;
 
 
 
+
 #flall2 ::-webkit-scrollbar {
     width: 10px;   
+
 
 }
 
@@ -233,3 +235,4 @@ font-size: 250%;
     width: 100vw;
     top: 0;
 }
+
