@@ -14,8 +14,6 @@ import MessageType from './types/Message.type'
 import Chat from './components/chat/Chat'
 
 function App() {
-  const [user, setUser] = useState<User | null>(null)
-  const [profileUser, setProfileUser] = useState<User | null>(null)
   const connection = useRef<WebSocket>()
   const [waitingToReconnect, setWaitingToReconnect] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
@@ -119,7 +117,7 @@ function App() {
   }
 
   function sendMSG(message: string) {
-    if (connection.current?.readyState === 1) connection.current.send(message)
+    if (isOpen && connection.current) connection.current.send(message)
     else {
       setTimeout(() => {
         sendMSG(message)
@@ -137,12 +135,10 @@ function App() {
           </>
         )}
         <Routes>
-          {/* <Route path='/signup' element={<Signup />} /> */}
           <Route path='/' element={<Home />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/profile' element={<Profile profileUser={profileUser} />} />
+          <Route path='/login' element={<Home />} />
+          <Route path='/profile' element={<Profile />} />
           <Route path='/rules' element={<Rules />} />
-          {/* <Route path='/' element={<Home />} /> */}
           <Route path='/lobby' element={<Lobby />} />
           {/* <Route path="/setup" element={<Setup />} /> */}
           <Route path='/game' element={<Game />} />
