@@ -116,27 +116,38 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
 
   return (
     <>
-      <div id='fl-invis2' style={{ display: isShown3 ? 'block' : 'none' }} onClick={() => setIsShown3(false)} />
+      <div
+        id='fl-invis'
+        style={{ display: isShown3 || isShown ? 'block' : 'none' }}
+        onClick={() => {
+          setIsShown3(false)
+          setIsShown(false)
+        }}
+      />
       <div id='flall2'>
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          {chats.map((m) => (
-            <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay2'>
-              <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
-            </div>
-          ))}
+        <div id='chat-c1'>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            {chats.map((m) => (
+              <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay2'>
+                <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div
+          style={{ borderRadius: isShown3 ? '0rem 0rem 1rem 1rem' : '1rem' }}
+          onClick={() => {
+            setIsShown3(!isShown3)
+            if (isShown) setIsShown(false)
+          }}
+          id='fldiv2'
+          className='simple'
+        >
+          {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
+          <p className='emoji'>💬</p>
         </div>
       </div>
-      <div
-        style={{ borderRadius: isShown3 ? '1rem 1rem 1rem 1rem' : '1rem' }}
-        onClick={() => setIsShown3(!isShown3)}
-        id='fldiv2'
-        className='simple'
-      >
-        {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
-        <p className='emoji'>💬</p>
-      </div>
 
-      <div id='fl-invis' style={{ display: isShown ? 'block' : 'none' }} onClick={() => setIsShown(false)} />
       <div id='flall'>
         <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
           <div style={{ height: '30%', display: pendinglist.length > 0 ? 'block' : 'none' }}>
@@ -150,7 +161,10 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
         </div>
         <div
           style={{ borderRadius: isShown ? '0rem 0rem 1rem 1rem' : '1rem' }}
-          onClick={() => setIsShown(!isShown)}
+          onClick={() => {
+            setIsShown(!isShown)
+            setIsShown3(false)
+          }}
           id='fldiv'
           className='simple'
         >
