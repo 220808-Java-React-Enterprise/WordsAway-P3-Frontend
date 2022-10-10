@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import MessageType from '../../types/Message.type'
-import '../../css/chatWindow.css'
+import '../../css/ChatWindow.css'
 
 interface ChatProp {
   chatID: string

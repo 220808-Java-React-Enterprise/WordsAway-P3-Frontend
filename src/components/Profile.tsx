@@ -12,6 +12,7 @@ export default function Profile() {
   const [isShown2, setIsShown2] = useState(false)
   const [userFriends, setUserFriends] = useState<User[]>([])
   const [userOutgoing, setUserOutgoing] = useState<User[]>([])
+  const [theme, getTheme] = useState('')
   var friends: { outgoingRequests: any[]; incomingRequests: any[]; friends: any[] } = {
     outgoingRequests: [],
     incomingRequests: [],
@@ -38,13 +39,34 @@ export default function Profile() {
     getUser(username)
   }, [])
 
+  async function getUser(username: string | null) {
+    /*
+    if (username === null) {
+      username = sessionStorage.getItem('username')
+    }
+    */
+    await WORDS_API.get('findUser', { params: { username: username } })
+      .then((response: AxiosResponse) => {
+        setProfileUser(response.data)
+      })
+      .catch((response) => console.log(response))
+  }
+
   useEffect(() => {
+    let username = sessionStorage.getItem('profileUsername')
+      ? sessionStorage.getItem('profileUsername')
+      : sessionStorage.getItem('username')
+    
+    console.log("user: " + username);
+    
+    getUser(username)
+    getTheme(localStorage.getItem('theme') || 'light')
     getFriends()
     getMatches()
   }, [])
 
   async function getFriends() {
-    WORDS_API.get('/getFriendsList')
+    await WORDS_API.get('/getFriendsList')
       .then((response: AxiosResponse<User[]>) => {
         const test = JSON.parse(JSON.stringify(response.data))
         setUserOutgoing(test.outgoingRequests)
@@ -52,6 +74,8 @@ export default function Profile() {
 
         //setUserFriends(response.data);
         console.log(JSON.stringify(userFriends))
+        console.log("would be removed");
+        sessionStorage.removeItem('profileUsername');
       })
       .catch(() => (window.location.href = '/login'))
   }
@@ -61,13 +85,8 @@ export default function Profile() {
   await WORDS_API.get('/gameHistory')
   .then((response) => {
     console.log("games: " + JSON.stringify(response.data));
-    
-    
-    
   })
   .catch(() => (console.log("broke")))
-  
-  setTest("wack");
   */
   }
 
@@ -104,6 +123,7 @@ export default function Profile() {
     setIsShown2(true)
     console.log('UNFRIEND Pending')
   }
+  
 
   async function cancelRequest() {
     await WORDS_API.post(
@@ -119,7 +139,6 @@ export default function Profile() {
       .catch((response) => alert(response))
   }
 
-  var [theme, getTheme] = useState('')
   useEffect(() => {
     getTheme(localStorage.getItem('theme') || 'light')
   }, [])
@@ -131,6 +150,8 @@ export default function Profile() {
   }
 
   console.log('icon: ' + profileUser?.avatar)
+  
+  
 
   return (
     <div className='profile' data-theme={theme}>
