@@ -38,7 +38,7 @@ const ChatWindow = ({ chatID, messages, sendMSG }: ChatProp) => {
     <button className='leavebutton' onClick={() => leaveChat()}>
       <p>❌</p>
       </button>
-    <h2>Chatting with {username} !</h2>
+    <h2 className='chatheader'>Chatting with {username} !</h2>
     <div>
     <input className='friendfind' type="text" value={friend} placeholder='add friend to chat!' onChange={(event) => setFriend(event.target.value) }></input>
       <button className='addpal' onClick={() => addUser(friend)}>Add Pal!</button>

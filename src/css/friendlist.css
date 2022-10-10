@@ -22,6 +22,7 @@
     display: flex;
     position: relative;
     float: right;
+    cursor: pointer;
 }
 
 #flcontainer{
@@ -169,9 +170,33 @@ margin-left: .25rem;
 font-size: 250%;
 }
 
-#fldiv .emoji{
+.emoji{
 margin-top: .25rem;
 margin-right: 2rem;
 margin-left: .25rem;
 font-size: 250%;
+}
+
+
+#fldiv2{
+    display: flex;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+
+#flall2{
+    position: absolute;
+    top: 9.4rem;
+    left: 1rem;
+    user-select: none;
+}
+
+
+#floverlay2{
+    background-color: rgb(84, 58, 171);
+    width: 20rem;
+    height: 30rem;
+    border-radius: 0rem 1rem 1rem 1rem;
+    flex-direction: column;
 }
