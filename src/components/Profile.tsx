@@ -3,24 +3,40 @@ import { AxiosResponse } from 'axios'
 import { Opponent } from '../types/Opponent.type'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
-
+import gear4 from '../components/icons/gear4.png'
 import '../css/Profile.css'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 
-interface UserProp {
-  profileUser: User | null
-}
-
-export default function Profile({ profileUser }: UserProp) {
+export default function Profile() {
+  const [profileUser, setProfileUser] = useState<User>()
   const [isShown2, setIsShown2] = useState(false)
   const [userFriends, setUserFriends] = useState<User[]>([])
   const [userOutgoing, setUserOutgoing] = useState<User[]>([])
-  const [test, setTest] = useState('')
   var friends: { outgoingRequests: any[]; incomingRequests: any[]; friends: any[] } = {
     outgoingRequests: [],
     incomingRequests: [],
     friends: []
   }
+  let navigate = useNavigate();
+
+  async function getUser(username: string | null) {
+    if (username === null) {
+      username = sessionStorage.getItem('username')
+    }
+    await WORDS_API.get('findUser', { params: { username: username } })
+      .then((response: AxiosResponse) => {
+        setProfileUser(response.data)
+      })
+      .catch((response) => console.log(response))
+  }
+
+  useEffect(() => {
+    let username = sessionStorage.getItem('profileUsername')
+      ? sessionStorage.getItem('profileUsername')
+      : sessionStorage.getItem('username')
+    sessionStorage.removeItem('profileUsername')
+    getUser(username)
+  }, [])
 
   useEffect(() => {
     getFriends()
@@ -30,11 +46,6 @@ export default function Profile({ profileUser }: UserProp) {
   async function getFriends() {
     WORDS_API.get('/getFriendsList')
       .then((response: AxiosResponse<User[]>) => {
-        /*
-    console.log(response.data)
-    console.log(JSON.stringify(response.data));
-    console.log(friends)
-    */
         const test = JSON.parse(JSON.stringify(response.data))
         setUserOutgoing(test.outgoingRequests)
         setUserFriends(test.friends)
@@ -110,8 +121,14 @@ export default function Profile({ profileUser }: UserProp) {
 
   var [theme, getTheme] = useState('')
   useEffect(() => {
-    getTheme(localStorage.getItem('theme') || '')
+    getTheme(localStorage.getItem('theme') || 'light')
   }, [])
+
+  function gosettings()
+  {
+    navigate('/settings')
+    window.location.reload();
+  }
 
   console.log('icon: ' + profileUser?.avatar)
 
@@ -133,7 +150,7 @@ export default function Profile({ profileUser }: UserProp) {
             <h1>{profileUser?.username}</h1>
           </div>
         </div>
-
+        <a href="#" onClick={gosettings} > <img className="gears" src={require('../components/icons/gear4.png')}/> </a>
         <div className='addfriend'>
           {profileUser?.username == sessionStorage.getItem('username') ? (
             <></>

@@ -13,8 +13,23 @@
     bottom: 1rem;
     right: 1rem;
     user-select: none;
-    
-    
+    pointer-events: none;
+    z-index: 2;
+}
+#flall2 {
+    position: fixed;
+    float: right;
+    bottom: 1rem;
+    right: 6rem;
+    user-select: none;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#chat-c1{
+    position: relative;
+    right: -5rem;
+    pointer-events: auto;
 }
 
 #fldiv{
@@ -23,6 +38,14 @@
     position: relative;
     float: right;
     cursor: pointer;
+    pointer-events: auto;
+}
+#fldiv2 {
+    display: flex;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 #flcontainer{
@@ -54,6 +77,14 @@
     width: 20rem;
     height: 30rem;
     border-radius: 1rem 1rem 0rem 1rem;
+    flex-direction: column;
+    pointer-events: auto;
+}
+#floverlay2 {
+    background-color: rgb(84, 58, 171);
+    width: 20rem;
+    height: 30rem;
+    border-radius: 0rem 1rem 1rem 1rem;
     flex-direction: column;
 }
 
@@ -156,7 +187,7 @@
 
 #fl-invis{
     position: absolute;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0,0,0,.125);
     height: 100vh;
     width: 100vw;
     top: 0;
@@ -178,20 +209,9 @@ font-size: 250%;
 }
 
 
-#fldiv2{
-    display: flex;
-    position: relative;
-    float: left;
-    cursor: pointer;
-}
 
-#flall2{
-    position: fixed;
-    top: 10rem;
-    left: 1rem;
-    user-select: none;
-    z-index: 1;
-}
+
+
 
 #flall2 ::-webkit-scrollbar {
     width: 10px;   
@@ -212,14 +232,4 @@ font-size: 250%;
     height: 100vh;
     width: 100vw;
     top: 0;
-
-}
-
-
-#floverlay2{
-    background-color: rgb(84, 58, 171);
-    width: 20rem;
-    height: 30rem;
-    border-radius: 0rem 1rem 1rem 1rem;
-    flex-direction: column;
 }
