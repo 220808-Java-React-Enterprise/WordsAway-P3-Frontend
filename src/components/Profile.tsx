@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { AxiosResponse } from 'axios'
+import { Opponent } from '../types/Opponent.type'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
 import gear4 from '../components/icons/gear4.png'
 import '../css/Profile.css'
 import { Navigate, useNavigate } from 'react-router-dom'
+import { updateShorthandPropertyAssignment } from 'typescript'
 
 export default function Profile() {
   const [profileUser, setProfileUser] = useState<User>()
@@ -23,20 +25,13 @@ export default function Profile() {
     if (username === null) {
       username = sessionStorage.getItem('username')
     }
+
     await WORDS_API.get('findUser', { params: { username: username } })
       .then((response: AxiosResponse) => {
         setProfileUser(response.data)
       })
       .catch((response) => console.log(response))
   }
-
-  useEffect(() => {
-    let username = sessionStorage.getItem('profileUsername')
-      ? sessionStorage.getItem('profileUsername')
-      : sessionStorage.getItem('username')
-    sessionStorage.removeItem('profileUsername')
-    getUser(username)
-  }, [])
 
   useEffect(() => {
     let username = sessionStorage.getItem('profileUsername')
@@ -64,11 +59,7 @@ export default function Profile() {
   }
 
   async function getMatches() {
-    await WORDS_API.get('/gameHistory', {
-      params: {
-        username: profileUser?.username
-      }
-    })
+    await WORDS_API.get('/gameHistory')
       .then((response) => {
         console.log(response.data)
       })

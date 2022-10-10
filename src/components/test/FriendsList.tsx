@@ -147,6 +147,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
           <p className='emoji'>💬</p>
         </div>
       </div>
+
       <div id='flall'>
         <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
           <div style={{ height: '30%', display: pendinglist.length > 0 ? 'block' : 'none' }}>

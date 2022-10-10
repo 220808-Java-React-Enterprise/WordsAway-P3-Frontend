@@ -47,8 +47,8 @@ export default function Navbar() {
           <ul>
             <li>
               {window.sessionStorage.getItem('username') ? (
-                <a className='cta' onClick={finduser}>
-                  FindUser
+                <a className='cta' onClick={rules}>
+                  Rules
                 </a>
               ) : (
                 <></>
@@ -56,8 +56,8 @@ export default function Navbar() {
             </li>
             <li>
               {window.sessionStorage.getItem('username') ? (
-                <a className='cta' onClick={rules}>
-                  Rules
+                <a className='cta' onClick={finduser}>
+                  Search
                 </a>
               ) : (
                 <></>
