@@ -21,7 +21,7 @@ h3 {
 }
 
 #lobbycontainer{
-    height: 100vh;
+    height: auto;
     width:100vw;
     padding-top: 2rem;
 }
