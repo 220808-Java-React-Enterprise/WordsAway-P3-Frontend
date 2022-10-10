@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { AxiosResponse } from 'axios'
 import MessageType from '../../types/Message.type'
 // import { ReactComponent as UserSVG } from '../icons/user-solid.svg'
@@ -11,6 +11,7 @@ import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
 import Chat from '../chat/Chat'
 import ChatWindow from '../chat/ChatWindow'
+//import internal from 'stream'
 
 type Props = {
   chats: Chat[]
@@ -30,14 +31,14 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     friends: []
   }
   const username = window.sessionStorage.getItem('username')
-  const [chatVisible, setChatVisible] = useState(-1)
+
+  //TODO make one chat visable at a time maybe using this number as an id
+  //const [chatVisible, setChatVisible] = useState<number | null>(null)
 
   async function getFriends() {
     await WORDS_API.get('getFriendsList')
       .then((response: AxiosResponse) => {
         sessionStorage.setItem('friends', JSON.stringify(response.data))
-
-        //console.log(response.data)
       })
       .catch((error) => {
         console.log(error)
@@ -49,7 +50,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
 
     for (let i = 0; i < friends.incomingRequests.length; i++) {
       pendinglist.push(
-        <div id='flrow' key={i}>
+        <div id='flrow' key={'IR' + i}>
           <div className='friend'>{friends.incomingRequests[i].username}</div>
           <button id='acceptfr' onClick={() => acceptFR(friends.incomingRequests[i].username)}>
             {/* <CheckSVG style={{ fill: 'green', height: '90%' }} /> */}✔
@@ -62,7 +63,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     }
     for (let i = 0; i < friends.friends.length; i++) {
       friendslist.push(
-        <div id='flrow' key={i}>
+        <div id='flrow' key={'F' + i}>
           <div className='friend'>{friends.friends[i].username}</div>
           <button id='deletefr' onClick={() => unfriendprompt(friends.friends[i].username)}>
             {/* <TrashSVG style={{ fill: 'red', height: '80%' }} /> */}
@@ -115,29 +116,25 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
 
   return (
     <>
-    <div id='fl-invis2' style={{ display: isShown3 ? 'block' : 'none' }} onClick={() => setIsShown3(false)} />
-        <div id='flall2'>
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-        {chats.map((m) => (
+      <div id='fl-invis2' style={{ display: isShown3 ? 'block' : 'none' }} onClick={() => setIsShown3(false)} />
+      <div id='flall2'>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          {chats.map((m) => (
             <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay2'>
-          <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
+              <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
             </div>
-        ))}
-          </div>
+          ))}
         </div>
-        <div
-          style={{ borderRadius: isShown3 ? '1rem 1rem 1rem 1rem' : '1rem' }}
-          onClick={() => setIsShown3(!isShown3)}
-          id='fldiv2'
-          className='simple'
-        >
-          {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
-          <p className='emoji'>💬</p>
-        
       </div>
-
-
-
+      <div
+        style={{ borderRadius: isShown3 ? '1rem 1rem 1rem 1rem' : '1rem' }}
+        onClick={() => setIsShown3(!isShown3)}
+        id='fldiv2'
+        className='simple'
+      >
+        {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
+        <p className='emoji'>💬</p>
+      </div>
 
       <div id='fl-invis' style={{ display: isShown ? 'block' : 'none' }} onClick={() => setIsShown(false)} />
       <div id='flall'>

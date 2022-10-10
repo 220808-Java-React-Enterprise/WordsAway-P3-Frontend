@@ -1,21 +1,16 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { AxiosResponse } from 'axios'
 import { Opponent } from '../types/Opponent.type'
 import WORDS_API from '../utils/ApiConfig'
-import { User } from '../../src/types/User.type'
 import '../css/lobby.css'
 import Leaderboard from './Leaderboard'
-import FriendsList from './test/FriendsList';
-import Challengeboard from './Challengeboard';
+import Challengeboard from './Challengeboard'
 
-interface LobbyProp {
-  currentUser: User | null
-}
-
-export default function Lobby({ currentUser }: LobbyProp) {
+export default function Lobby() {
   const [users, setUsers] = useState<Opponent[]>([])
   const [gameType, setGameType] = useState('')
   const [tableVis, setTableVis] = useState('hidden')
+  const username = window.sessionStorage.getItem('username')
 
   async function getPlayers() {
     setTableVis('visible')
@@ -51,14 +46,9 @@ export default function Lobby({ currentUser }: LobbyProp) {
     challengeTable.style.visibility = tableVis
   }
 
-  var [theme, getTheme] = useState('')
-  useEffect(() => {
-    getTheme(localStorage.getItem("theme") || '');
-  },[]);
-
   return (
     <div id='lobbycontainer'>
-      <h1 data-testid='title'>Welcome, {currentUser?.username}</h1>
+      <h1 data-testid='title'>Welcome, {username}</h1>
       <div id='lobby'>
         <Leaderboard />
         <div id='playerBoard'>
@@ -82,4 +72,3 @@ export default function Lobby({ currentUser }: LobbyProp) {
     </div>
   )
 }
-

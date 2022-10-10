@@ -1,20 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Opponent } from '../src/types/Opponent.type'
 import { User } from '../src/types/User.type'
-import Signup from './components/Signup'
-import Login from './components/Login'
-import Game from './components/Game'
 import Home from './components/Home'
+import Game from './components/Game'
 import Lobby from './components/Lobby'
 import FindUser from './components/test/FindUser'
 import Profile from './components/Profile'
 import Navbar from './components/Navbar'
 import FriendsList from './components/test/FriendsList'
 import Rules from './components/Rules'
-import SettingsPage from './components/SettingsPage'
+import SettingsPage from './components/Settings'
 import MessageType from './types/Message.type'
-import ChatWindow from './components/chat/ChatWindow'
 import Chat from './components/chat/Chat'
 
 function App() {
@@ -28,6 +24,11 @@ function App() {
   const WS_URL = 'ws://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway/chat'
   //const WS_URL = 'ws://localhost:8080/wordsaway/chat'
 
+  var [theme, getTheme] = useState('')
+  useEffect(() => {
+    getTheme(localStorage.getItem('theme') || 'light')
+  }, [])
+
   useEffect(() => {
     setupWebSocket()
   }, [])
@@ -40,7 +41,7 @@ function App() {
       client.onopen = () => {
         setIsOpen(true)
         setWaitingToReconnect(false)
-        client.send(JSON.stringify({ user: username, id: '', type: MessageType.LOGIN, data: '' }))
+        sendMSG(JSON.stringify({ user: username, id: '', type: MessageType.LOGIN, data: '' }))
         console.log('Websocket Opened.', connection.current)
       }
 
@@ -76,7 +77,7 @@ function App() {
             break
           case MessageType.MESSAGE:
             const chat = getChat(message.id)
-            chat.messages.push(message.data)
+            chat.messages.push(message.user + ': ' + message.data)
             setChats([...chats])
             break
           case MessageType.LEAVE_CHAT_ACK:
@@ -104,6 +105,7 @@ function App() {
     }
   }
 
+  //TODO replace this with a map and useImmer
   function getChat(id: string) {
     var chat
     chats.forEach((c) => {
@@ -117,26 +119,31 @@ function App() {
   }
 
   function sendMSG(message: string) {
-    connection.current?.send(message)
+    if (connection.current?.readyState === 1) connection.current.send(message)
+    else {
+      setTimeout(() => {
+        sendMSG(message)
+      }, 1000)
+    }
   }
-  var [theme, getTheme] = useState('')
-  useEffect(() => {
-    getTheme(localStorage.getItem("theme") || '');
-  },[]);
 
   return (
     <div className='container' data-theme={theme}>
       <BrowserRouter>
-        <Navbar />
-        {sessionStorage.getItem('username') && <FriendsList sendMSG={sendMSG} chats={chats} />}
+        {sessionStorage.getItem('username') && (
+          <>
+            <Navbar />
+            <FriendsList sendMSG={sendMSG} chats={chats} />
+          </>
+        )}
         <Routes>
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/logout' element={<Login />} />
+          {/* <Route path='/signup' element={<Signup />} /> */}
+          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/profile' element={<Profile profileUser={profileUser} />} />
           <Route path='/rules' element={<Rules />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/lobby' element={<Lobby currentUser={user} />} />
+          {/* <Route path='/' element={<Home />} /> */}
+          <Route path='/lobby' element={<Lobby />} />
           {/* <Route path="/setup" element={<Setup />} /> */}
           <Route path='/game' element={<Game />} />
           <Route path='/finduser' element={<FindUser />} />
