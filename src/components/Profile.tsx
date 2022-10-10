@@ -3,21 +3,41 @@ import { AxiosResponse } from 'axios'
 import { Opponent } from '../types/Opponent.type'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
-
+import gear4 from '../components/icons/gear4.png'
 import '../css/Profile.css'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 export default function Profile() {
   const [profileUser, setProfileUser] = useState<User>()
   const [isShown2, setIsShown2] = useState(false)
   const [userFriends, setUserFriends] = useState<User[]>([])
   const [userOutgoing, setUserOutgoing] = useState<User[]>([])
-  var [theme, getTheme] = useState('')
+  const [theme, getTheme] = useState('')
   var friends: { outgoingRequests: any[]; incomingRequests: any[]; friends: any[] } = {
     outgoingRequests: [],
     incomingRequests: [],
     friends: []
   }
+  let navigate = useNavigate();
+
+  async function getUser(username: string | null) {
+    if (username === null) {
+      username = sessionStorage.getItem('username')
+    }
+    await WORDS_API.get('findUser', { params: { username: username } })
+      .then((response: AxiosResponse) => {
+        setProfileUser(response.data)
+      })
+      .catch((response) => console.log(response))
+  }
+
+  useEffect(() => {
+    let username = sessionStorage.getItem('profileUsername')
+      ? sessionStorage.getItem('profileUsername')
+      : sessionStorage.getItem('username')
+    sessionStorage.removeItem('profileUsername')
+    getUser(username)
+  }, [])
 
   async function getUser(username: string | null) {
     /*
@@ -43,19 +63,7 @@ export default function Profile() {
     getTheme(localStorage.getItem('theme') || 'light')
     getFriends()
     getMatches()
-    
-   
-      
-   
-   
-
-
   }, [])
-
-  
-  
-  
-  
 
   async function getFriends() {
     await WORDS_API.get('/getFriendsList')
@@ -77,15 +85,9 @@ export default function Profile() {
   await WORDS_API.get('/gameHistory')
   .then((response) => {
     console.log("games: " + JSON.stringify(response.data));
-    
-    
-    
   })
   .catch(() => (console.log("broke")))
-  
   */
- 
-
   }
 
   async function addFriend() {
@@ -137,9 +139,15 @@ export default function Profile() {
       .catch((response) => alert(response))
   }
 
-  
+  useEffect(() => {
+    getTheme(localStorage.getItem('theme') || 'light')
+  }, [])
 
- 
+  function gosettings()
+  {
+    navigate('/settings')
+    window.location.reload();
+  }
 
   console.log('icon: ' + profileUser?.avatar)
   
@@ -163,7 +171,7 @@ export default function Profile() {
             <h1>{profileUser?.username}</h1>
           </div>
         </div>
-
+        <a href="#" onClick={gosettings} > <img className="gears" src={require('../components/icons/gear4.png')}/> </a>
         <div className='addfriend'>
           {profileUser?.username == sessionStorage.getItem('username') ? (
             <></>
