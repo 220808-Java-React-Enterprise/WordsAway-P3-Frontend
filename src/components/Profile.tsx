@@ -3,10 +3,11 @@ import { AxiosResponse } from 'axios'
 import { Opponent } from '../types/Opponent.type'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
-
+import SettingsPage from './SettingsPage'
 import '../css/Profile.css'
 import { Navigate } from 'react-router-dom'
-
+import { useNavigate } from "react-router-dom";
+import gear4 from '../components/icons/gear4.png'
 interface UserProp{
   profileUser: User | null;
 }
@@ -20,7 +21,8 @@ export default function Profile({profileUser}: UserProp){
  var friends: { outgoingRequests: any[], incomingRequests: any[], friends: any[] } = { outgoingRequests: [], incomingRequests: [], friends: []}
 
  
- 
+ let navigate = useNavigate();
+
  useEffect(() => {
   getFriends()
  getMatches()
@@ -110,7 +112,13 @@ async function getMatches() {
   
   console.log("icon: " + profileUser?.avatar);
 
+  function gosettings()
+  {
+    navigate('/settings')
+    window.location.reload();
+  }
 
+  
   return (
     
     <div className ="profile" data-theme={theme}>
@@ -119,10 +127,18 @@ async function getMatches() {
 {profileUser?.avatar == 0 ? <img alt=":(" src={"images/icon0.png"}></img>: profileUser?.avatar ? <img alt=":(" src={"images/icon" + (profileUser.avatar).toString() +".png"}></img> : <></> } 
 </div>
 
+
+
+
 <div className  = "intro">
 <div className  = "titleProf">
 <h1>{profileUser?.username}</h1>
 </div>
+
+
+<a href="#" onClick={gosettings} > <img className="gears" src={require('../components/icons/gear4.png')}/> </a>
+
+
 
 
 </div>
@@ -157,6 +173,9 @@ async function getMatches() {
 <h3 id="win"> Victory! </h3>
 </div>
 </div>
+
+
+
 
 <div style={{ display: (isShown2) ? 'flex' : 'none' }} id='removeConfirm'>
                 <div>

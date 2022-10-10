@@ -3,7 +3,7 @@ import React from 'react'
 import {useState,useEffect} from 'react';
 import { URL } from 'react-dnd-html5-backend/dist/NativeTypes';
 import { URLSearchParams } from 'url';
-import  "../../css/FUser.css"
+import  "../../css/finduser.css"
 import WORDS_API from '../../utils/ApiConfig';
 import { useNavigate } from "react-router-dom";
 
@@ -71,6 +71,7 @@ console.log(dataTable);
 
 
   return (
+    <body>
     <div id="searchUser">
 <form>
   <label>Find</label>
@@ -93,7 +94,7 @@ console.log(dataTable);
 
 
 </div>
-
+</body>
 
     
       

@@ -76,3 +76,10 @@
 
 }
 */
+
+.settingsPage{
+  object-fit: cover;
+  background-color: rgb(152, 174, 194);
+  height:80%
+}
+

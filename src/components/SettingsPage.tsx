@@ -123,7 +123,7 @@ function iconPrompt() {
   console.log("icon: " + icon);
 
   return (
-    <div>
+    <div className="settingsPage">
         <h1> SettingsPage</h1>
         <br/>
         <section>
@@ -151,10 +151,10 @@ function iconPrompt() {
 
 
           <br/>
-          <form>
+          <form >
           <label>New Email</label>
           <br/>
-        <input type="text" placeholder="enter new email" onChange={updateEmail}/>
+        <input id="inputEmail"type="text" placeholder="enter new email" onChange={updateEmail}/>
         <br/>
         <label>New Password</label>
         <br/>

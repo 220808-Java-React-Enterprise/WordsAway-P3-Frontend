@@ -5,7 +5,7 @@ import '../css/Profile.css'
 import { User } from "../types/User.type";
 //import '../css/Profile.css';
 import '../css/Navbar.css'
-import useLocalStorage from 'use-local-storage'
+import FindUser from './test/FindUser';
 
 
 export default function Navbar() {
@@ -45,6 +45,11 @@ export default function Navbar() {
     window.location.reload();
   }
 
+  function finduser() {
+    navigate("/finduser");
+    window.location.reload();
+  }
+
   function notifications() {  //needs to be implemented
     //navigate("/lobby");
     window.location.reload();
@@ -68,8 +73,12 @@ export default function Navbar() {
         <div className="topnav">
           <ul>
             
+          <li>
+              {window.sessionStorage.getItem("username") ? <a className="cta" onClick={finduser}>FindUser</a>
+                : <></>}
+            </li>
             
-            
+           
             <li>
               {window.sessionStorage.getItem("username") ? <a className="cta" onClick={rules}>Rules</a>
                 : <></>}

@@ -53,6 +53,15 @@ background-color: var(--profile-topholder);
 
 }
 
+.gears {
+  position:absolute;
+  height: 70px;
+  width: 70px;
+  left: 1000px;
+  top: 75px
+
+}
+
 
 .icon {
   padding-left: 5vw;
