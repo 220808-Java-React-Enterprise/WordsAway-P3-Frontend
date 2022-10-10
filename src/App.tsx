@@ -13,7 +13,7 @@ import Navbar from './components/Navbar'
 import FriendsList from './components/test/FriendsList';
 import Rules from './components/Rules'
 import SocketTest from './components/SocketTest';
-import SettingsPage from './components/SettingsPage';
+import SettingsPage from './components/Settings';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);

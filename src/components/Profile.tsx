@@ -3,7 +3,7 @@ import { AxiosResponse } from 'axios'
 import { Opponent } from '../types/Opponent.type'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
-import SettingsPage from './SettingsPage'
+import SettingsPage from './Settings'
 import '../css/Profile.css'
 import { Navigate } from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
