@@ -3,7 +3,6 @@ import { AxiosResponse } from 'axios'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
 import '../css/Rules.css'
-import useLocalStorage from 'use-local-storage'
 
 const Rules = () => {
  

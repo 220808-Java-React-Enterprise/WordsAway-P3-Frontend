@@ -77,6 +77,7 @@
     position: relative;
     left: -.25rem;
     top: -.85rem;
+    cursor: pointer;
 }
 .addpal{
     width: auto;
@@ -84,6 +85,7 @@
     position: relative;
     left: .7rem;
     top: -2.3rem;
+    cursor: pointer;
 }
 .friendfind{
     height: 74%;
@@ -106,6 +108,7 @@
     position: relative;
     top: -1.25rem;
     left: -.9rem;
+    cursor: pointer;
 }
 
 .ourmessage{
@@ -119,23 +122,26 @@
     overflow: auto;
     background-color: #fff;
     size: auto;
-    height: 50%;
+    height: 17.5rem;
     width: 93%;
     margin: auto;
     border: black;
     position: relative;
-    top: -1.9rem;
+    top: -1.8rem;
 
 }
 
-h2 {
+.chatheader {
     font-family: fantasy;
     color: silver;
     font-weight: lighter;
     text-align: center;
-    background-color: darkcyan;
+    background-color: steelblue;
     border: 2px solid black;
     display: block;
     position: relative;
-    top: -1.1rem;
+    top: -1.2rem;
+    left: 2.4rem;
+    width: 15rem;
+    border-radius: 20%;
 }

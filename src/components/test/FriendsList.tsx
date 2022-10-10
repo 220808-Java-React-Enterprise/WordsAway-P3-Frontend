@@ -116,21 +116,24 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
 
   return (
     <>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        {chats.map((m) => (
-          <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay'>
-            <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
-          </div>
-        ))}
-        <div
-          style={{ borderRadius: isShown3 ? '0rem 0rem 1rem 1rem' : '1rem' }}
-          onClick={() => setIsShown3(!isShown3)}
-          id='fldiv'
-          className='simple'
-        >
-          {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
-          <p className='emoji'>💬</p>
+      <div id='fl-invis2' style={{ display: isShown3 ? 'block' : 'none' }} onClick={() => setIsShown3(false)} />
+      <div id='flall2'>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          {chats.map((m) => (
+            <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay2'>
+              <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
+            </div>
+          ))}
         </div>
+      </div>
+      <div
+        style={{ borderRadius: isShown3 ? '1rem 1rem 1rem 1rem' : '1rem' }}
+        onClick={() => setIsShown3(!isShown3)}
+        id='fldiv2'
+        className='simple'
+      >
+        {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
+        <p className='emoji'>💬</p>
       </div>
 
       <div id='fl-invis' style={{ display: isShown ? 'block' : 'none' }} onClick={() => setIsShown(false)} />
