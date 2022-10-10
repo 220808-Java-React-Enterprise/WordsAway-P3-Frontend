@@ -7,20 +7,35 @@ import WORDS_API from '../utils/ApiConfig'
 import '../css/Profile.css'
 import { Navigate } from 'react-router-dom'
 
-interface UserProp {
-  profileUser: User | null
-}
-
-export default function Profile({ profileUser }: UserProp) {
+export default function Profile() {
+  const [profileUser, setProfileUser] = useState<User>()
   const [isShown2, setIsShown2] = useState(false)
   const [userFriends, setUserFriends] = useState<User[]>([])
   const [userOutgoing, setUserOutgoing] = useState<User[]>([])
-  const [test, setTest] = useState('')
   var friends: { outgoingRequests: any[]; incomingRequests: any[]; friends: any[] } = {
     outgoingRequests: [],
     incomingRequests: [],
     friends: []
   }
+
+  async function getUser(username: string | null) {
+    if (username === null) {
+      username = sessionStorage.getItem('username')
+    }
+    await WORDS_API.get('findUser', { params: { username: username } })
+      .then((response: AxiosResponse) => {
+        setProfileUser(response.data)
+      })
+      .catch((response) => console.log(response))
+  }
+
+  useEffect(() => {
+    let username = sessionStorage.getItem('profileUsername')
+      ? sessionStorage.getItem('profileUsername')
+      : sessionStorage.getItem('username')
+    sessionStorage.removeItem('profileUsername')
+    getUser(username)
+  }, [])
 
   useEffect(() => {
     getFriends()
@@ -30,11 +45,6 @@ export default function Profile({ profileUser }: UserProp) {
   async function getFriends() {
     WORDS_API.get('/getFriendsList')
       .then((response: AxiosResponse<User[]>) => {
-        /*
-    console.log(response.data)
-    console.log(JSON.stringify(response.data));
-    console.log(friends)
-    */
         const test = JSON.parse(JSON.stringify(response.data))
         setUserOutgoing(test.outgoingRequests)
         setUserFriends(test.friends)
@@ -110,7 +120,7 @@ export default function Profile({ profileUser }: UserProp) {
 
   var [theme, getTheme] = useState('')
   useEffect(() => {
-    getTheme(localStorage.getItem('theme') || '')
+    getTheme(localStorage.getItem('theme') || 'light')
   }, [])
 
   console.log('icon: ' + profileUser?.avatar)
