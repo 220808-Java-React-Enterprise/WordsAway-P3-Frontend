@@ -37,7 +37,7 @@ export default function Profile() {
       ? sessionStorage.getItem('profileUsername')
       : sessionStorage.getItem('username')
     
-    console.log("user: " + username);
+    
     
     getUser(username)
     getTheme(localStorage.getItem('theme') || 'light')
@@ -65,25 +65,28 @@ export default function Profile() {
         setUserFriends(test.friends)
 
         //setUserFriends(response.data);
-        console.log(JSON.stringify(userFriends))
-        console.log("would be removed");
+        
         sessionStorage.removeItem('profileUsername');
       })
       .catch(() => (window.location.href = '/login'))
   }
 
   async function getMatches() {
-    /*
-  await WORDS_API.get('/gameHistory')
+    
+    await WORDS_API.get('/gameHistory', {
+      params: {
+        username: profileUser?.username
+      }
+    })
   .then((response) => {
-    console.log("games: " + JSON.stringify(response.data));
+    console.log(response.data);
     
     
     
   })
   .catch(() => (console.log("broke")))
   
-  */
+  
  
 
   }

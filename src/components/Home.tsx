@@ -87,6 +87,8 @@ const Home = () => {
       .then(() => (window.location.href = 'lobby'))
   }
 
+ 
+
   return (
     <>
       <div className='logincontainer'>
