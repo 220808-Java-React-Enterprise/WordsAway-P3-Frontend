@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { AxiosResponse } from 'axios'
-import { Opponent } from '../types/Opponent.type'
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
 
 import '../css/Profile.css'
-import { Navigate } from 'react-router-dom'
 
 export default function Profile() {
   const [profileUser, setProfileUser] = useState<User>()
