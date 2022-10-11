@@ -55,6 +55,7 @@ export default function Lobby() {
                 getBots()
               }}
               className='table-button'
+              data-testid="practice-table-button"
             >
               Practice
             </button>
