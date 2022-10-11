@@ -132,32 +132,7 @@ const SettingsPage = () => {
                 <img alt='Its broken!' src={'images/icon7.png'}></img>
               </a>
             </div>
-
-        </div>  
-
-
-          <br/>
-          <form >
-          <label>New Email</label>
-          <br/>
-        <input id="inputEmail"type="text" placeholder="enter new email" onChange={updateEmail}/>
-        <br/>
-        <label>New Password</label>
-        <br/>
-        <input type="text" placeholder="enter new password" onChange={updatePassword}/>
-        <br/>
-        <label>Old Password</label>
-        <br/>
-        <input type="text" placeholder="enter old password" onChange={updateOldPassword}/>
-
-
-        <input type="button" value="Enter" onClick={handleUpdatePassword}/>
-        </form>
-        <br/>
-        </section>
-
           </div>
-
         </div>
 
         <br />

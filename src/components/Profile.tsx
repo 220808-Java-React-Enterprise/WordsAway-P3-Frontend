@@ -30,8 +30,11 @@ export default function Profile() {
     await WORDS_API.get('findUser', { params: { username: username } })
       .then((response: AxiosResponse) => {
         setProfileUser(response.data)
+        //getFriends()
+        //getMatches()
       })
       .catch((response) => console.log(response))
+    
   }
 
   useEffect(() => {
@@ -41,9 +44,15 @@ export default function Profile() {
 
     getUser(username)
     getTheme(localStorage.getItem('theme') || 'light')
+    //getFriends()
+    //getMatches()
+  }, [])
+
+  useEffect(() => {
+    
     getFriends()
     getMatches()
-  }, [])
+  }, [profileUser])
 
   async function getFriends() {
     await WORDS_API.get('/getFriendsList')
@@ -54,7 +63,7 @@ export default function Profile() {
 
         //setUserFriends(response.data);
 
-        sessionStorage.removeItem('profileUsername');
+        
 
       })
       .catch(() => (window.location.href = '/login'))
@@ -62,17 +71,18 @@ export default function Profile() {
 
   async function getMatches() {
 
-    console.log(profileUser?.username);
+    
     await WORDS_API.get('/gameHistory', {
       params: {
         username: profileUser?.username
       }
     })
   .then((response) => {
-    console.log(response.data);
+    console.log(JSON.stringify(response.data));
+    console.log(profileUser?.username);
+    console.log("username")
     
-    
-    
+    sessionStorage.removeItem('profileUsername');
   })
   .catch(() => (console.log("broke")))
   
@@ -139,7 +149,6 @@ export default function Profile() {
     window.location.reload()
   }
 
-  console.log('icon: ' + profileUser?.avatar)
 
   return (
     <div className='profile' data-theme={theme}>
