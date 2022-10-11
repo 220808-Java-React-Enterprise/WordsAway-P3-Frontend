@@ -4,8 +4,7 @@ import WORDS_API from '../utils/ApiConfig';
 import FindUser from '../components/test/FindUser';
 
 jest.mock('../utils/ApiConfig');
-jest.mock('react-router-dom');
-jest.mock('')
+jest.mock('react-router-dom')
 
 describe('render finduser', ()=>{
 
@@ -23,6 +22,7 @@ describe('render finduser', ()=>{
     })
 
     it('Type user into search input, click "Search user"', ()=>{
+        
         fireEvent.change(screen.getByPlaceholderText('Enter a Username'), {value:"testusername"});
         fireEvent.click(screen.getByTestId('search-user-button'));
     })
