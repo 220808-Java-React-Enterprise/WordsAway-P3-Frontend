@@ -11,7 +11,7 @@ import FriendsList from './components/test/FriendsList'
 import Rules from './components/Rules'
 import SettingsPage from './components/Settings'
 import MessageType from './types/Message.type'
-import Chat from './components/chat/Chat'
+import Chat from './types/Chat'
 
 function App() {
   const connection = useRef<WebSocket>()
@@ -124,6 +124,7 @@ function App() {
       }, 1000)
     }
   }
+  console.log("chat below\n" + chats + '\nChat above')
 
   return (
     <div className='container' data-theme={theme}>
@@ -151,3 +152,5 @@ function App() {
 }
 
 export default App
+
+

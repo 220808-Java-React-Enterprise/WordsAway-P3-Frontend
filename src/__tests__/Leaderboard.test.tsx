@@ -4,11 +4,29 @@ import '@testing-library/jest-dom/extend-expect'
 import ReactDOM from 'react-dom'
 import { cleanup, render } from '@testing-library/react'
 import renderer from "react-test-renderer"
+import {rest} from 'msw'
+import {setupServer} from 'msw/node'
+import 'whatwg-fetch'
+
 
 
     //for clearing overlapping tests
     afterEach(cleanup);
     jest.mock("../utils/ApiConfig")
+
+    const server = setupServer(
+        rest.get('http://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway', (req, res, ctx) => {
+            return res(ctx.status(200), ctx.json({"user": [{"username":"toddles6", "elo":"1016", "gamesPlayed":"1", "gamesWon":"1"}]}))
+        })
+    )
+
+    beforeAll(() => server.listen());
+    afterAll(()=> server.close());
+    afterEach(()=> server.resetHandlers());
+
+    it('grabs users in this fashion',async () => {
+        const user = await 
+    })
 
     //syntax for checking if the div renders
     it('renders leaderboard without crashing', () => {

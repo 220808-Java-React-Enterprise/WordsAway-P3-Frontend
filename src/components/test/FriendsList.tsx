@@ -9,7 +9,7 @@ import MessageType from '../../types/Message.type'
 import '../../css/chatWindow.css'
 import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
-import Chat from '../chat/Chat'
+import Chat from '../../types/Chat'
 import ChatWindow from '../chat/ChatWindow'
 //import internal from 'stream'
 
@@ -90,7 +90,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     }
   }
 
-  async function acceptFR(name: string) {
+  function acceptFR(name: string) {
     console.log('ACCEPT ' + name)
     const params = { username: name }
     WORDS_API.post('addFriend', {}, { params }).catch((error) => {

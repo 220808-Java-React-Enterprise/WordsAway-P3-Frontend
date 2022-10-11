@@ -90,6 +90,8 @@ const Home = () => {
       .then(() => (window.location.href = 'lobby'))
   }
 
+ 
+
   return (
     <>
       <div className='logincontainer'>
@@ -101,9 +103,9 @@ const Home = () => {
           {isLogin ? (
             <>
               <form role='loginForm' className='form' onSubmit={login}>
-                <input type='text' placeholder='Username' onChange={(event) => setUsername(event.target.value)} />
+                <input data-testid='login-username-input' type='text' placeholder='Username' onChange={(event) => setUsername(event.target.value)} />
                 <br />
-                <input type='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
+                <input data-testid='login-password-input' type='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
                 <br />
                 <button data-testid='loginButton' type='submit'>
                   Login

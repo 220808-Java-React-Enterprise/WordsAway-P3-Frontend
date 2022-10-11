@@ -49,7 +49,7 @@ const Leaderboard = () => {
           <tr>
             <th className='rank'>Ranking</th>
             <th className='username'>Username</th>
-            <th className='mmr'>MMR</th>
+            <th className='mmr'>ELO</th>
             <th className='winstreak'>Games Won</th>
           </tr>
         </thead>
