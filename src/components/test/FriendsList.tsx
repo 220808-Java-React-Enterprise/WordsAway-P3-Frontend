@@ -6,7 +6,7 @@ import MessageType from '../../types/Message.type'
 // import { ReactComponent as XMarkSVG } from '../icons/xmark-solid.svg'
 // import { ReactComponent as TrashSVG } from '../icons/trash-can-solid.svg'
 
-import '../../css/ChatWindow.css'
+import '../../css/chatWindow.css'
 import '../../css/friendlist.css'
 import WORDS_API from '../../utils/ApiConfig'
 import Chat from '../chat/Chat'
@@ -46,6 +46,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
   }
 
   function populateList() {
+    if (!friends) return
     friends = JSON.parse(sessionStorage.friends)
 
     for (let i = 0; i < friends.incomingRequests.length; i++) {
@@ -147,6 +148,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
           <p className='emoji'>💬</p>
         </div>
       </div>
+
       <div id='flall'>
         <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
           <div style={{ height: '30%', display: pendinglist.length > 0 ? 'block' : 'none' }}>
