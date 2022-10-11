@@ -47,8 +47,9 @@ const ChatWindow = ({ chatID, messages, sendMSG }: ChatProp) => {
           value={friend}
           placeholder='add friend to chat!'
           onChange={(event) => setFriend(event.target.value)}
+          data-testid='chat-user'
         ></input>
-        <button className='addpal' onClick={() => addUser(friend)}>
+        <button data-testid='chat-user-button' className='addpal' onClick={() => addUser(friend)}>
           Add Pal!
         </button>
       </div>
@@ -64,10 +65,11 @@ const ChatWindow = ({ chatID, messages, sendMSG }: ChatProp) => {
           value={message}
           placeholder='Message'
           onChange={(event) => setMessage(event.target.value)}
+          data-testid='chat-message'
         />
         <br />
         <button type='submit' className='form-button'>
-          <p>Send</p>
+          <p data-testid='chat-submit'>Send</p>
         </button>
       </form>
     </>

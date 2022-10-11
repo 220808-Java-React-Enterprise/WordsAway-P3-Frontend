@@ -89,7 +89,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     }
   }
 
-  async function acceptFR(name: string) {
+  function acceptFR(name: string) {
     console.log('ACCEPT ' + name)
     const params = { username: name }
     WORDS_API.post('addFriend', {}, { params }).catch((error) => {

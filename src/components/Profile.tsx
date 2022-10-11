@@ -20,24 +20,24 @@ export default function Profile() {
   }
   let navigate = useNavigate();
 
-  async function getUser(username: string | null) {
-    if (username === null) {
-      username = sessionStorage.getItem('username')
-    }
-    await WORDS_API.get('findUser', { params: { username: username } })
-      .then((response: AxiosResponse) => {
-        setProfileUser(response.data)
-      })
-      .catch((response) => console.log(response))
-  }
+  // async function getUser(username: string | null) {
+  //   if (username === null) {
+  //     username = sessionStorage.getItem('username')
+  //   }
+  //   await WORDS_API.get('findUser', { params: { username: username } })
+  //     .then((response: AxiosResponse) => {
+  //       setProfileUser(response.data)
+  //     })
+  //     .catch((response) => console.log(response))
+  // }
 
-  useEffect(() => {
-    let username = sessionStorage.getItem('profileUsername')
-      ? sessionStorage.getItem('profileUsername')
-      : sessionStorage.getItem('username')
-    sessionStorage.removeItem('profileUsername')
-    getUser(username)
-  }, [])
+  // useEffect(() => {
+  //   let username = sessionStorage.getItem('profileUsername')
+  //     ? sessionStorage.getItem('profileUsername')
+  //     : sessionStorage.getItem('username')
+  //   sessionStorage.removeItem('profileUsername')
+  //   getUser(username)
+  // }, [])
 
   async function getUser(username: string | null) {
     /*
