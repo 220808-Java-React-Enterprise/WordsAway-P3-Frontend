@@ -208,8 +208,13 @@ margin-left: .25rem;
 font-size: 250%;
 }
 
+
+
+
+
 #flall2 ::-webkit-scrollbar {
     width: 10px;   
+
 
 }
 
