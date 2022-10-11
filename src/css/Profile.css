@@ -1,9 +1,26 @@
+[data-theme="light"] {
+  --profile-background: white;
+  --border: lightgrey;
+  --profile-topholder: hsl(206, 67%, 62%);
+  --profile-rest: lightblue;
+}
+
+[data-theme="dark"] {
+  --profile-background: #72268e;
+  --border: #410559;
+  --profile-topholder: rgb(25, 25, 124);
+  --profile-rest: rgb(3, 96, 127);
+}
+
+.container{
+  background: var(--background);
+}
 
 
 .mainBody{
 
   margin: 0 auto;
-  background-color: #ddd;
+  background-color: var(--profile-background);
   min-height:100%;
 }
 
@@ -17,7 +34,7 @@
 }
 
 .profile{
-background-color: lightgrey;
+background-color: var(--border);
 width: 70vw;
 height: 80vh;
 margin: 0 auto;
@@ -32,7 +49,7 @@ box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 
 .topholder{
 height: 33%;
-background-color: #5ca7df;
+background-color: var(--profile-topholder);
 
 }
 
@@ -77,7 +94,7 @@ background-color: #5ca7df;
 
 
 .rest{
-  background-color:lightblue;
+  background-color: var(--profile-rest);
   height: 67%;
   display: flex;
 }
@@ -189,5 +206,14 @@ footer {
   margin-right: 1rem;
   margin-left: 1rem;
   margin-top: .8rem;
+
+}
+
+.gears {
+  position:relative;
+  height: 70px;
+  width: 70px;
+  left: 22px;
+  top: 75px
 
 }
