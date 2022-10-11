@@ -46,7 +46,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
   }
 
   function populateList() {
-    if (!friends) return
+    if (sessionStorage.friends === undefined) return
     friends = JSON.parse(sessionStorage.friends)
 
     for (let i = 0; i < friends.incomingRequests.length; i++) {
@@ -72,16 +72,19 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
           </button>
           <button
             className='startchat'
-            onClick={() =>
+            onClick={() => {
               sendMSG(
                 JSON.stringify({
-                  user: friends.friends[i].username,
+                  user: username,
                   id: '',
                   type: MessageType.START_CHAT,
-                  data: username
+                  data: friends.friends[i].username
                 })
               )
-            }
+              alert('Chat starting...')
+              setIsShown(false)
+              setIsShown3(true)
+            }}
           >
             <p>✉</p>
           </button>
@@ -125,29 +128,33 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
           setIsShown(false)
         }}
       />
-      <div id='flall2'>
-        <div id='chat-c1'>
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-            {chats.map((m) => (
-              <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay2'>
-                <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
-              </div>
-            ))}
+      {chats.length !== 0 ? (
+        <div id='flall2'>
+          <div id='chat-c1'>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              {chats.map((m) => (
+                <div style={{ display: isShown3 ? 'flex' : 'none' }} id='floverlay2'>
+                  <ChatWindow key={m.id} chatID={m.id} messages={m.messages} sendMSG={sendMSG} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div
+            style={{ borderRadius: isShown3 ? '0rem 0rem 1rem 1rem' : '1rem' }}
+            onClick={() => {
+              setIsShown3(!isShown3)
+              if (isShown) setIsShown(false)
+            }}
+            id='fldiv2'
+            className='simple'
+          >
+            {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
+            <p className='emoji'>💬</p>
           </div>
         </div>
-        <div
-          style={{ borderRadius: isShown3 ? '0rem 0rem 1rem 1rem' : '1rem' }}
-          onClick={() => {
-            setIsShown3(!isShown3)
-            if (isShown) setIsShown(false)
-          }}
-          id='fldiv2'
-          className='simple'
-        >
-          {/* <UserSVG style={{ height: '55%', margin: 'auto', fill: ((pendinglist.length > 0) ? 'red' : 'white') }} /> */}
-          <p className='emoji'>💬</p>
-        </div>
-      </div>
+      ) : (
+        <></>
+      )}
 
       <div id='flall'>
         <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
