@@ -46,6 +46,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
   }
 
   function populateList() {
+    if (!friends) return
     friends = JSON.parse(sessionStorage.friends)
 
     for (let i = 0; i < friends.incomingRequests.length; i++) {
@@ -116,8 +117,14 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
 
   return (
     <>
-      
-      <div id='fl-invis' style={{ display: isShown3 || isShown ? 'block' : 'none' }} onClick={() => {setIsShown3(false);setIsShown(false)}} />
+      <div
+        id='fl-invis'
+        style={{ display: isShown3 || isShown ? 'block' : 'none' }}
+        onClick={() => {
+          setIsShown3(false)
+          setIsShown(false)
+        }}
+      />
       <div id='flall2'>
         <div id='chat-c1'>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
@@ -130,7 +137,10 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
         </div>
         <div
           style={{ borderRadius: isShown3 ? '0rem 0rem 1rem 1rem' : '1rem' }}
-          onClick={() => {setIsShown3(!isShown3); if (isShown)setIsShown(false)}}
+          onClick={() => {
+            setIsShown3(!isShown3)
+            if (isShown) setIsShown(false)
+          }}
           id='fldiv2'
           className='simple'
         >
@@ -138,7 +148,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
           <p className='emoji'>💬</p>
         </div>
       </div>
-      
+
       <div id='flall'>
         <div style={{ display: isShown ? 'flex' : 'none' }} id='floverlay'>
           <div style={{ height: '30%', display: pendinglist.length > 0 ? 'block' : 'none' }}>
@@ -152,7 +162,10 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
         </div>
         <div
           style={{ borderRadius: isShown ? '0rem 0rem 1rem 1rem' : '1rem' }}
-          onClick={() => { setIsShown(!isShown); setIsShown3(false) }}
+          onClick={() => {
+            setIsShown(!isShown)
+            setIsShown3(false)
+          }}
           id='fldiv'
           className='simple'
         >
