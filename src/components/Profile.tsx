@@ -19,14 +19,14 @@ export default function Profile() {
     incomingRequests: [],
     friends: []
   }
-  let navigate = useNavigate();
+  let navigate = useNavigate()
 
   async function getUser(username: string | null) {
     
     if (username === null) {
       username = sessionStorage.getItem('username')
     }
-    
+
     await WORDS_API.get('findUser', { params: { username: username } })
       .then((response: AxiosResponse) => {
         setProfileUser(response.data)
@@ -38,9 +38,7 @@ export default function Profile() {
     let username = sessionStorage.getItem('profileUsername')
       ? sessionStorage.getItem('profileUsername')
       : sessionStorage.getItem('username')
-    
-    
-    
+
     getUser(username)
     getTheme(localStorage.getItem('theme') || 'light')
     getFriends()
@@ -55,13 +53,15 @@ export default function Profile() {
         setUserFriends(test.friends)
 
         //setUserFriends(response.data);
-        
+
         sessionStorage.removeItem('profileUsername');
+
       })
       .catch(() => (window.location.href = '/login'))
   }
 
   async function getMatches() {
+
     console.log(profileUser?.username);
     await WORDS_API.get('/gameHistory', {
       params: {
@@ -78,6 +78,7 @@ export default function Profile() {
   
   
  
+
 
   }
 
@@ -114,7 +115,6 @@ export default function Profile() {
     setIsShown2(true)
     console.log('UNFRIEND Pending')
   }
-  
 
   async function cancelRequest() {
     await WORDS_API.post(
@@ -134,15 +134,12 @@ export default function Profile() {
     getTheme(localStorage.getItem('theme') || 'light')
   }, [])
 
-  function gosettings()
-  {
+  function gosettings() {
     navigate('/settings')
-    window.location.reload();
+    window.location.reload()
   }
 
   console.log('icon: ' + profileUser?.avatar)
-  
-  
 
   return (
     <div className='profile' data-theme={theme}>
@@ -162,7 +159,10 @@ export default function Profile() {
             <h1>{profileUser?.username}</h1>
           </div>
         </div>
-        <a href="#" onClick={gosettings} > <img className="gears" src={require('../components/icons/gear4.png')}/> </a>
+        <a href='#' onClick={gosettings}>
+          {' '}
+          <img className='gears' src={require('../components/icons/gear4.png')} />{' '}
+        </a>
         <div className='addfriend'>
           {profileUser?.username == sessionStorage.getItem('username') ? (
             <></>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import MessageType from '../../types/Message.type'
-import '../../css/ChatWindow.css'
+import '../../css/chatWindow.css'
 
 interface ChatProp {
   chatID: string
@@ -21,7 +21,6 @@ const ChatWindow = ({ chatID, messages, sendMSG }: ChatProp) => {
     setMessage('')
   }
 
-
   function addUser(playerToAdd: string) {
     sendMSG(JSON.stringify({ user: username, id: chatID, type: MessageType.ADD_USER, data: playerToAdd }))
     alert('Added ' + friend + ' to the chat!')
@@ -31,8 +30,6 @@ const ChatWindow = ({ chatID, messages, sendMSG }: ChatProp) => {
     sendMSG(JSON.stringify({ user: username, id: chatID, type: MessageType.LEAVE_CHAT, data: '' }))
     alert('You left the chat!')
   }
-
-
 
   return (
     <>

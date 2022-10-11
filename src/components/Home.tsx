@@ -3,6 +3,7 @@ import WORDS_API from '../utils/ApiConfig'
 import axios, { AxiosResponse } from 'axios'
 import CryptoJS from 'crypto-js'
 import '../css/login.css'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const [username, setUsername] = useState('')
@@ -10,6 +11,7 @@ const Home = () => {
   const [email, setEmail] = useState('')
   const [confirm, setConfirm] = useState('')
   const [isLogin, setIsLogin] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     window.sessionStorage.removeItem('username')
@@ -32,7 +34,6 @@ const Home = () => {
     })
       .then((response) => {
         sessionStorage.setItem('token', response.headers.authorization)
-        sessionStorage.setItem('username', username)
         axios.defaults.headers.common.Authorization = response.headers.authorization
         storeUser()
       })
@@ -47,7 +48,9 @@ const Home = () => {
       .then((response: AxiosResponse) => {
         let user = { ...response.data }
         window.sessionStorage.setItem('user', JSON.stringify(user))
-        window.location.href = '/lobby'
+        sessionStorage.setItem('username', username)
+        navigate('/lobby')
+        window.location.reload()
       })
       .catch((response) => console.log(response))
   }
