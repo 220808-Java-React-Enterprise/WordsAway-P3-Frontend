@@ -1,0 +1,72 @@
+[data-theme="light"] {
+    --background: #fff;
+    --color: skyblue;
+    --rules-color: rgb(33, 98, 124);
+
+}
+
+[data-theme="dark"] {
+    --background: #72268e;
+    --color: #6a79b1;
+    --rules-color: #6a79b1;
+} 
+
+
+
+.rulescontainer{
+    background: var(--background);
+    width: 100vw;
+    height: 100vh;
+    /* display: flex; */
+    flex-direction: column;
+    user-select: none;
+    transition: all .5s;
+}
+.titleRules h1{
+    width: 65rem;
+    height: 10rem;
+    margin: auto;
+    display: flex;
+    margin-right: 450px;
+    font-family:Bookworm;
+    font-size: 6rem;
+    color: skyblue;
+    font-weight:bolder;
+    -webkit-text-stroke: .01rem black;
+}
+
+.titleRules h2{
+    width: 65rem;
+    /* height: 10rem; */
+    margin: auto;
+    display: flex;
+    margin-right: 450px;
+    font-family:Bookworm;
+    font-size: 3rem;
+    color: skyblue;
+    font-weight:bolder;
+    -webkit-text-stroke: .01rem black;
+}
+
+.titleRules ul{
+    width: 60rem;
+    /* height: 10rem; */
+    font-size: 2rem;
+    color: var(--rules-color);
+    margin: auto;
+    
+}
+
+.titleRules p{
+    width: 60rem;
+    /* height: 10rem; */
+    font-size: 2rem;
+    color: var(--rules-color);
+    margin: auto;
+    
+}
+
+.titleRules{
+    background-color: var(--background);
+}
+

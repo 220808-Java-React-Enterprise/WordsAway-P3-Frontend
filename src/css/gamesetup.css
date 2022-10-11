@@ -1,0 +1,86 @@
+.wormtray{
+    background-color:burlywood;
+    width: 30rem;
+    height: 20rem;
+    display: flex;
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: rgb(100,50,50);
+    border-width: .5rem;
+
+}
+
+.wormcell{
+    background-color: rgba(100,100,100,.3);
+    width: calc(30rem/7);
+    height: 17rem;
+    margin: auto;
+    border-radius: 1.5rem;
+    display: flex;
+    
+    align-content: center;
+}
+
+
+.gamesetup{
+    background-color:brown;
+    display: flex;
+    margin: auto;
+
+}
+
+.worm{
+    border-style: solid;
+    height: 2rem;
+    width: 2rem;
+    margin: auto;
+    border-radius: .75rem;
+    border-width: 2px;
+}
+
+.worma{
+    background-color: aqua;
+}
+.wormb {
+    background-color: greenyellow;
+}
+.wormc {
+    background-color: coral;
+}
+.wormd {
+    background-color: orange;
+}
+.worms {
+    background-color: brown;
+}
+
+.worma-v{
+    width: 2rem;
+    height: calc(2.5rem*5);
+    background-color: aqua;
+    margin: auto;
+}
+.wormb-v{
+    width: 2rem;
+        height: calc(2.5rem*4);
+        background-color: greenyellow;
+        margin: auto;
+}
+.wormc-v{
+    width: 2rem;
+        height: calc(2.5rem*3);
+        background-color:coral;
+        margin: auto;
+}
+.wormd-v{
+    width: 2rem;
+        height: calc(2.5rem*3);
+        background-color:orange;
+        margin: auto;
+}
+.worms-v{
+    width: 2rem;
+        height: calc(2.5rem*2);
+        background-color: brown;
+        margin: auto;
+}

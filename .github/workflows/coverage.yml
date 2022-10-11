@@ -1,6 +1,6 @@
 name: Code Coverage
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.9]
+        node-version: [18.x]
 
     steps:
     - name: Checkout repository

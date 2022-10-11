@@ -1,0 +1,234 @@
+.simple{
+    background-color: rgb(84, 58, 171);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0rem 0rem .5rem .5rem;
+    
+}
+
+#flall{
+    
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    user-select: none;
+    pointer-events: none;
+    z-index: 2;
+}
+#flall2 {
+    position: fixed;
+    float: right;
+    bottom: 1rem;
+    right: 6rem;
+    user-select: none;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#chat-c1{
+    position: relative;
+    right: -5rem;
+    pointer-events: auto;
+}
+
+#fldiv{
+
+    display: flex;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    pointer-events: auto;
+}
+#fldiv2 {
+    display: flex;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+#flcontainer{
+    background-color: rgb(175, 175, 175);
+    width: 90%;
+    height: 90%;
+    border-radius: 0.25rem;
+    overflow: auto;
+    margin: auto;
+}
+#flpcontainer {
+    background-color: rgb(175, 175, 175);
+    width: 90%;
+    height: 80%;
+    border-radius: 0.25rem;
+    overflow: auto;
+    margin: auto;
+}
+
+.friend{
+    height: 1.5rem;
+    width: 10rem;
+    background-color: rgb(153, 153, 153);
+    border-radius: .25rem;
+    margin-bottom: .2rem;
+}
+#floverlay{
+    background-color: rgb(84, 58, 171);
+    width: 20rem;
+    height: 30rem;
+    border-radius: 1rem 1rem 0rem 1rem;
+    flex-direction: column;
+    pointer-events: auto;
+}
+#floverlay2 {
+    background-color: rgb(84, 58, 171);
+    width: 20rem;
+    height: 30rem;
+    border-radius: 0rem 1rem 1rem 1rem;
+    flex-direction: column;
+}
+
+#flrow{
+    display: flex;
+    margin-left: .25px;
+    margin-right: .25px;
+    /* width: 178%; */
+    /*edited width to make it fill the box*/
+}
+
+#flrow div {
+    user-select: text;
+    padding-left: 5px;
+    width: 100%;
+}
+#flrow .friend{
+    width: 11100000%;
+}
+
+
+.frtitle{
+    font-size: 1.5rem;
+    margin: auto;
+    margin-left: 1rem;
+    color: white;
+}
+
+#flall ::-webkit-scrollbar {
+    width: 10px;   
+
+}
+
+#flall ::-webkit-scrollbar-thumb {
+    background: rgb(84, 58, 171);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(175, 175, 175);
+ }
+
+ #flrow button{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+ }
+#flrow button svg {
+    margin: auto;
+}
+
+#flrow #deletefr p{
+    position: relative;
+    left: -.42rem;
+    top: -1.1rem;
+    font-size: medium;
+}
+
+#flconfirm{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.329);
+    position: absolute;
+    top: 0;
+    left:0;
+    display: flex;
+}
+#flconfirm div{
+    width: 50rem;
+    height: 9rem;
+    background-color: rgb(84, 58, 171);
+    margin: auto;
+    border-radius: 1rem;
+    display: flex;
+}
+#flconfirm div div {
+    height: auto;
+    font-size: 1.2rem;
+    color: white;
+    height: 2rem;
+    width: auto;
+    text-align: center;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+
+}
+#flconfirm div div div{
+    display: block;
+
+}
+#flconfirm button {
+    font-size: 1.25rem;
+    width: 5rem;
+    height: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-top: .8rem;
+
+}
+
+#fl-invis{
+    position: absolute;
+    background-color: rgba(0,0,0,.125);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+
+}
+
+#flall #fldiv p{
+margin-top: .25rem;
+margin-right: 2rem;
+margin-left: .25rem;
+font-size: 250%;
+}
+
+.emoji{
+margin-top: .25rem;
+margin-right: 2rem;
+margin-left: .25rem;
+font-size: 250%;
+}
+
+
+
+
+
+#flall2 ::-webkit-scrollbar {
+    width: 10px;   
+
+
+}
+
+#flall2 ::-webkit-scrollbar-thumb {
+    background: rgb(84, 58, 171);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(175, 175, 175);
+ }
+
+#fl-invis2{
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+}

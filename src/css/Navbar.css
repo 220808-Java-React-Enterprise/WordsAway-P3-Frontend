@@ -1,0 +1,73 @@
+[data-theme="light"] {
+  --background-color: #269faf;
+  --ul-color: #fff;
+}
+
+[data-theme="dark"] {
+  --background-color: #410559;
+  --ul-color: rgb(113, 101, 219);
+}
+
+.topnav {
+  background-color: var(--background-color);
+  height: 10vh;
+  overflow: hidden;
+  text-align: center;
+
+}
+
+.navtitle {
+  font-family:Bookworm;
+  text-align: center; 
+  margin-left: 550px; 
+  color: skyblue;
+  font-weight:bolder;
+  -webkit-text-stroke: .01rem black;
+  font-size: 85px;
+  display: inline-block;
+  background-color: #269faf;
+}
+/* Style the links inside the navigation bar */
+
+.topnav ul {
+  margin-right: 75px;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  float: right;
+  line-height: 10vh;   
+    /* width: 20%; */
+    text-decoration: none;
+  font-size: 25px;
+  align-items: center;
+  color: var(--ul-color)
+}
+
+.topnav a {
+  /* float: left; */
+  text-align: center;
+  text-decoration: none;
+}
+
+.topnav h1{
+  color: blue
+}
+
+#test{
+  height: 100px;
+  width: 100px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  /* color: black; */
+  cursor: pointer;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: rgb(255, 114, 114);
+}
+
