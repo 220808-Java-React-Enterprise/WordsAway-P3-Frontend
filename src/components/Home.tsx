@@ -146,7 +146,7 @@ const Home = () => {
                   onChange={(event) => setConfirm(event.target.value)}
                 />
                 <br />
-                <button type='submit'>Signup</button>
+                <button data-testid='submit-signup' type='submit'>Signup</button>
               </form>
               <button className='redirect-button' onClick={toggleLogin}>
                 Login

@@ -184,7 +184,7 @@ export default function Profile() {
         </div>
         <a href='#' onClick={gosettings}>
           {' '}
-          <img className='gears' src={require('../components/icons/gear4.png')} />{' '}
+          <img data-testid="gear-image" className='gears' src={'images/gear4.png'} />{' '}
         </a>
         <div className='addfriend'>
           {profileUser?.username == sessionStorage.getItem('username') ? (

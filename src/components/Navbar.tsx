@@ -46,46 +46,33 @@ export default function Navbar() {
         <div className='topnav'>
           <ul>
             <li>
-              {window.sessionStorage.getItem('username') ? (
-                <a className='cta' onClick={rules}>
+              
+                <a data-testid="nav-rules" className='cta' onClick={rules}>
                   Rules
                 </a>
-              ) : (
-                <></>
-              )}
             </li>
             <li>
-              {window.sessionStorage.getItem('username') ? (
-                <a className='cta' onClick={finduser}>
+              
+                <a data-testid="nav-finduser" className='cta' onClick={finduser}>
                   Search
                 </a>
-              ) : (
-                <></>
-              )}
             </li>
             <li>
-              {window.sessionStorage.getItem('username') ? (
-                <a className='cta' onClick={profile}>
+              
+                <a data-testid="nav-profile" className='cta' onClick={profile}>
                   Profile
                 </a>
-              ) : (
-                <></>
-              )}
             </li>
             <li>
-              {window.sessionStorage.getItem('username') ? (
-                <a className='cta' onClick={logout}>
+              
+                <a data-testid="nav-logout" className='cta' onClick={logout}>
                   Sign Out
                 </a>
-              ) : (
-                <a className='cta' onClick={login}>
-                  Sign In
-                </a>
-              )}
+             
             </li>
           </ul>
 
-          <a className='navtitle' onClick={lobby}>
+          <a data-testid="nav-lobby" className='navtitle' onClick={lobby}>
             Words Away
           </a>
         </div>
