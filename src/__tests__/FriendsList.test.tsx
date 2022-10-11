@@ -2,8 +2,6 @@ import React from 'react';
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
 import FriendsList from '../components/test/FriendsList';
 
-// import Login from '../components/Login';
-import axios from 'axios';
 import WORDS_API from '../utils/ApiConfig';
 
 afterEach(cleanup);

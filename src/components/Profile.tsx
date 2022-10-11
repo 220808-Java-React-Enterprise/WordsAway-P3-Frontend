@@ -6,6 +6,7 @@ import WORDS_API from '../utils/ApiConfig'
 import gear4 from '../components/icons/gear4.png'
 import '../css/Profile.css'
 import { Navigate, useNavigate } from 'react-router-dom'
+import { updateShorthandPropertyAssignment } from 'typescript'
 
 export default function Profile() {
   const [profileUser, setProfileUser] = useState<User>()
@@ -18,33 +19,13 @@ export default function Profile() {
     incomingRequests: [],
     friends: []
   }
-  let navigate = useNavigate();
-
-  // async function getUser(username: string | null) {
-  //   if (username === null) {
-  //     username = sessionStorage.getItem('username')
-  //   }
-  //   await WORDS_API.get('findUser', { params: { username: username } })
-  //     .then((response: AxiosResponse) => {
-  //       setProfileUser(response.data)
-  //     })
-  //     .catch((response) => console.log(response))
-  // }
-
-  // useEffect(() => {
-  //   let username = sessionStorage.getItem('profileUsername')
-  //     ? sessionStorage.getItem('profileUsername')
-  //     : sessionStorage.getItem('username')
-  //   sessionStorage.removeItem('profileUsername')
-  //   getUser(username)
-  // }, [])
+  let navigate = useNavigate()
 
   async function getUser(username: string | null) {
-    /*
     if (username === null) {
       username = sessionStorage.getItem('username')
     }
-    */
+
     await WORDS_API.get('findUser', { params: { username: username } })
       .then((response: AxiosResponse) => {
         setProfileUser(response.data)
@@ -56,9 +37,7 @@ export default function Profile() {
     let username = sessionStorage.getItem('profileUsername')
       ? sessionStorage.getItem('profileUsername')
       : sessionStorage.getItem('username')
-    
-    console.log("user: " + username);
-    
+
     getUser(username)
     getTheme(localStorage.getItem('theme') || 'light')
     getFriends()
@@ -73,21 +52,18 @@ export default function Profile() {
         setUserFriends(test.friends)
 
         //setUserFriends(response.data);
-        console.log(JSON.stringify(userFriends))
-        console.log("would be removed");
-        sessionStorage.removeItem('profileUsername');
+
+        sessionStorage.removeItem('profileUsername')
       })
       .catch(() => (window.location.href = '/login'))
   }
 
   async function getMatches() {
-    /*
-  await WORDS_API.get('/gameHistory')
-  .then((response) => {
-    console.log("games: " + JSON.stringify(response.data));
-  })
-  .catch(() => (console.log("broke")))
-  */
+    await WORDS_API.get('/gameHistory')
+      .then((response) => {
+        console.log(response.data)
+      })
+      .catch(() => console.log('broke'))
   }
 
   async function addFriend() {
@@ -123,7 +99,6 @@ export default function Profile() {
     setIsShown2(true)
     console.log('UNFRIEND Pending')
   }
-  
 
   async function cancelRequest() {
     await WORDS_API.post(
@@ -143,15 +118,12 @@ export default function Profile() {
     getTheme(localStorage.getItem('theme') || 'light')
   }, [])
 
-  function gosettings()
-  {
+  function gosettings() {
     navigate('/settings')
-    window.location.reload();
+    window.location.reload()
   }
 
   console.log('icon: ' + profileUser?.avatar)
-  
-  
 
   return (
     <div className='profile' data-theme={theme}>
@@ -171,7 +143,10 @@ export default function Profile() {
             <h1>{profileUser?.username}</h1>
           </div>
         </div>
-        <a href="#" onClick={gosettings} > <img className="gears" src={require('../components/icons/gear4.png')}/> </a>
+        <a href='#' onClick={gosettings}>
+          {' '}
+          <img className='gears' src={require('../components/icons/gear4.png')} />{' '}
+        </a>
         <div className='addfriend'>
           {profileUser?.username == sessionStorage.getItem('username') ? (
             <></>
