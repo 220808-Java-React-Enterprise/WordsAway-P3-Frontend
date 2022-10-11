@@ -21,8 +21,10 @@ describe('render finduser', ()=>{
         cleanup()
     })
 
-    it('basic render', ()=>{
+    it('Type user into search input, click "Search user"', ()=>{
         
+        fireEvent.change(screen.getByPlaceholderText('Enter a Username'), {value:"testusername"});
+        fireEvent.click(screen.getByTestId('search-user-button'));
     })
 
 })
