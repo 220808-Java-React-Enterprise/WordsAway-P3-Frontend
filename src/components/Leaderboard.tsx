@@ -57,61 +57,61 @@ const Leaderboard = () => {
           <tr>
             <td className='rank'>1</td>
             <td className='username'>{users[0]?.username}</td>
-            <td className='mmr'>{users[0]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[0]?.elo)}</td>
             <td className='winstreak'>{users[0]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>2</td>
             <td className='username'>{users[1]?.username}</td>
-            <td className='mmr'>{users[1]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[1]?.elo)}</td>
             <td className='winstreak'>{users[1]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>3</td>
             <td className='username'>{users[2]?.username}</td>
-            <td className='mmr'>{users[2]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[2]?.elo)}</td>
             <td className='winstreak'>{users[2]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>4</td>
             <td className='username'>{users[3]?.username}</td>
-            <td className='mmr'>{users[3]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[3]?.elo)}</td>
             <td className='winstreak'>{users[3]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>5</td>
             <td className='username'>{users[4]?.username}</td>
-            <td className='mmr'>{users[4]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[4]?.elo)}</td>
             <td className='winstreak'>{users[4]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>6</td>
             <td className='username'>{users[5]?.username}</td>
-            <td className='mmr'>{users[5]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[5]?.elo)}</td>
             <td className='winstreak'>{users[5]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>7</td>
             <td className='username'>{users[6]?.username}</td>
-            <td className='mmr'>{users[6]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[6]?.elo)}</td>
             <td className='winstreak'>{users[6]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>8</td>
             <td className='username'>{users[7]?.username}</td>
-            <td className='mmr'>{users[7]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[7]?.elo)}</td>
             <td className='winstreak'>{users[7]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>9</td>
             <td className='username'>{users[8]?.username}</td>
-            <td className='mmr'>{users[8]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[8]?.elo)}</td>
             <td className='winstreak'>{users[8]?.gamesWon}</td>
           </tr>
           <tr>
             <td className='rank'>10</td>
             <td className='username'>{users[9]?.username}</td>
-            <td className='mmr'>{users[9]?.elo}</td>
+            <td className='mmr'>{Math.trunc(users[9]?.elo)}</td>
             <td className='winstreak'>{users[9]?.gamesWon}</td>
           </tr>
           <tr>
