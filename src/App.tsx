@@ -11,7 +11,7 @@ import FriendsList from './components/test/FriendsList'
 import Rules from './components/Rules'
 import SettingsPage from './components/Settings'
 import MessageType from './types/Message.type'
-import Chat from './components/chat/Chat'
+import Chat from './types/Chat'
 
 function App() {
   const connection = useRef<WebSocket>()
