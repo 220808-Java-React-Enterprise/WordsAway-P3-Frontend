@@ -1,31 +1,26 @@
-import React from 'react';
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
+import Profile from '../components/Profile';
 import WORDS_API from '../utils/ApiConfig';
-import Lobby from '../components/Lobby';
 
 jest.mock('../utils/ApiConfig');
-
-describe('render',()=>{
+jest.mock('react-router-dom');
+describe('render profile', ()=>{
     (WORDS_API.get as jest.Mock).mockResolvedValue({
         data: {}
     });
 
     (WORDS_API.post as jest.Mock).mockResolvedValue({});
-
+    (WORDS_API.put as jest.Mock).mockResolvedValue({});
+    require = 
 
     beforeEach(() => {
-        render(<Lobby/>)
+        render(<Profile/>)
     })
     afterEach(() => {
         cleanup()
     })
+    // it('Intial Render check', ()=>{
 
-    it('Click challenge table button', ()=>{
-        fireEvent.click(screen.getByRole('rankedMatchBtn'))
-    })
-    it('Click practice table button', () => {
-        fireEvent.click(screen.getByTestId('practice-table-button'))
-    })
-
+    // })
 
 })

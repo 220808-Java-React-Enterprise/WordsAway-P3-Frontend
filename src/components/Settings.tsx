@@ -62,11 +62,6 @@ const SettingsPage = () => {
       })
   }
 
-  function emptyFunction() {
-    console.log(user)
-    console.log(icon)
-  }
-
   function emptyFunction2(event: React.MouseEvent<HTMLAnchorElement>) {
     var test = event.currentTarget.dataset.value
     setIcon(test)
@@ -97,7 +92,7 @@ const SettingsPage = () => {
       <br />
       <section>
         <a href='#' onClick={iconPrompt}>
-          <img id='settingIcon' alt='Its broken!' src={'images/icon' + icon + '.png'}></img>
+          <img data-testid='select-icon' id='settingIcon' alt='Its broken!' src={'images/icon' + icon + '.png'}></img>
         </a>
 
         <div style={{ display: isShown2 ? 'flex' : 'none' }} id='iconSelect'>
@@ -154,11 +149,10 @@ const SettingsPage = () => {
           />
 
           <input type='button' value='Enter' onClick={handleUpdatePassword} />
-          <input type='button' value='Wack' onClick={emptyFunction} />
         </form>
         <br />
       </section>
-      <button onClick={switchTheme} className='switch'>
+      <button data-testid='switch-theme' onClick={switchTheme} className='switch'>
         {localStorage.getItem('themeText')}
       </button>
     </div>
