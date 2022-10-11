@@ -124,6 +124,7 @@ function App() {
       }, 1000)
     }
   }
+  console.log("chat below\n" + chats + '\nChat above')
 
   return (
     <div className='container' data-theme={theme}>

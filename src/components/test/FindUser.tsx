@@ -58,7 +58,7 @@ const FindUser = () => {
             setFindUserName(event.target.value)
           }}
         />
-        <input id='userButton' type='submit' value='Search User' />
+        <input data-testid='search-user-button' id='userButton' type='submit' value='Search User' />
       </form>
 
       <div id='dynamictab'>

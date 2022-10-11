@@ -6,7 +6,7 @@ import { User } from "../../src/types/User.type";
 import '../css/challengeboard.css'
 
 interface BoardProps {
-    userList: Opponent[]
+    userList: Opponent[] 
     gameType: string
 }
 
