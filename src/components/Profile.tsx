@@ -62,8 +62,12 @@ export default function Profile() {
   }
 
   async function getMatches() {
-    
-    await WORDS_API.get('/gameHistory')
+    console.log(profileUser?.username);
+    await WORDS_API.get('/gameHistory', {
+      params: {
+        username: profileUser?.username
+      }
+    })
   .then((response) => {
     console.log(response.data);
     
