@@ -42,8 +42,7 @@
   position: absolute;
 }
 #settingIcon{
-  height: 5%;
-  width: 10%;
+  width: 40%;
 
 }
 /*
@@ -79,6 +78,20 @@
 
 .settingsPage{
   object-fit: cover;
-  background-color: rgb(152, 174, 194);
+  /* background-color: rgb(152, 174, 194); */
   height:fill;
+  display:flex;
+  flex-direction: column;
+  width: 30rem;
+  /* border-style: solid; */
+  height: auto;
+  margin: auto;
+
+  padding: 2rem;
 }
+.settingsPage section form label {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
