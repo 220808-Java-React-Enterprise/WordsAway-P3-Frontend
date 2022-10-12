@@ -66,3 +66,14 @@
     width: 75px;
 }
 
+#tablediv::-webkit-scrollbar {
+    width: 10px;
+}
+
+#tablediv::-webkit-scrollbar-thumb {
+    background: rgb(84, 58, 171);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(175, 175, 175);
+}

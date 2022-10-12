@@ -1,5 +1,5 @@
 [data-theme="light"] {
-    --lobby-background: rgb(204, 99,0, .2);
+    --lobby-background: white;
     --lobby-box: azure;
     --lobby-table: rgba(45, 58, 231, 0.178);
     --lobby-button: #EFEFEF;
@@ -22,6 +22,7 @@ h3 {
 
 #lobbycontainer{
     height: auto;
+
     width:100vw;
     padding-top: 2rem;
 }
