@@ -3,6 +3,7 @@ import { fireEvent, render, screen, cleanup } from '@testing-library/react';
 import WORDS_API from '../utils/ApiConfig';
 import { Opponent } from '../types/Opponent.type';
 import Challengeboard from '../components/Challengeboard';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 jest.mock('../utils/ApiConfig');
 
@@ -24,7 +25,7 @@ describe("Render ChallengeBoard", ()=>{
 
         let opponents: Opponent[] = [{ elo: 123, username: "username1", board_id: "hello" }, { elo: 999, username: "username2", board_id: String(null) }];
 
-        render(<Challengeboard userList={opponents} gameType='practiced'/>)
+        render(<Router><Challengeboard userList={opponents} gameType='practiced'/></Router>)
     })
 
     afterEach(() => {
