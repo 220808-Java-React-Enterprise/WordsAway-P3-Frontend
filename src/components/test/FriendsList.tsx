@@ -93,20 +93,28 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     }
   }
 
-  function acceptFR(name: string) {
+  async function acceptFR(name: string) {
     console.log('ACCEPT ' + name)
     const params = { username: name }
-    WORDS_API.post('addFriend', {}, { params }).catch((error) => {
-      console.log(error)
-    })
-    setIsShown(!isShown)
+    await WORDS_API.post('addFriend', {}, { params })
+      .catch((error) => {
+        console.log(error)
+      })
+      .then(() => {
+        getFriends()
+        populateList()
+        setIsShown(!isShown)
+      })
   }
 
-  function rejectFR(name: string) {
+  async function rejectFR(name: string) {
     console.log('REJECT ' + name)
     const params = { username: name }
-    WORDS_API.post('removeFriend', {}, { params })
-    setIsShown(!isShown)
+    await WORDS_API.post('removeFriend', {}, { params }).then(() => {
+      getFriends()
+      populateList()
+      setIsShown(!isShown)
+    })
   }
   function unfriendprompt(name: string) {
     setIsShown2(true)
@@ -114,10 +122,13 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     setUnfriendName(name)
   }
 
-  function unfriend(name: string) {
+  async function unfriend(name: string) {
     const params = { username: unfriendName }
-    WORDS_API.post('removeFriend', {}, { params })
-    setIsShown(!isShown)
+    await WORDS_API.post('removeFriend', {}, { params }).then(() => {
+      getFriends()
+      populateList()
+      setIsShown(!isShown)
+    })
   }
 
   getFriends()

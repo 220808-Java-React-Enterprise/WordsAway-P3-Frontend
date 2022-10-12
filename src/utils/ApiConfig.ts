@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios'
 
-export const URL: string = 'http://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway'
-//export const URL: string = 'http://localhost:8080/wordsaway'
+//export const URL: string = 'http://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway'
+export const URL: string = 'http://localhost:8080/wordsaway'
 
 const WORDS_API = axios.create({
   baseURL: URL,
