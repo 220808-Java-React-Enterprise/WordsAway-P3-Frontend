@@ -18,8 +18,8 @@ function App() {
   const [isOpen, setIsOpen] = useState(false)
   const [chats, setChats] = useState<Chat[]>([])
   const username = window.sessionStorage.getItem('username')
-  const WS_URL = 'ws://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway/chat'
-  //const WS_URL = 'ws://localhost:8080/wordsaway/chat'
+  //const WS_URL = 'ws://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway/chat'
+  const WS_URL = 'ws://localhost:8080/wordsaway/chat'
 
   var [theme, getTheme] = useState('')
   useEffect(() => {
@@ -57,7 +57,6 @@ function App() {
 
       client.onmessage = (event) => {
         const message = JSON.parse(event.data)
-        let chat
         switch (message.type) {
           case MessageType.NOTIFICATION:
             alert(message.data)
@@ -70,20 +69,23 @@ function App() {
             break
           case MessageType.START_CHAT:
           case MessageType.START_CHAT_ACK: {
-            chat = new Chat(message.id)
-            chat.messages.push('Chat started with users: ' + message.data)
+            const chat = new Chat(message.id)
+            //chat.messages.push('Chat started with users: ' + message.data)
+            chat.messages = [...chat.messages, 'Chat started with users: ' + message.data]
             setChats([...chats, chat])
             break
           }
           case MessageType.MESSAGE: {
             const chat = getChat(message.id)
-            chat.messages.push(message.user + ': ' + message.data)
+            //chat.messages.push(message.user + ': ' + message.data)
+            chat.messages = [...chat.messages, message.user + ': ' + message.data]
             setChats([...chats])
             break
           }
           case MessageType.ADD_USER_ACK: {
             const chat = getChat(message.id)
-            chat.messages.push(message.data + ' joined the chat.')
+            //chat.messages.push(message.data + ' joined the chat.')
+            chat.messages = [...chat.messages, message.data + ' joined the chat.']
             setChats([...chats])
             break
           }
