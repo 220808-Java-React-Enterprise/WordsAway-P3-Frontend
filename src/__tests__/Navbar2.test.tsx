@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-render-in-setup */
 import React from 'react';
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
 import FriendsList from '../components/test/FriendsList';
@@ -11,12 +12,18 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('rendering navbar', ()=>{
+
+  const { location } = window
+
     beforeEach(() => {
-        render(<Navbar/>)
+      delete (window as Partial<Window>).location;
+      window.location = { ...window.location, reload: jest.fn() };
+      render(<Navbar/>)
     })
 
     afterEach(() => {
         cleanup()
+        window.location = location
     })
 
 

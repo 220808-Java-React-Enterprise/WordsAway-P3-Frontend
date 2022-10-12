@@ -1,5 +1,7 @@
+/* eslint-disable testing-library/no-render-in-setup */
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
 import WORDS_API from '../utils/ApiConfig';
+import { Opponent } from '../types/Opponent.type';
 import Challengeboard from '../components/Challengeboard';
 
 jest.mock('../utils/ApiConfig');
@@ -20,7 +22,9 @@ describe("Render ChallengeBoard", ()=>{
             }
         });
 
-        render(<Challengeboard userList={[{ elo: 123, username: "username1", board_id: "hello" }, { elo: 999, username: "username2", board_id: String(null) }]} gameType={"practiced"}/>)
+        let opponents: Opponent[] = [{ elo: 123, username: "username1", board_id: "hello" }, { elo: 999, username: "username2", board_id: String(null) }];
+
+        render(<Challengeboard userList={opponents} gameType='practiced'/>)
     })
 
     afterEach(() => {

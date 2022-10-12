@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-render-in-setup */
 import { fireEvent, render, screen, cleanup } from '@testing-library/react'
 import SettingsPage from '../components/Settings'
 import WORDS_API from '../utils/ApiConfig'
@@ -14,6 +15,9 @@ jest.mock('react-router-dom', () => ({
 }))
 
 describe('render Setting', () => {
+
+  const { location, alert } = window;
+
   ;(WORDS_API.get as jest.Mock).mockResolvedValue({
     data: {}
   })
@@ -22,10 +26,16 @@ describe('render Setting', () => {
   ;(WORDS_API.put as jest.Mock).mockResolvedValue({})
 
   beforeEach(() => {
-    render(<SettingsPage />)
+    delete (window as Partial<Window>).location;
+    window.location = { ...window.location, reload: jest.fn() };
+    delete (window as Partial<Window>).alert;
+    window.alert = jest.fn();
+  render(<SettingsPage />)
   })
   afterEach(() => {
     cleanup()
+    window.location = location
+    window.alert = alert
   })
   it('Intial Render check', () => {})
   it('Fill in email inputs', () => {

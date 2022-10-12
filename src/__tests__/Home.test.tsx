@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-render-in-setup */
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
 
 import WORDS_API from '../utils/ApiConfig';
@@ -10,11 +11,16 @@ jest.mock('react-router-dom');
 
 describe('render Setting', () => {
 
+    const { alert } = window;
+ 
     beforeEach(() => {
-        render(<Home />)
+      delete (window as Partial<Window>).alert;
+      window.alert = jest.fn();
+      render(<Home />)
     })
     afterEach(() => {
         cleanup()
+        window.alert = alert
     })
 
     it('Login test fail', ()=>{

@@ -1,5 +1,5 @@
+/* eslint-disable testing-library/no-render-in-setup */
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
-import { useNavigate } from 'react-router-dom';
 import Profile from '../components/Profile';
 import WORDS_API from '../utils/ApiConfig';
 
@@ -11,6 +11,20 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('render profile', ()=>{
+
+  const { location } = window;
+
+  beforeEach(() => {
+    delete (window as Partial<Window>).location;
+    window.location = { ...window.location, reload: jest.fn() };
+    render(<Profile/>)
+  });
+
+  afterEach(() => {
+    cleanup();
+    window.location = location;
+  });
+
     (WORDS_API.get as jest.Mock).mockResolvedValue({
         data: {}
     });
@@ -18,13 +32,6 @@ describe('render profile', ()=>{
     (WORDS_API.post as jest.Mock).mockResolvedValue({});
     (WORDS_API.put as jest.Mock).mockResolvedValue({});
     
-
-    beforeEach(() => {
-        render(<Profile/>)
-    })
-    afterEach(() => {
-        cleanup()
-    })
     it('Intial Render check', ()=>{
         
     })

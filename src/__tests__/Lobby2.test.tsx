@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-render-in-setup */
 import React from 'react';
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
 import WORDS_API from '../utils/ApiConfig';
@@ -14,7 +15,7 @@ describe('render',()=>{
 
 
     beforeEach(() => {
-        render(<Lobby/>)
+      render(<Lobby/>)
     })
     afterEach(() => {
         cleanup()

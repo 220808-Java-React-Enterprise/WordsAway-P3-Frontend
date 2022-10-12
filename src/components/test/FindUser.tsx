@@ -64,13 +64,17 @@ const FindUser = () => {
       <div id='dynamictab'>
         <table>
           <thead>
-            <th>Username</th>
+            <tr>
+              <th>Username</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
-              <a href='#' onClick={toProfile}>
-                {dataTable}
-              </a>
+              <td>
+                <a href='#' onClick={toProfile}>
+                  {dataTable}
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>

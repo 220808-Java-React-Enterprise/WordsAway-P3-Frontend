@@ -4,6 +4,7 @@ import { Opponent } from '../types/Opponent.type'
 import WORDS_API from '../utils/ApiConfig'
 import { User } from '../../src/types/User.type'
 import '../css/challengeboard.css'
+import { useNavigate } from 'react-router-dom'
 
 interface BoardProps {
   userList: Opponent[]
@@ -17,6 +18,7 @@ export default function Challengeboard({ userList, gameType }: BoardProps) {
     friends: []
   }
   const friendslist: any = []
+  const navigate = useNavigate()
 
   async function getFriends() {
     await WORDS_API.get('getFriendsList')
@@ -59,7 +61,7 @@ export default function Challengeboard({ userList, gameType }: BoardProps) {
     )
       .then((response) => {
         sessionStorage.setItem('board_id', response.data)
-        window.location.href = '/game'
+        navigate('/game')
       })
       .catch((response) => alert(response))
   }
@@ -67,7 +69,7 @@ export default function Challengeboard({ userList, gameType }: BoardProps) {
   function continueGame(board_id: string) {
     // alert('Board ID: ' + board_id)
     sessionStorage.setItem('board_id', board_id)
-    window.location.href = '/game'
+    navigate('/game')
   }
 
   getFriends()
