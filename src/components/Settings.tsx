@@ -4,6 +4,8 @@ import { AxiosResponse } from 'axios'
 import CryptoJS from 'crypto-js'
 import '../css/settings.css'
 import { User } from '../types/User.type'
+import { useNavigate } from 'react-router-dom'
+
 const SettingsPage = () => {
   const [newEmail, setEmail] = useState('')
   const [newPassword, setPassword] = useState('')
@@ -14,12 +16,15 @@ const SettingsPage = () => {
   const [username, setUsername] = useState('')
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
   const [buttonText, setButtonText] = useState(localStorage.getItem('themeText') || 'Dark Mode')
+  const navigate = useNavigate()
 
   useEffect(() => {
     const data = window.sessionStorage.getItem('user')
     if (data != null) {
       setUser(JSON.parse(data))
       setIcon(user?.avatar?.toString())
+    } else {
+      navigate('/')
     }
   }, [])
 
@@ -62,11 +67,6 @@ const SettingsPage = () => {
       })
   }
 
-  function emptyFunction() {
-    console.log(user)
-    console.log(icon)
-  }
-
   function emptyFunction2(event: React.MouseEvent<HTMLAnchorElement>) {
     var test = event.currentTarget.dataset.value
     setIcon(test)
@@ -93,11 +93,11 @@ const SettingsPage = () => {
 
   return (
     <div>
-      <h1> SettingsPage</h1>
+      <h1> Settings</h1>
       <br />
       <section>
         <a href='#' onClick={iconPrompt}>
-          <img id='settingIcon' alt='Its broken!' src={'images/icon' + icon + '.png'}></img>
+          <img data-testid='select-icon' id='settingIcon' alt='Its broken!' src={'images/icon' + icon + '.png'}></img>
         </a>
 
         <div style={{ display: isShown2 ? 'flex' : 'none' }} id='iconSelect'>
@@ -154,12 +154,11 @@ const SettingsPage = () => {
           />
 
           <input type='button' value='Enter' onClick={handleUpdatePassword} />
-          <input type='button' value='Wack' onClick={emptyFunction} />
         </form>
         <br />
       </section>
-      <button onClick={switchTheme} className='switch'>
-        {localStorage.getItem('themeText')}
+      <button data-testid='switch-theme' onClick={switchTheme} className='switch'>
+        {localStorage.getItem('themeText') ? localStorage.getItem('themeText') : 'Dark Mode'}
       </button>
     </div>
   )

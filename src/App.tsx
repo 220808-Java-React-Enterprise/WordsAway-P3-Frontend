@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { User } from '../src/types/User.type'
 import Home from './components/Home'
 import Game from './components/Game'
 import Lobby from './components/Lobby'
@@ -69,18 +68,26 @@ function App() {
             console.log('Logged in with server.')
             break
           case MessageType.START_CHAT:
-          case MessageType.START_CHAT_ACK:
-            getChat(message.id)
-            setChats([...chats])
+          case MessageType.START_CHAT_ACK: {
+            const chat = new Chat(message.id)
+            chat.messages.push('Chat started with users: ' + message.data)
+            //chat.messages = [...chat.messages, 'Chat started with users: ' + message.data]
+            setChats([...chats, chat])
             break
-          case MessageType.MESSAGE:
+          }
+          case MessageType.MESSAGE: {
             const chat = getChat(message.id)
-            chat.messages.push(message.user + ': ' + message.data)
+            chat.messages = [...chat.messages, message.user + ': ' + message.data]
             setChats([...chats])
             break
-          case MessageType.LEAVE_CHAT_ACK:
-            chats.splice(chats.indexOf(getChat(message.id)), 1)
+          }
+          case MessageType.ADD_USER_ACK: {
+            const chat = getChat(message.id)
+            chat.messages = [...chat.messages, message.data + ' joined the chat.']
             setChats([...chats])
+            break
+          }
+          case MessageType.LEAVE_CHAT_ACK:
             break
           case MessageType.ERROR:
             console.log(message)
@@ -112,19 +119,35 @@ function App() {
     if (chat === undefined) {
       chat = new Chat(id)
       chats.push(chat)
+      setChats([...chats])
     }
     return chat
   }
 
   function sendMSG(message: string) {
+    let mts = JSON.parse(message)
+    if (mts.type === MessageType.LEAVE_CHAT) {
+      setChats(chats.filter((item) => item.id !== mts.id))
+    } else if (mts.type === MessageType.MESSAGE) {
+      const chat = getChat(mts.id)
+      chat.messages.push(mts.user + ': ' + mts.data)
+      setChats([...chats])
+    } else if (mts.type === MessageType.ADD_USER) {
+      const chat = getChat(mts.id)
+      chat.messages.push(mts.user + ' requested that ' + mts.data + ' join the chat.')
+      setChats([...chats])
+    }
+    sendToServer(message)
+  }
+
+  function sendToServer(message: string) {
     if (connection.current?.readyState === 1) connection.current.send(message)
     else {
       setTimeout(() => {
-        sendMSG(message)
-      }, 1000)
+        sendToServer(message)
+      }, 100)
     }
   }
-  console.log("chat below\n" + chats + '\nChat above')
 
   return (
     <div className='container' data-theme={theme}>
@@ -141,7 +164,6 @@ function App() {
           <Route path='/profile' element={<Profile />} />
           <Route path='/rules' element={<Rules />} />
           <Route path='/lobby' element={<Lobby />} />
-          {/* <Route path="/setup" element={<Setup />} /> */}
           <Route path='/game' element={<Game />} />
           <Route path='/finduser' element={<FindUser />} />
           <Route path='/settings' element={<SettingsPage />} />

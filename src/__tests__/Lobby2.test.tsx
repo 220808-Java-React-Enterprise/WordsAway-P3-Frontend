@@ -16,6 +16,9 @@ describe('render',()=>{
     beforeEach(() => {
         render(<Lobby/>)
     })
+    afterEach(() => {
+        cleanup()
+    })
 
     it('Click challenge table button', ()=>{
         fireEvent.click(screen.getByRole('rankedMatchBtn'))

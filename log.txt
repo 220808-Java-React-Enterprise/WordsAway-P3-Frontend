@@ -1,0 +1,2394 @@
+PASS src/__tests__/ApiConfig.test.tsx
+  ● Console
+
+    console.error
+      Error: Not implemented: na---------------------|---------|----------|---------|---------|-----------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s     
+---------------------|---------|----------|---------|---------|-----------------------
+All files            |   72.23 |    61.11 |    51.7 |   72.51 |                       
+ components          |   72.63 |       62 |   51.37 |   73.04 |                       
+  Challengeboard.tsx |      76 |       50 |   58.33 |      75 | 29,49-64,118          
+  Home.tsx           |      40 |       40 |   21.73 |   40.67 | 28-55,62-90,108-154   
+  Leaderboard.tsx    |      88 |        0 |   66.66 |   91.66 | 24,35                 
+  Lobby.tsx          |      92 |       50 |   77.77 |      92 | 23,34                 
+  Navbar.tsx         |   90.47 |       50 |   85.71 |   90.47 | 16-17                 
+  Profile.tsx        |   68.33 |    52.38 |   42.85 |   68.33 | 39,78,102-154,215-241 
+  Rules.tsx          |     100 |      100 |     100 |     100 |                       
+  Settings.tsx       |    83.6 |    86.66 |   56.25 |    83.6 | 60,65-73,105-153      
+ components/chat     |   76.19 |      100 |   44.44 |   76.19 |                       
+  ChatWindow.tsx     |   76.19 |      100 |   44.44 |   76.19 | 29,34-44,54-62        
+ components/test     |   69.87 |    59.09 |   55.17 |   69.62 |                       
+  FindUser.tsx       |   70.83 |      100 |   55.55 |   70.83 | 31,37-45,58           
+  FriendsList.tsx    |   69.49 |    59.09 |      55 |   69.09 | 44,56,76-100,127-174  
+---------------------|---------|----------|---------|---------|-----------------------
+ 13 |     it('bad call', async () => {
+      14 |         await WORDS_API.get('/getOpponents?type=humantghq5p34897oyv o')
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at __tests__/ApiConfig.test.tsx:11:47
+      at Object.<anonymous> (__tests__/ApiConfig.test.tsx:7:9)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+          at Location.set href [as href] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/ApiConfig.test.tsx:18:47
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/ApiConfig.test.tsx:14:9) {
+        type: 'not implemented'
+      }
+
+      16 |                 console.log(response.data)
+      17 |             })
+    > 18 |             .catch(() => (window.location.href = '/login'))
+         |                                               ^
+      19 |     })
+      20 |     
+      21 | })
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at __tests__/ApiConfig.test.tsx:18:47
+      at Object.<anonymous> (__tests__/ApiConfig.test.tsx:14:9)
+
+PASS src/__tests__/ChatWindow.test.tsx
+PASS src/__tests__/Challengeboard.test.tsx
+  ● Console
+
+    console.log
+      [ [ 0, 'nfielder2', 1000, undefined ] ]
+
+      at log (components/Challengeboard.tsx:45:13)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+          at Location.set href [as href] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+          at continueGame (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Challengeboard.tsx:70:5)
+          at onClick (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Challengeboard.tsx:125:42)
+          at HTMLUnknownElement.callCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+          at HTMLUnknownElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLUnknownElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLUnknownElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLUnknownElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at Object.invokeGuardedCallbackDev (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+          at invokeGuardedCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+          at invokeGuardedCallbackAndCatchFirstError (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+          at executeDispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+          at processDispatchQueueItemsInOrder (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+          at processDispatchQueue (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+          at dispatchEventsForPlugins (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9288:12
+          at batchedUpdates$1 (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+          at batchedUpdates (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+          at dispatchEventForPluginEventSystem (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+          at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+          at dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+          at dispatchDiscreteEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+          at HTMLDivElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:25:20
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:79:16
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:64:24
+          at act (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react/cjs/react.development.js:2512:16)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:63:25
+          at Object.eventWrapper (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:78:28)
+          at fireEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:16:35)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:125:36)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/fire-event.js:18:52)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/Challengeboard.test.tsx:31:19)
+          at Promise.then.completed (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:333:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:259:10)
+          at _callCircusTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:277:40)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at _runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:209:3)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:97:9)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:91:9)
+          at run (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:31:3)
+          at runAndTransformResultsToJestFormat (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:136:21)
+          at jestAdapter (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:70:21)
+          at runTestInternal (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:407:16)
+          at runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:491:34)
+          at Object.worker (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/testWorker.js:133:12) {
+        type: 'not implemented'
+      }
+
+      68 |     // alert('Board ID: ' + board_id)
+      69 |     sessionStorage.setItem('board_id', board_id)
+    > 70 |     window.location.href = '/game'
+         |     ^
+      71 |   }
+      72 |
+      73 |   getFriends()
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at continueGame (components/Challengeboard.tsx:70:5)
+      at onClick (components/Challengeboard.tsx:125:42)
+      at HTMLUnknownElement.callCallback (../node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (../node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (../node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at invokeGuardedCallbackAndCatchFirstError (../node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+      at executeDispatch (../node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+      at processDispatchQueueItemsInOrder (../node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+      at processDispatchQueue (../node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+      at dispatchEventsForPlugins (../node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+      at ../node_modules/react-dom/cjs/react-dom.development.js:9288:12
+      at batchedUpdates$1 (../node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+      at batchedUpdates (../node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+      at dispatchEventForPluginEventSystem (../node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+      at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (../node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+      at dispatchEvent (../node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+      at dispatchDiscreteEvent (../node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+      at HTMLDivElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at ../node_modules/@testing-library/dom/dist/events.js:25:20
+      at ../node_modules/@testing-library/react/dist/pure.js:79:16
+      at ../node_modules/@testing-library/react/dist/act-compat.js:64:24
+      at act (../node_modules/react/cjs/react.development.js:2512:16)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (../node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (../node_modules/@testing-library/dom/dist/events.js:16:35)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:36)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/Challengeboard.test.tsx:31:19)
+
+PASS src/__tests__/Home.test.tsx
+FAIL src/__tests__/FriendsList.test.tsx
+  ● Console
+
+    console.log
+      REJECT nfielder2
+
+      at log (components/test/FriendsList.tsx:105:13)
+
+    console.log
+      <ref *1> HTMLButtonElement {
+        '__reactFiber$d7nulznh5q5': <ref *2> FiberNode {
+          tag: 5,
+          key: null,
+          elementType: 'button',
+          type: 'button',
+          stateNode: [Circular *1],
+          return: FiberNode {
+            tag: 5,
+            key: 'F0',
+            elementType: 'div',
+            type: 'div',
+            stateNode: [HTMLDivElement],
+            return: [FiberNode],
+            child: [FiberNode],
+            sibling: null,
+            index: 0,
+            ref: null,
+            pendingProps: [Object],
+            memoizedProps: [Object],
+            updateQueue: null,
+            memoizedState: null,
+            dependencies: null,
+            mode: 1,
+            flags: 1048576,
+            subtreeFlags: 1048576,
+            deletions: null,
+            lanes: 0,
+            childLanes: 0,
+            alternate: null,
+            actualDuration: 0,
+            actualStartTime: -1,
+            selfBaseDuration: 0,
+            treeBaseDuration: 0,
+            _debugSource: undefined,
+            _debugOwner: [FiberNode],
+            _debugNeedsRemount: false,
+            _debugHookTypes: null
+          },
+          child: FiberNode {
+            tag: 5,
+            key: null,
+            elementType: 'p',
+            type: 'p',
+            stateNode: [HTMLParagraphElement],
+            return: [Circular *2],
+            child: null,
+            sibling: null,
+            index: 0,
+            ref: null,
+            pendingProps: [Object],
+            memoizedProps: [Object],
+            updateQueue: null,
+            memoizedState: null,
+            dependencies: null,
+            mode: 1,
+            flags: 0,
+            subtreeFlags: 0,
+            deletions: null,
+            lanes: 0,
+            childLanes: 0,
+            alternate: null,
+            actualDuration: 0,
+            actualStartTime: -1,
+            selfBaseDuration: 0,
+            treeBaseDuration: 0,
+            _debugSource: undefined,
+            _debugOwner: [FiberNode],
+            _debugNeedsRemount: false,
+            _debugHookTypes: null
+          },
+          sibling: FiberNode {
+            tag: 5,
+            key: null,
+            elementType: 'button',
+            type: 'button',
+            stateNode: [HTMLButtonElement],
+            return: [FiberNode],
+            child: [FiberNode],
+            sibling: null,
+            index: 2,
+            ref: null,
+            pendingProps: [Object],
+            memoizedProps: [Object],
+            updateQueue: null,
+            memoizedState: null,
+            dependencies: null,
+            mode: 1,
+            flags: 1048576,
+            subtreeFlags: 0,
+            deletions: null,
+            lanes: 0,
+            childLanes: 0,
+            alternate: null,
+            actualDuration: 0,
+            actualStartTime: -1,
+            selfBaseDuration: 0,
+            treeBaseDuration: 0,
+            _debugSource: undefined,
+            _debugOwner: [FiberNode],
+            _debugNeedsRemount: false,
+            _debugHookTypes: null
+          },
+          index: 1,
+          ref: null,
+          pendingProps: {
+            id: 'deletefr',
+            onClick: [Function: onClick],
+            children: [Object]
+          },
+          memoizedProps: {
+            id: 'deletefr',
+            onClick: [Function: onClick],
+            children: [Object]
+          },
+          updateQueue: null,
+          memoizedState: null,
+          dependencies: null,
+          mode: 1,
+          flags: 1048576,
+          subtreeFlags: 0,
+          deletions: null,
+          lanes: 0,
+          childLanes: 0,
+          alternate: null,
+          actualDuration: 0,
+          actualStartTime: -1,
+          selfBaseDuration: 0,
+          treeBaseDuration: 0,
+          _debugSource: undefined,
+          _debugOwner: FiberNode {
+            tag: 0,
+            key: null,
+            elementType: [Function: FriendsList],
+            type: [Function: FriendsList],
+            stateNode: null,
+            return: [FiberNode],
+            child: [FiberNode],
+            sibling: null,
+            index: 0,
+            ref: null,
+            pendingProps: [Object],
+            memoizedProps: [Object],
+            updateQueue: null,
+            memoizedState: [Object],
+            dependencies: null,
+            mode: 1,
+            flags: 1,
+            subtreeFlags: 1048576,
+            deletions: null,
+            lanes: 0,
+            childLanes: 0,
+            alternate: null,
+            actualDuration: 0,
+            actualStartTime: -1,
+            selfBaseDuration: 0,
+            treeBaseDuration: 0,
+            _debugSource: undefined,
+            _debugOwner: null,
+            _debugNeedsRemount: false,
+            _debugHookTypes: [Array]
+          },
+          _debugNeedsRemount: false,
+          _debugHookTypes: null
+        },
+        '__reactProps$d7nulznh5q5': {
+          id: 'deletefr',
+          onClick: [Function: onClick],
+          children: {
+            '$$typeof': Symbol(react.element),
+            type: 'p',
+            key: null,
+            ref: null,
+            props: [Object],
+            _owner: [FiberNode],
+            _store: {}
+          }
+        }
+      }
+
+      at Object.<anonymous> (__tests__/FriendsList.test.tsx:44:13)
+
+    console.log
+      UNFRIEND Pendingnfielder2
+
+      at log (components/test/FriendsList.tsx:109:13)
+
+    console.log
+      <ref *1> HTMLButtonElement {
+        '__reactFiber$d7nulznh5q5': <ref *2> FiberNode {
+          tag: 5,
+          key: null,
+          elementType: 'button',
+          type: 'button',
+          stateNode: [Circular *1],
+          return: FiberNode {
+            tag: 5,
+            key: 'F0',
+            elementType: 'div',
+            type: 'div',
+            stateNode: [HTMLDivElement],
+            return: [FiberNode],
+            child: [FiberNode],
+            sibling: null,
+            index: 0,
+            ref: null,
+            pendingProps: [Object],
+            memoizedProps: [Object],
+            updateQueue: null,
+            memoizedState: null,
+            dependencies: null,
+            mode: 1,
+            flags: 1048576,
+            subtreeFlags: 1048576,
+            deletions: null,
+            lanes: 0,
+            childLanes: 0,
+            alternate: null,
+            actualDuration: 0,
+            actualStartTime: -1,
+            selfBaseDuration: 0,
+            treeBaseDuration: 0,
+            _debugSource: undefined,
+            _debugOwner: [FiberNode],
+            _debugNeedsRemount: false,
+            _debugHookTypes: null
+          },
+          child: FiberNode {
+            tag: 5,
+            key: null,
+            elementType: 'p',
+            type: 'p',
+            stateNode: [HTMLParagraphElement],
+            return: [Circular *2],
+            child: null,
+            sibling: null,
+            index: 0,
+            ref: null,
+            pendingProps: [Object],
+            memoizedProps: [Object],
+            updateQueue: null,
+            memoizedState: null,
+            dependencies: null,
+            mode: 1,
+            flags: 0,
+            subtreeFlags: 0,
+            deletions: null,
+            lanes: 0,
+            childLanes: 0,
+            alternate: null,
+            actualDuration: 0,
+            actualStartTime: -1,
+            selfBaseDuration: 0,
+            treeBaseDuration: 0,
+            _debugSource: undefined,
+            _debugOwner: [FiberNode],
+            _debugNeedsRemount: false,
+            _debugHookTypes: null
+          },
+          sibling: FiberNode {
+            tag: 5,
+            key: null,
+            elementType: 'button',
+            type: 'button',
+            stateNode: [HTMLButtonElement],
+            return: [FiberNode],
+            child: [FiberNode],
+            sibling: null,
+            index: 2,
+            ref: null,
+            pendingProps: [Object],
+            memoizedProps: [Object],
+            updateQueue: null,
+            memoizedState: null,
+            dependencies: null,
+            mode: 1,
+            flags: 1048576,
+            subtreeFlags: 0,
+            deletions: null,
+            lanes: 0,
+            childLanes: 0,
+            alternate: null,
+            actualDuration: 0,
+            actualStartTime: -1,
+            selfBaseDuration: 0,
+            treeBaseDuration: 0,
+            _debugSource: undefined,
+            _debugOwner: [FiberNode],
+            _debugNeedsRemount: false,
+            _debugHookTypes: null
+          },
+          index: 1,
+          ref: null,
+          pendingProps: {
+            id: 'deletefr',
+            onClick: [Function: onClick],
+            children: [Object]
+          },
+          memoizedProps: {
+            id: 'deletefr',
+            onClick: [Function: onClick],
+            children: [Object]
+          },
+          updateQueue: null,
+          memoizedState: null,
+          dependencies: null,
+          mode: 1,
+          flags: 1048576,
+          subtreeFlags: 0,
+          deletions: null,
+          lanes: 0,
+          childLanes: 0,
+          alternate: null,
+          actualDuration: 0,
+          actualStartTime: -1,
+          selfBaseDuration: 0,
+          treeBaseDuration: 0,
+          _debugSource: undefined,
+          _debugOwner: FiberNode {
+            tag: 0,
+            key: null,
+            elementType: [Function: FriendsList],
+            type: [Function: FriendsList],
+            stateNode: null,
+            return: [FiberNode],
+            child: [FiberNode],
+            sibling: null,
+            index: 0,
+            ref: null,
+            pendingProps: [Object],
+            memoizedProps: [Object],
+            updateQueue: null,
+            memoizedState: [Object],
+            dependencies: null,
+            mode: 1,
+            flags: 1,
+            subtreeFlags: 1048576,
+            deletions: null,
+            lanes: 0,
+            childLanes: 0,
+            alternate: null,
+            actualDuration: 0,
+            actualStartTime: -1,
+            selfBaseDuration: 0,
+            treeBaseDuration: 0,
+            _debugSource: undefined,
+            _debugOwner: null,
+            _debugNeedsRemount: false,
+            _debugHookTypes: [Array]
+          },
+          _debugNeedsRemount: false,
+          _debugHookTypes: null
+        },
+        '__reactProps$d7nulznh5q5': {
+          id: 'deletefr',
+          onClick: [Function: onClick],
+          children: {
+            '$$typeof': Symbol(react.element),
+            type: 'p',
+            key: null,
+            ref: null,
+            props: [Object],
+            _owner: [FiberNode],
+            _store: {}
+          }
+        }
+      }
+
+      at Object.<anonymous> (__tests__/FriendsList.test.tsx:52:13)
+
+    console.log
+      UNFRIEND Pendingnfielder2
+
+      at log (components/test/FriendsList.tsx:109:13)
+
+  ● Rendering FriendsList and Clicking Buttons › test acceptFR
+
+    Unable to fire a "click" event - please provide a DOM element.
+
+      31 |     const testbutton: any = page.container.querySelector('#acceptfr');
+      32 |     // console.log(testbutton)
+    > 33 |     fireEvent.click(testbutton);
+         |               ^
+      34 |   });
+      35 |   test('test rejectFR', () => {
+      36 |     const page = render(<FriendsList sendMSG={jest.fn()} chats={[]} />);
+
+      at createEvent (../node_modules/@testing-library/dom/dist/events.js:34:11)
+      at Function.createEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:120:38)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:68)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/FriendsList.test.tsx:33:15)
+
+PASS src/__tests__/Profile.test.tsx
+  ● Console
+
+    console.log
+      matches: undefined
+
+      at log (components/Profile.tsx:60:13)
+
+    console.log
+      undefined
+
+      at log (components/Profile.tsx:61:13)
+
+    console.error
+      Warning: An update to Profile inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Profile (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:14:41)
+
+      34 |     await WORDS_API.get('findUser', { params: { username: username } })
+      35 |       .then((response: AxiosResponse) => {
+    > 36 |         setProfileUser(response.data)
+         |         ^
+      37 |
+      38 |       })
+      39 |       .catch((response) => console.log(response))
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setProfileUser (components/Profile.tsx:36:9)
+
+    console.error
+      Warning: An update to Profile inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Profile (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:14:41)
+
+      68 |       .then((response: AxiosResponse<User[]>) => {
+      69 |         const test = JSON.parse(JSON.stringify(response.data))
+    > 70 |         setUserOutgoing(test.outgoingRequests)
+         |         ^
+      71 |         setUserFriends(test.friends)
+      72 |
+      73 |         //setUserFriends(response.data);
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setUserOutgoing (components/Profile.tsx:70:9)
+
+    console.error
+      Warning: An update to Profile inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Profile (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:14:41)
+
+      69 |         const test = JSON.parse(JSON.stringify(response.data))
+      70 |         setUserOutgoing(test.outgoingRequests)
+    > 71 |         setUserFriends(test.friends)
+         |         ^
+      72 |
+      73 |         //setUserFriends(response.data);
+      74 |
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setUserFriends (components/Profile.tsx:71:9)
+
+    console.log
+      {}
+
+      at log (components/Profile.tsx:91:13)
+
+    console.error
+      Warning: An update to Profile inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Profile (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:14:41)
+
+      93 |     
+      94 |     sessionStorage.removeItem('profileUsername');
+    > 95 |     setMatchList(response.data);
+         |     ^
+      96 |
+      97 |     
+      98 |
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setMatchList (components/Profile.tsx:95:5)
+
+    console.log
+      matches: undefined
+
+      at log (components/Profile.tsx:60:13)
+
+    console.log
+      undefined
+
+      at log (components/Profile.tsx:61:13)
+
+    console.error
+      Warning: An update to Profile inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Profile (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:14:41)
+
+      34 |     await WORDS_API.get('findUser', { params: { username: username } })
+      35 |       .then((response: AxiosResponse) => {
+    > 36 |         setProfileUser(response.data)
+         |         ^
+      37 |
+      38 |       })
+      39 |       .catch((response) => console.log(response))
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setProfileUser (components/Profile.tsx:36:9)
+
+    console.error
+      Warning: An update to Profile inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Profile (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:14:41)
+
+      68 |       .then((response: AxiosResponse<User[]>) => {
+      69 |         const test = JSON.parse(JSON.stringify(response.data))
+    > 70 |         setUserOutgoing(test.outgoingRequests)
+         |         ^
+      71 |         setUserFriends(test.friends)
+      72 |
+      73 |         //setUserFriends(response.data);
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setUserOutgoing (components/Profile.tsx:70:9)
+
+    console.error
+      Warning: An update to Profile inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Profile (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:14:41)
+
+      69 |         const test = JSON.parse(JSON.stringify(response.data))
+      70 |         setUserOutgoing(test.outgoingRequests)
+    > 71 |         setUserFriends(test.friends)
+         |         ^
+      72 |
+      73 |         //setUserFriends(response.data);
+      74 |
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setUserFriends (components/Profile.tsx:71:9)
+
+    console.log
+      {}
+
+      at log (components/Profile.tsx:91:13)
+
+    console.error
+      Warning: An update to Profile inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Profile (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:14:41)
+
+      93 |     
+      94 |     sessionStorage.removeItem('profileUsername');
+    > 95 |     setMatchList(response.data);
+         |     ^
+      96 |
+      97 |     
+      98 |
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setMatchList (components/Profile.tsx:95:5)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+          at Location.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+          at reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Profile.tsx:163:21)
+          at HTMLUnknownElement.callCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+          at HTMLUnknownElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLUnknownElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLUnknownElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLUnknownElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at Object.invokeGuardedCallbackDev (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+          at invokeGuardedCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+          at invokeGuardedCallbackAndCatchFirstError (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+          at executeDispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+          at processDispatchQueueItemsInOrder (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+          at processDispatchQueue (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+          at dispatchEventsForPlugins (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9288:12
+          at batchedUpdates$1 (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+          at batchedUpdates (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+          at dispatchEventForPluginEventSystem (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+          at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+          at dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+          at dispatchDiscreteEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+          at HTMLDivElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLImageElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLImageElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLImageElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:25:20
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:79:16
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:64:24
+          at act (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react/cjs/react.development.js:2512:16)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:63:25
+          at Object.eventWrapper (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:78:28)
+          at fireEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:16:35)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:125:36)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/fire-event.js:18:52)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/Profile.test.tsx:32:19)
+          at Promise.then.completed (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:333:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:259:10)
+          at _callCircusTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:277:40)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at _runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:209:3)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:97:9)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:91:9)
+          at run (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:31:3)
+          at runAndTransformResultsToJestFormat (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:136:21)
+          at jestAdapter (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:70:21)
+          at runTestInternal (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:407:16)
+          at runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:491:34)
+          at Object.worker (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/testWorker.js:133:12) {
+        type: 'not implemented'
+      }
+
+      161 |   function gosettings() {
+      162 |     navigate('/settings')
+    > 163 |     window.location.reload()
+          |                     ^
+      164 |   } 
+      165 |
+      166 |   
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl.reload (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+      at Location.reload (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+      at reload (components/Profile.tsx:163:21)
+      at HTMLUnknownElement.callCallback (../node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (../node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (../node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at invokeGuardedCallbackAndCatchFirstError (../node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+      at executeDispatch (../node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+      at processDispatchQueueItemsInOrder (../node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+      at processDispatchQueue (../node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+      at dispatchEventsForPlugins (../node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+      at ../node_modules/react-dom/cjs/react-dom.development.js:9288:12
+      at batchedUpdates$1 (../node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+      at batchedUpdates (../node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+      at dispatchEventForPluginEventSystem (../node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+      at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (../node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+      at dispatchEvent (../node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+      at dispatchDiscreteEvent (../node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+      at HTMLDivElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLImageElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLImageElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLImageElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at ../node_modules/@testing-library/dom/dist/events.js:25:20
+      at ../node_modules/@testing-library/react/dist/pure.js:79:16
+      at ../node_modules/@testing-library/react/dist/act-compat.js:64:24
+      at act (../node_modules/react/cjs/react.development.js:2512:16)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (../node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (../node_modules/@testing-library/dom/dist/events.js:16:35)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:36)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/Profile.test.tsx:32:19)
+
+PASS src/__tests__/FindUser.test.tsx
+  ● Console
+
+    console.error
+      Warning: validateDOMNesting(...): <th> cannot appear as a child of <thead>.
+          at th
+          at thead
+          at table
+          at div
+          at div
+          at FindUser (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/test/FindUser.tsx:11:43)
+
+      15 |     (WORDS_API.post as jest.Mock).mockResolvedValue({});
+      16 |     beforeEach(() => {
+    > 17 |         render(<FindUser/>)
+         |               ^
+      18 |     })
+      19 |
+      20 |     afterEach(() => {
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateDOMNesting (../node_modules/react-dom/cjs/react-dom.development.js:10847:7)
+      at createInstance (../node_modules/react-dom/cjs/react-dom.development.js:10930:5)
+      at completeWork (../node_modules/react-dom/cjs/react-dom.development.js:22187:28)
+      at completeUnitOfWork (../node_modules/react-dom/cjs/react-dom.development.js:26593:16)
+      at performUnitOfWork (../node_modules/react-dom/cjs/react-dom.development.js:26568:5)
+      at workLoopSync (../node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (../node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (../node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (../node_modules/react/cjs/react.development.js:2667:24)
+      at act (../node_modules/react/cjs/react.development.js:2582:11)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (../node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (../node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (__tests__/FindUser.test.tsx:17:15)
+
+    console.error
+      Warning: validateDOMNesting(...): <a> cannot appear as a child of <tr>.
+          at a
+          at tr
+          at tbody
+          at table
+          at div
+          at div
+          at FindUser (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/test/FindUser.tsx:11:43)
+
+      15 |     (WORDS_API.post as jest.Mock).mockResolvedValue({});
+      16 |     beforeEach(() => {
+    > 17 |         render(<FindUser/>)
+         |               ^
+      18 |     })
+      19 |
+      20 |     afterEach(() => {
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateDOMNesting (../node_modules/react-dom/cjs/react-dom.development.js:10847:7)
+      at createInstance (../node_modules/react-dom/cjs/react-dom.development.js:10930:5)
+      at completeWork (../node_modules/react-dom/cjs/react-dom.development.js:22187:28)
+      at completeUnitOfWork (../node_modules/react-dom/cjs/react-dom.development.js:26593:16)
+      at performUnitOfWork (../node_modules/react-dom/cjs/react-dom.development.js:26568:5)
+      at workLoopSync (../node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (../node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (../node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (../node_modules/react/cjs/react.development.js:2667:24)
+      at act (../node_modules/react/cjs/react.development.js:2582:11)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (../node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (../node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (__tests__/FindUser.test.tsx:17:15)
+
+PASS src/__tests__/Navbar2.test.tsx
+  ● Console
+
+    console.error
+      Warning: validateDOMNesting(...): <body> cannot appear as a child of <div>.
+          at body
+          at Navbar
+
+      13 | describe('rendering navbar', ()=>{
+      14 |     beforeEach(() => {
+    > 15 |         render(<Navbar/>)
+         |               ^
+      16 |     })
+      17 |
+      18 |     afterEach(() => {
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateDOMNesting (../node_modules/react-dom/cjs/react-dom.development.js:10847:7)
+      at createInstance (../node_modules/react-dom/cjs/react-dom.development.js:10930:5)
+      at completeWork (../node_modules/react-dom/cjs/react-dom.development.js:22187:28)
+      at completeUnitOfWork (../node_modules/react-dom/cjs/react-dom.development.js:26593:16)
+      at performUnitOfWork (../node_modules/react-dom/cjs/react-dom.development.js:26568:5)
+      at workLoopSync (../node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (../node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (../node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (../node_modules/react/cjs/react.development.js:2667:24)
+      at act (../node_modules/react/cjs/react.development.js:2582:11)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (../node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (../node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (__tests__/Navbar2.test.tsx:15:15)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+          at Location.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+          at reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Navbar.tsx:27:21)
+          at HTMLUnknownElement.callCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+          at HTMLUnknownElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLUnknownElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLUnknownElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLUnknownElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at Object.invokeGuardedCallbackDev (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+          at invokeGuardedCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+          at invokeGuardedCallbackAndCatchFirstError (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+          at executeDispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+          at processDispatchQueueItemsInOrder (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+          at processDispatchQueue (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+          at dispatchEventsForPlugins (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9288:12
+          at batchedUpdates$1 (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+          at batchedUpdates (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+          at dispatchEventForPluginEventSystem (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+          at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+          at dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+          at dispatchDiscreteEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+          at HTMLDivElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLAnchorElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLAnchorElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLAnchorElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:25:20
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:79:16
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:64:24
+          at act (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react/cjs/react.development.js:2512:16)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:63:25
+          at Object.eventWrapper (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:78:28)
+          at fireEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:16:35)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:125:36)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/fire-event.js:18:52)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/Navbar2.test.tsx:27:19)
+          at Promise.then.completed (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:333:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:259:10)
+          at _callCircusTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:277:40)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at _runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:209:3)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:97:9)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:91:9)
+          at run (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:31:3)
+          at runAndTransformResultsToJestFormat (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:136:21)
+          at jestAdapter (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:70:21)
+          at runTestInternal (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:407:16)
+          at runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:491:34)
+          at Object.worker (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/testWorker.js:133:12) {
+        type: 'not implemented'
+      }
+
+      25 |   function rules() {
+      26 |     navigate('/rules')
+    > 27 |     window.location.reload()
+         |                     ^
+      28 |   }
+      29 |
+      30 |   function finduser() {
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl.reload (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+      at Location.reload (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+      at reload (components/Navbar.tsx:27:21)
+      at HTMLUnknownElement.callCallback (../node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (../node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (../node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at invokeGuardedCallbackAndCatchFirstError (../node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+      at executeDispatch (../node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+      at processDispatchQueueItemsInOrder (../node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+      at processDispatchQueue (../node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+      at dispatchEventsForPlugins (../node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+      at ../node_modules/react-dom/cjs/react-dom.development.js:9288:12
+      at batchedUpdates$1 (../node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+      at batchedUpdates (../node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+      at dispatchEventForPluginEventSystem (../node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+      at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (../node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+      at dispatchEvent (../node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+      at dispatchDiscreteEvent (../node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+      at HTMLDivElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLAnchorElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLAnchorElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLAnchorElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at ../node_modules/@testing-library/dom/dist/events.js:25:20
+      at ../node_modules/@testing-library/react/dist/pure.js:79:16
+      at ../node_modules/@testing-library/react/dist/act-compat.js:64:24
+      at act (../node_modules/react/cjs/react.development.js:2512:16)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (../node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (../node_modules/@testing-library/dom/dist/events.js:16:35)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:36)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/Navbar2.test.tsx:27:19)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+          at Location.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+          at reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Navbar.tsx:32:21)
+          at HTMLUnknownElement.callCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+          at HTMLUnknownElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLUnknownElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLUnknownElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLUnknownElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at Object.invokeGuardedCallbackDev (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+          at invokeGuardedCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+          at invokeGuardedCallbackAndCatchFirstError (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+          at executeDispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+          at processDispatchQueueItemsInOrder (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+          at processDispatchQueue (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+          at dispatchEventsForPlugins (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9288:12
+          at batchedUpdates$1 (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+          at batchedUpdates (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+          at dispatchEventForPluginEventSystem (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+          at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+          at dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+          at dispatchDiscreteEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+          at HTMLDivElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLAnchorElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLAnchorElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLAnchorElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:25:20
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:79:16
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:64:24
+          at act (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react/cjs/react.development.js:2512:16)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:63:25
+          at Object.eventWrapper (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:78:28)
+          at fireEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:16:35)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:125:36)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/fire-event.js:18:52)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/Navbar2.test.tsx:30:19)
+          at Promise.then.completed (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:333:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:259:10)
+          at _callCircusTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:277:40)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at _runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:209:3)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:97:9)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:91:9)
+          at run (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:31:3)
+          at runAndTransformResultsToJestFormat (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:136:21)
+          at jestAdapter (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:70:21)
+          at runTestInternal (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:407:16)
+          at runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:491:34)
+          at Object.worker (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/testWorker.js:133:12) {
+        type: 'not implemented'
+      }
+
+      30 |   function finduser() {
+      31 |     navigate('/finduser')
+    > 32 |     window.location.reload()
+         |                     ^
+      33 |   }
+      34 |
+      35 |   function profile() {
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl.reload (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+      at Location.reload (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+      at reload (components/Navbar.tsx:32:21)
+      at HTMLUnknownElement.callCallback (../node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (../node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (../node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at invokeGuardedCallbackAndCatchFirstError (../node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+      at executeDispatch (../node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+      at processDispatchQueueItemsInOrder (../node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+      at processDispatchQueue (../node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+      at dispatchEventsForPlugins (../node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+      at ../node_modules/react-dom/cjs/react-dom.development.js:9288:12
+      at batchedUpdates$1 (../node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+      at batchedUpdates (../node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+      at dispatchEventForPluginEventSystem (../node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+      at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (../node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+      at dispatchEvent (../node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+      at dispatchDiscreteEvent (../node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+      at HTMLDivElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLAnchorElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLAnchorElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLAnchorElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at ../node_modules/@testing-library/dom/dist/events.js:25:20
+      at ../node_modules/@testing-library/react/dist/pure.js:79:16
+      at ../node_modules/@testing-library/react/dist/act-compat.js:64:24
+      at act (../node_modules/react/cjs/react.development.js:2512:16)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (../node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (../node_modules/@testing-library/dom/dist/events.js:16:35)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:36)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/Navbar2.test.tsx:30:19)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+          at Location.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+          at reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Navbar.tsx:40:21)
+          at HTMLUnknownElement.callCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+          at HTMLUnknownElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLUnknownElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLUnknownElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLUnknownElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at Object.invokeGuardedCallbackDev (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+          at invokeGuardedCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+          at invokeGuardedCallbackAndCatchFirstError (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+          at executeDispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+          at processDispatchQueueItemsInOrder (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+          at processDispatchQueue (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+          at dispatchEventsForPlugins (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9288:12
+          at batchedUpdates$1 (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+          at batchedUpdates (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+          at dispatchEventForPluginEventSystem (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+          at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+          at dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+          at dispatchDiscreteEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+          at HTMLDivElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLAnchorElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLAnchorElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLAnchorElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:25:20
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:79:16
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:64:24
+          at act (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react/cjs/react.development.js:2512:16)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:63:25
+          at Object.eventWrapper (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:78:28)
+          at fireEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:16:35)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:125:36)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/fire-event.js:18:52)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/Navbar2.test.tsx:33:19)
+          at Promise.then.completed (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:333:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:259:10)
+          at _callCircusTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:277:40)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at _runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:209:3)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:97:9)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:91:9)
+          at run (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:31:3)
+          at runAndTransformResultsToJestFormat (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:136:21)
+          at jestAdapter (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:70:21)
+          at runTestInternal (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:407:16)
+          at runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:491:34)
+          at Object.worker (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/testWorker.js:133:12) {
+        type: 'not implemented'
+      }
+
+      38 |
+      39 |     navigate('/profile')
+    > 40 |     window.location.reload()
+         |                     ^
+      41 |   }
+      42 |
+      43 |   return (
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl.reload (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+      at Location.reload (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+      at reload (components/Navbar.tsx:40:21)
+      at HTMLUnknownElement.callCallback (../node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (../node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (../node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at invokeGuardedCallbackAndCatchFirstError (../node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+      at executeDispatch (../node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+      at processDispatchQueueItemsInOrder (../node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+      at processDispatchQueue (../node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+      at dispatchEventsForPlugins (../node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+      at ../node_modules/react-dom/cjs/react-dom.development.js:9288:12
+      at batchedUpdates$1 (../node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+      at batchedUpdates (../node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+      at dispatchEventForPluginEventSystem (../node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+      at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (../node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+      at dispatchEvent (../node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+      at dispatchDiscreteEvent (../node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+      at HTMLDivElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLAnchorElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLAnchorElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLAnchorElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at ../node_modules/@testing-library/dom/dist/events.js:25:20
+      at ../node_modules/@testing-library/react/dist/pure.js:79:16
+      at ../node_modules/@testing-library/react/dist/act-compat.js:64:24
+      at act (../node_modules/react/cjs/react.development.js:2512:16)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (../node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (../node_modules/@testing-library/dom/dist/events.js:16:35)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:36)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/Navbar2.test.tsx:33:19)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+          at Location.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+          at reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Navbar.tsx:12:21)
+          at HTMLUnknownElement.callCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+          at HTMLUnknownElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLUnknownElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLUnknownElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLUnknownElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at Object.invokeGuardedCallbackDev (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+          at invokeGuardedCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+          at invokeGuardedCallbackAndCatchFirstError (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+          at executeDispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+          at processDispatchQueueItemsInOrder (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+          at processDispatchQueue (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+          at dispatchEventsForPlugins (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9288:12
+          at batchedUpdates$1 (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+          at batchedUpdates (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+          at dispatchEventForPluginEventSystem (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+          at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+          at dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+          at dispatchDiscreteEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+          at HTMLDivElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLAnchorElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLAnchorElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLAnchorElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:25:20
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:79:16
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:64:24
+          at act (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react/cjs/react.development.js:2512:16)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:63:25
+          at Object.eventWrapper (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:78:28)
+          at fireEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:16:35)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:125:36)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/fire-event.js:18:52)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/Navbar2.test.tsx:36:19)
+          at Promise.then.completed (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:333:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:259:10)
+          at _callCircusTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:277:40)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at _runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:209:3)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:97:9)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:91:9)
+          at run (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:31:3)
+          at runAndTransformResultsToJestFormat (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:136:21)
+          at jestAdapter (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:70:21)
+          at runTestInternal (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:407:16)
+          at runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:491:34)
+          at Object.worker (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/testWorker.js:133:12) {
+        type: 'not implemented'
+      }
+
+      10 |     window.sessionStorage.removeItem('username')
+      11 |     navigate('/')
+    > 12 |     window.location.reload()
+         |                     ^
+      13 |   }
+      14 |
+      15 |   function login() {
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl.reload (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+      at Location.reload (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+      at reload (components/Navbar.tsx:12:21)
+      at HTMLUnknownElement.callCallback (../node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (../node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (../node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at invokeGuardedCallbackAndCatchFirstError (../node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+      at executeDispatch (../node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+      at processDispatchQueueItemsInOrder (../node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+      at processDispatchQueue (../node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+      at dispatchEventsForPlugins (../node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+      at ../node_modules/react-dom/cjs/react-dom.development.js:9288:12
+      at batchedUpdates$1 (../node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+      at batchedUpdates (../node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+      at dispatchEventForPluginEventSystem (../node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+      at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (../node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+      at dispatchEvent (../node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+      at dispatchDiscreteEvent (../node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+      at HTMLDivElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLAnchorElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLAnchorElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLAnchorElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at ../node_modules/@testing-library/dom/dist/events.js:25:20
+      at ../node_modules/@testing-library/react/dist/pure.js:79:16
+      at ../node_modules/@testing-library/react/dist/act-compat.js:64:24
+      at act (../node_modules/react/cjs/react.development.js:2512:16)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (../node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (../node_modules/@testing-library/dom/dist/events.js:16:35)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:36)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/Navbar2.test.tsx:36:19)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+          at Location.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+          at reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Navbar.tsx:22:21)
+          at HTMLUnknownElement.callCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+          at HTMLUnknownElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLUnknownElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLUnknownElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLUnknownElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at Object.invokeGuardedCallbackDev (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+          at invokeGuardedCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+          at invokeGuardedCallbackAndCatchFirstError (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+          at executeDispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+          at processDispatchQueueItemsInOrder (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+          at processDispatchQueue (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+          at dispatchEventsForPlugins (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9288:12
+          at batchedUpdates$1 (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+          at batchedUpdates (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+          at dispatchEventForPluginEventSystem (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+          at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+          at dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+          at dispatchDiscreteEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+          at HTMLDivElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLAnchorElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLAnchorElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLAnchorElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:25:20
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:79:16
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:64:24
+          at act (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react/cjs/react.development.js:2512:16)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:63:25
+          at Object.eventWrapper (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:78:28)
+          at fireEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:16:35)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:125:36)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/fire-event.js:18:52)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/Navbar2.test.tsx:39:19)
+          at Promise.then.completed (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:333:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:259:10)
+          at _callCircusTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:277:40)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at _runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:209:3)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:97:9)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:91:9)
+          at run (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:31:3)
+          at runAndTransformResultsToJestFormat (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:136:21)
+          at jestAdapter (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:70:21)
+          at runTestInternal (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:407:16)
+          at runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:491:34)
+          at Object.worker (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/testWorker.js:133:12) {
+        type: 'not implemented'
+      }
+
+      20 |   function lobby() {
+      21 |     navigate('/lobby')
+    > 22 |     window.location.reload()
+         |                     ^
+      23 |   }
+      24 |
+      25 |   function rules() {
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl.reload (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+      at Location.reload (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+      at reload (components/Navbar.tsx:22:21)
+      at HTMLUnknownElement.callCallback (../node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (../node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (../node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at invokeGuardedCallbackAndCatchFirstError (../node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+      at executeDispatch (../node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+      at processDispatchQueueItemsInOrder (../node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+      at processDispatchQueue (../node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+      at dispatchEventsForPlugins (../node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+      at ../node_modules/react-dom/cjs/react-dom.development.js:9288:12
+      at batchedUpdates$1 (../node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+      at batchedUpdates (../node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+      at dispatchEventForPluginEventSystem (../node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+      at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (../node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+      at dispatchEvent (../node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+      at dispatchDiscreteEvent (../node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+      at HTMLDivElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLAnchorElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLAnchorElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLAnchorElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at ../node_modules/@testing-library/dom/dist/events.js:25:20
+      at ../node_modules/@testing-library/react/dist/pure.js:79:16
+      at ../node_modules/@testing-library/react/dist/act-compat.js:64:24
+      at act (../node_modules/react/cjs/react.development.js:2512:16)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (../node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (../node_modules/@testing-library/dom/dist/events.js:16:35)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:36)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/Navbar2.test.tsx:39:19)
+
+PASS src/__tests__/Lobby2.test.tsx
+  ● Console
+
+    console.error
+      Warning: Received NaN for the `children` attribute. If this is expected, cast the value to a string.
+          at td
+          at tr
+          at tbody
+          at table
+          at div
+          at Leaderboard (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Leaderboard.tsx:10:29)
+          at div
+          at div
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      15 |
+      16 |     beforeEach(() => {
+    > 17 |         render(<Lobby/>)
+         |               ^
+      18 |     })
+      19 |     afterEach(() => {
+      20 |         cleanup()
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at validateProperty$1 (../node_modules/react-dom/cjs/react-dom.development.js:3736:7)
+      at warnUnknownProperties (../node_modules/react-dom/cjs/react-dom.development.js:3803:21)
+      at validateProperties$2 (../node_modules/react-dom/cjs/react-dom.development.js:3827:3)
+      at validatePropertiesInDevelopment (../node_modules/react-dom/cjs/react-dom.development.js:9541:5)
+      at setInitialProperties (../node_modules/react-dom/cjs/react-dom.development.js:9830:5)
+      at finalizeInitialChildren (../node_modules/react-dom/cjs/react-dom.development.js:10950:3)
+      at completeWork (../node_modules/react-dom/cjs/react-dom.development.js:22193:17)
+      at completeUnitOfWork (../node_modules/react-dom/cjs/react-dom.development.js:26593:16)
+      at performUnitOfWork (../node_modules/react-dom/cjs/react-dom.development.js:26568:5)
+      at workLoopSync (../node_modules/react-dom/cjs/react-dom.development.js:26466:5)
+      at renderRootSync (../node_modules/react-dom/cjs/react-dom.development.js:26434:7)
+      at performConcurrentWorkOnRoot (../node_modules/react-dom/cjs/react-dom.development.js:25738:74)
+      at flushActQueue (../node_modules/react/cjs/react.development.js:2667:24)
+      at act (../node_modules/react/cjs/react.development.js:2582:11)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (../node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (../node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (__tests__/Lobby2.test.tsx:17:15)
+
+    console.error
+      Warning: An update to Leaderboard inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Leaderboard (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Leaderboard.tsx:10:29)
+          at div
+          at div
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      20 |     await WORDS_API.get('/getTopTenElo')
+      21 |       .then((response: AxiosResponse) => {
+    > 22 |         setUsers(response.data)
+         |         ^
+      23 |       })
+      24 |       .catch(() => (window.location.href = '/login'))
+      25 |   }
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setUsers (components/Leaderboard.tsx:22:9)
+
+    console.error
+      Warning: An update to Leaderboard inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Leaderboard (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Leaderboard.tsx:10:29)
+          at div
+          at div
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      31 |     await WORDS_API.get('/getRankElo')
+      32 |       .then((response: AxiosResponse) => {
+    > 33 |         setRank(response.data)
+         |         ^
+      34 |       })
+      35 |       .catch(() => (window.location.href = '/login'))
+      36 |   }
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setRank (components/Leaderboard.tsx:33:9)
+
+    console.log
+      {}
+
+      at log (components/Lobby.tsx:18:17)
+
+    console.error
+      Warning: An update to Lobby inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      17 |       .then((response: AxiosResponse<Opponent[]>) => {
+      18 |         console.log(response.data)
+    > 19 |         setUsers(response.data)
+         |         ^
+      20 |         setGameType('ranked')
+      21 |         setTableVis(true)
+      22 |       })
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setUsers (components/Lobby.tsx:19:9)
+
+    console.error
+      Warning: An update to Lobby inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      18 |         console.log(response.data)
+      19 |         setUsers(response.data)
+    > 20 |         setGameType('ranked')
+         |         ^
+      21 |         setTableVis(true)
+      22 |       })
+      23 |       .catch(() => (window.location.href = '/login'))
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setGameType (components/Lobby.tsx:20:9)
+
+    console.error
+      Warning: An update to Lobby inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      19 |         setUsers(response.data)
+      20 |         setGameType('ranked')
+    > 21 |         setTableVis(true)
+         |         ^
+      22 |       })
+      23 |       .catch(() => (window.location.href = '/login'))
+      24 |   }
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setTableVis (components/Lobby.tsx:21:9)
+
+    console.error
+      Warning: An update to Leaderboard inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Leaderboard (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Leaderboard.tsx:10:29)
+          at div
+          at div
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      20 |     await WORDS_API.get('/getTopTenElo')
+      21 |       .then((response: AxiosResponse) => {
+    > 22 |         setUsers(response.data)
+         |         ^
+      23 |       })
+      24 |       .catch(() => (window.location.href = '/login'))
+      25 |   }
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setUsers (components/Leaderboard.tsx:22:9)
+
+    console.error
+      Warning: An update to Leaderboard inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Leaderboard (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Leaderboard.tsx:10:29)
+          at div
+          at div
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      31 |     await WORDS_API.get('/getRankElo')
+      32 |       .then((response: AxiosResponse) => {
+    > 33 |         setRank(response.data)
+         |         ^
+      34 |       })
+      35 |       .catch(() => (window.location.href = '/login'))
+      36 |   }
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setRank (components/Leaderboard.tsx:33:9)
+
+    console.log
+      {}
+
+      at log (components/Lobby.tsx:29:17)
+
+    console.error
+      Warning: An update to Lobby inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      28 |       .then((response: AxiosResponse<Opponent[]>) => {
+      29 |         console.log(response.data)
+    > 30 |         setUsers(response.data)
+         |         ^
+      31 |         setGameType('practice')
+      32 |         setTableVis(true)
+      33 |       })
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setUsers (components/Lobby.tsx:30:9)
+
+    console.error
+      Warning: An update to Lobby inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      29 |         console.log(response.data)
+      30 |         setUsers(response.data)
+    > 31 |         setGameType('practice')
+         |         ^
+      32 |         setTableVis(true)
+      33 |       })
+      34 |       .catch(() => (window.location.href = '/login'))
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setGameType (components/Lobby.tsx:31:9)
+
+    console.error
+      Warning: An update to Lobby inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+          at Lobby (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Lobby.tsx:10:29)
+
+      30 |         setUsers(response.data)
+      31 |         setGameType('practice')
+    > 32 |         setTableVis(true)
+         |         ^
+      33 |       })
+      34 |       .catch(() => (window.location.href = '/login'))
+      35 |   }
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at dispatchSetState (../node_modules/react-dom/cjs/react-dom.development.js:17527:7)
+      at setTableVis (components/Lobby.tsx:32:9)
+
+/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Home.tsx:1714
+      if (response.response.status === 401) {
+                            ^
+
+TypeError: Cannot read properties of undefined (reading 'status')
+    at /Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Home.tsx:1714:29
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at login (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Home.tsx:1693:5)
+
+Node.js v18.9.0
+PASS src/__tests__/Navbar.test.tsx
+  ● Console
+
+    console.error
+      Warning: An update to Root inside a test was not wrapped in act(...).
+      
+      When testing, code that causes React state updates should be wrapped into act(...):
+      
+      act(() => {
+        /* fire events that update state */
+      });
+      /* assert on the output */
+      
+      This ensures that you're testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+
+      10 |     const div = document.createElement('div')
+      11 |     const root = createRoot(div)
+    > 12 |     root.render(<Navbar />)
+         |          ^
+      13 | })
+
+      at printWarning (../node_modules/react-dom/cjs/react-dom.development.js:86:30)
+      at error (../node_modules/react-dom/cjs/react-dom.development.js:60:7)
+      at warnIfUpdatesNotWrappedWithActDEV (../node_modules/react-dom/cjs/react-dom.development.js:27589:9)
+      at scheduleUpdateOnFiber (../node_modules/react-dom/cjs/react-dom.development.js:25508:5)
+      at updateContainer (../node_modules/react-dom/cjs/react-dom.development.js:28858:5)
+      at ReactDOMRoot.Object.<anonymous>.ReactDOMHydrationRoot.render.ReactDOMRoot.render [as render] (../node_modules/react-dom/cjs/react-dom.development.js:29314:3)
+      at Object.<anonymous> (__tests__/Navbar.test.tsx:12:10)
+
+PASS src/__tests__/Rules.test.tsx
+PASS src/__tests__/Settings.test.tsx
+  ● Console
+
+    console.log
+      null
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon:
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      null
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon:
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      here at handlePassword
+
+      at log (components/Settings.tsx:38:13)
+
+    console.error
+      Error: Not implemented: window.alert
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/Window.js:870:7
+          at alert (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Settings.tsx:61:9)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+        type: 'not implemented'
+      }
+
+      59 |           })
+      60 |           .catch((response) => console.log(response))
+    > 61 |         alert('Change successful!')
+         |         ^
+      62 |         console.log(response)
+      63 |       })
+      64 |       .catch((error: { response: { data: { message: any } } }) => {
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at ../node_modules/jsdom/lib/jsdom/browser/Window.js:870:7
+      at alert (components/Settings.tsx:61:9)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:62:17)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl._locationObjectNavigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+          at LocationImpl._locationObjectSetterNavigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+          at LocationImpl.set href [as href] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+          at Location.set href [as href] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Settings.tsx:58:13
+          at processTicksAndRejections (node:internal/process/task_queues:95:5) {
+        type: 'not implemented'
+      }
+
+      56 |             let user2 = { ...response.data }
+      57 |             window.sessionStorage.setItem('user', JSON.stringify(user2))
+    > 58 |             window.location.href = '/lobby'
+         |             ^
+      59 |           })
+      60 |           .catch((response) => console.log(response))
+      61 |         alert('Change successful!')
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl._locationObjectNavigate (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:31:5)
+      at LocationImpl._locationObjectSetterNavigate (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:25:17)
+      at LocationImpl.set href [as href] (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:47:10)
+      at Location.set href [as href] (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:125:37)
+      at components/Settings.tsx:58:13
+
+    console.log
+      null
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon:
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      null
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon:
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      null
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon:
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+    console.error
+      Error: Not implemented: navigation (except hash changes)
+          at module.exports (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+          at navigateFetch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+          at exports.navigate (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+          at LocationImpl.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+          at Location.reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+          at reload (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/components/Settings.tsx:91:21)
+          at HTMLUnknownElement.callCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+          at HTMLUnknownElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLUnknownElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLUnknownElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLUnknownElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at Object.invokeGuardedCallbackDev (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+          at invokeGuardedCallback (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+          at invokeGuardedCallbackAndCatchFirstError (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+          at executeDispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+          at processDispatchQueueItemsInOrder (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+          at processDispatchQueue (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+          at dispatchEventsForPlugins (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9288:12
+          at batchedUpdates$1 (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+          at batchedUpdates (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+          at dispatchEventForPluginEventSystem (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+          at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+          at dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+          at dispatchDiscreteEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+          at HTMLDivElement.callTheUserObjectsOperation (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+          at innerInvokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+          at invokeEventListeners (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+          at HTMLButtonElementImpl._dispatch (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+          at HTMLButtonElementImpl.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+          at HTMLButtonElement.dispatchEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:25:20
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:79:16
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:64:24
+          at act (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/react/cjs/react.development.js:2512:16)
+          at /Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/act-compat.js:63:25
+          at Object.eventWrapper (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/pure.js:78:28)
+          at fireEvent (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:16:35)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/dom/dist/events.js:125:36)
+          at Function.fireEvent.<computed> [as click] (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/@testing-library/react/dist/fire-event.js:18:52)
+          at Object.<anonymous> (/Users/koukaakiva/Work/WordsAway-P3-Frontend/src/__tests__/Settings.test.tsx:47:15)
+          at Promise.then.completed (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:333:28)
+          at new Promise (<anonymous>)
+          at callAsyncCircusFn (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/utils.js:259:10)
+          at _callCircusTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:277:40)
+          at processTicksAndRejections (node:internal/process/task_queues:95:5)
+          at _runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:209:3)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:97:9)
+          at _runTestsForDescribeBlock (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:91:9)
+          at run (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/run.js:31:3)
+          at runAndTransformResultsToJestFormat (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:136:21)
+          at jestAdapter (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:70:21)
+          at runTestInternal (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:407:16)
+          at runTest (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/runTest.js:491:34)
+          at Object.worker (/Users/koukaakiva/Work/WordsAway-P3-Frontend/node_modules/jest-runner/build/testWorker.js:133:12) {
+        type: 'not implemented'
+      }
+
+      89 |     localStorage.setItem('theme', newTheme)
+      90 |     localStorage.setItem('themeText', newText)
+    > 91 |     window.location.reload()
+         |                     ^
+      92 |   }
+      93 |
+      94 |   return (
+
+      at VirtualConsole.<anonymous> (../node_modules/jest-environment-jsdom/build/index.js:55:29)
+      at module.exports (../node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at navigateFetch (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:77:3)
+      at exports.navigate (../node_modules/jsdom/lib/jsdom/living/window/navigation.js:55:3)
+      at LocationImpl.reload (../node_modules/jsdom/lib/jsdom/living/window/Location-impl.js:230:5)
+      at Location.reload (../node_modules/jsdom/lib/jsdom/living/generated/Location.js:102:36)
+      at reload (components/Settings.tsx:91:21)
+      at HTMLUnknownElement.callCallback (../node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLUnknownElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLUnknownElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLUnknownElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at Object.invokeGuardedCallbackDev (../node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+      at invokeGuardedCallback (../node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+      at invokeGuardedCallbackAndCatchFirstError (../node_modules/react-dom/cjs/react-dom.development.js:4291:25)
+      at executeDispatch (../node_modules/react-dom/cjs/react-dom.development.js:9041:3)
+      at processDispatchQueueItemsInOrder (../node_modules/react-dom/cjs/react-dom.development.js:9073:7)
+      at processDispatchQueue (../node_modules/react-dom/cjs/react-dom.development.js:9086:5)
+      at dispatchEventsForPlugins (../node_modules/react-dom/cjs/react-dom.development.js:9097:3)
+      at ../node_modules/react-dom/cjs/react-dom.development.js:9288:12
+      at batchedUpdates$1 (../node_modules/react-dom/cjs/react-dom.development.js:26140:12)
+      at batchedUpdates (../node_modules/react-dom/cjs/react-dom.development.js:3991:12)
+      at dispatchEventForPluginEventSystem (../node_modules/react-dom/cjs/react-dom.development.js:9287:3)
+      at dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay (../node_modules/react-dom/cjs/react-dom.development.js:6465:5)
+      at dispatchEvent (../node_modules/react-dom/cjs/react-dom.development.js:6457:5)
+      at dispatchDiscreteEvent (../node_modules/react-dom/cjs/react-dom.development.js:6430:5)
+      at HTMLDivElement.callTheUserObjectsOperation (../node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:350:25)
+      at invokeEventListeners (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+      at HTMLButtonElementImpl._dispatch (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+      at HTMLButtonElementImpl.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+      at HTMLButtonElement.dispatchEvent (../node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+      at ../node_modules/@testing-library/dom/dist/events.js:25:20
+      at ../node_modules/@testing-library/react/dist/pure.js:79:16
+      at ../node_modules/@testing-library/react/dist/act-compat.js:64:24
+      at act (../node_modules/react/cjs/react.development.js:2512:16)
+      at ../node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at Object.eventWrapper (../node_modules/@testing-library/react/dist/pure.js:78:28)
+      at fireEvent (../node_modules/@testing-library/dom/dist/events.js:16:35)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/dom/dist/events.js:125:36)
+      at Function.fireEvent.<computed> [as click] (../node_modules/@testing-library/react/dist/fire-event.js:18:52)
+      at Object.<anonymous> (__tests__/Settings.test.tsx:47:15)
+
+    console.log
+      {}
+
+      at log (components/Settings.tsx:81:11)
+
+    console.log
+      icon: undefined
+
+      at log (components/Settings.tsx:82:11)
+
+
+Snapshot Summary
+ › 1 snapshot file obsolete from 1 test suite. To remove it, run `npm test -- -u`.
+   ↳   • __tests__/__snapshots__/Leaderboard.test.tsx.snap
+
+Test Suites: 1 failed, 11 passed, 12 total
+Tests:       1 failed, 32 passed, 33 total
+Snapshots:   1 file obsolete, 0 total
+Time:        5.257 s
+Ran all test suites.

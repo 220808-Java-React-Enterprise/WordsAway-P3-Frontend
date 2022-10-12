@@ -2,75 +2,80 @@ import React, { useState, useEffect } from 'react'
 import { AxiosResponse } from 'axios'
 import { Opponent } from '../types/Opponent.type'
 import WORDS_API from '../utils/ApiConfig'
-import { User } from "../../src/types/User.type";
+import { User } from '../../src/types/User.type'
 import '../css/challengeboard.css'
 
 interface BoardProps {
-    userList: Opponent[] 
-    gameType: string
+  userList: Opponent[]
+  gameType: string
 }
 
 export default function Challengeboard({ userList, gameType }: BoardProps) {
+  var friends: { outgoingRequests: any[]; incomingRequests: any[]; friends: any[] } = {
+    outgoingRequests: [],
+    incomingRequests: [],
+    friends: []
+  }
+  const friendslist: any = []
 
-    var friends: { outgoingRequests: any[], incomingRequests: any[], friends: any[] } = { outgoingRequests: [], incomingRequests: [], friends: [] }
-    const friendslist: any = []
+  async function getFriends() {
+    await WORDS_API.get('getFriendsList')
+      .then((response: AxiosResponse) => {
+        sessionStorage.setItem('friends', JSON.stringify(response.data))
 
-    async function getFriends() {
-        await WORDS_API.get('getFriendsList')
-            .then((response: AxiosResponse) => {
-                sessionStorage.setItem('friends', JSON.stringify(response.data))
+        // console.log(response.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
 
-                // console.log(response.data)
+  function populateList() {
+    friends = JSON.parse(sessionStorage.friends)
 
-            })
-            .catch((error) => {
-                console.log(error)
-            })
+    for (let i = 0; i < friends.friends.length; i++) {
+      friendslist.push(
+        // <div id='flrow' key={i}>
+        //     <div className='friend'>{friends.friends[i].username}</div>
+        //     <div className='friendElo'>{friends.friends[i].elo}</div>
+        // </div>
+        [i, friends.friends[i].username, friends.friends[i].elo, friends.friends[i].board_id]
+      )
     }
+    console.log(friendslist)
+  }
 
-    function populateList() {
-        friends = JSON.parse(sessionStorage.friends)
-
-        for (let i = 0; i < friends.friends.length; i++) {
-            friendslist.push(
-                // <div id='flrow' key={i}>
-                //     <div className='friend'>{friends.friends[i].username}</div>
-                //     <div className='friendElo'>{friends.friends[i].elo}</div>
-                // </div>
-                [i, friends.friends[i].username, friends.friends[i].elo, friends.friends[i].board_id]
-            )
+  async function startGame(username: string, gameType: string) {
+    await WORDS_API.post(
+      'makeGame',
+      {
+        username: username
+      },
+      {
+        params: {
+          type: gameType
         }
-        console.log(friendslist)
-    }
-
-    async function startGame(username: string, gameType: string) {
-        await WORDS_API.post('makeGame', {
-            username: username,
-        },
-            {
-                params: {
-                    type: gameType
-                }
-            })
-            .then((response) => {
-                sessionStorage.setItem('board_id', response.data)
-                window.location.href = '/game'
-            })
-            .catch((response) => alert(response))
-    }
-
-    function continueGame(board_id: string) {
-        // alert('Board ID: ' + board_id)
-        sessionStorage.setItem('board_id', board_id)
+      }
+    )
+      .then((response) => {
+        sessionStorage.setItem('board_id', response.data)
         window.location.href = '/game'
-    }
+      })
+      .catch((response) => alert(response))
+  }
 
-    getFriends()
-    populateList()
+  function continueGame(board_id: string) {
+    // alert('Board ID: ' + board_id)
+    sessionStorage.setItem('board_id', board_id)
+    window.location.href = '/game'
+  }
 
-    return (
-        <div id="playerTables">
-            {/* <table className = 'playerTable' data-testid='userTable' id = 'friendsTable'>
+  getFriends()
+  populateList()
+
+  return (
+    <div id='playerTables'>
+      {/* <table className = 'playerTable' data-testid='userTable' id = 'friendsTable'>
                 <thead className="playerTable-header">
                     <tr>
                         <th>Username</th>
@@ -94,30 +99,38 @@ export default function Challengeboard({ userList, gameType }: BoardProps) {
                     ))}
                 </tbody>
             </table> */}
-            <table className = 'playerTable' data-testid='userTable' id='opponentsTable'>
-                <thead className="playerTable-header">
-                    <tr>
-                        <th>Username</th>
-                        <th>ELO</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody className="playerTable-body">
-                    {userList.map((user) => (
-                        <tr key={user.username} id = 'playerInfo'>
-                            <td className="usernames-column">{user.username}</td>
-                            <td className="elo-column">{user.elo.toFixed(0)}</td>
-                            <td className='button-column'>
-                                {user.board_id == null ? (
-                                    <button onClick={() => startGame(user.username, gameType)} className="gameBtn" role='challengePlayerBtn'>Challenge!</button>
-                                ) : (
-                                    <button onClick={() => continueGame(user.board_id)} className="gameBtn" role='continueGameBtn'>Continue!</button>
-                                )}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    )
+      <table className='playerTable' data-testid='userTable' id='opponentsTable'>
+        <thead className='playerTable-header'>
+          <tr>
+            <th>Username</th>
+            <th>ELO</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody className='playerTable-body'>
+          {userList.map((user) => (
+            <tr key={user.username} id='playerInfo'>
+              <td className='usernames-column'>{user.username}</td>
+              <td className='elo-column'>{user.elo.toFixed(0)}</td>
+              <td className='button-column'>
+                {user.board_id == null ? (
+                  <button
+                    onClick={() => startGame(user.username, gameType)}
+                    className='gameBtn'
+                    role='challengePlayerBtn'
+                  >
+                    Challenge!
+                  </button>
+                ) : (
+                  <button onClick={() => continueGame(user.board_id)} className='gameBtn' role='continueGameBtn'>
+                    Continue!
+                  </button>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
 }

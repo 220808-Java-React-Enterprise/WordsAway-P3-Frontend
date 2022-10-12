@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { AxiosResponse } from 'axios'
 import { Opponent } from '../types/Opponent.type'
+import { Match } from '../types/Match.type'
+
 import { User } from '../types/User.type'
 import WORDS_API from '../utils/ApiConfig'
 import gear4 from '../components/icons/gear4.png'
@@ -14,6 +16,8 @@ export default function Profile() {
   const [userFriends, setUserFriends] = useState<User[]>([])
   const [userOutgoing, setUserOutgoing] = useState<User[]>([])
   const [theme, getTheme] = useState('')
+  const [matchList, setMatchList] = useState<Match[]>();
+  const Matches : any = [];
   var friends: { outgoingRequests: any[]; incomingRequests: any[]; friends: any[] } = {
     outgoingRequests: [],
     incomingRequests: [],
@@ -22,6 +26,7 @@ export default function Profile() {
   let navigate = useNavigate()
 
   async function getUser(username: string | null) {
+    
     if (username === null) {
       username = sessionStorage.getItem('username')
     }
@@ -29,8 +34,10 @@ export default function Profile() {
     await WORDS_API.get('findUser', { params: { username: username } })
       .then((response: AxiosResponse) => {
         setProfileUser(response.data)
+
       })
       .catch((response) => console.log(response))
+    
   }
 
   useEffect(() => {
@@ -40,9 +47,21 @@ export default function Profile() {
 
     getUser(username)
     getTheme(localStorage.getItem('theme') || 'light')
+  }, [])
+
+  useEffect(() => {
+    
     getFriends()
     getMatches()
-  }, [])
+    
+  }, [profileUser])
+
+  useEffect(() => { 
+    console.log("matches: " + JSON.stringify(matchList));
+    console.log(profileUser);
+
+    
+  },[matchList])
 
   async function getFriends() {
     await WORDS_API.get('/getFriendsList')
@@ -53,19 +72,40 @@ export default function Profile() {
 
         //setUserFriends(response.data);
 
-        sessionStorage.removeItem('profileUsername')
+        
+
       })
       .catch(() => (window.location.href = '/login'))
   }
 
   async function getMatches() {
-    await WORDS_API.get('/gameHistory')
-      .then((response) => {
-        console.log(response.data)
-      })
-      .catch(() => console.log('broke'))
+
+    
+    await WORDS_API.get('/gameHistory', {
+      params: {
+        username: profileUser?.username,
+        limit: 3
+      }
+    })
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    
+    
+    sessionStorage.removeItem('profileUsername');
+    setMatchList(response.data);
+
+    
+
+
+    
+  })
+  .catch(() => (console.log("broke")))
+  
+  
+
   }
 
+ 
   async function addFriend() {
     await WORDS_API.post(
       'addFriend',
@@ -121,10 +161,9 @@ export default function Profile() {
   function gosettings() {
     navigate('/settings')
     window.location.reload()
-  }
+  } 
 
-  console.log('icon: ' + profileUser?.avatar)
-
+  
   return (
     <div className='profile' data-theme={theme}>
       <div className='topholder'>
@@ -145,7 +184,7 @@ export default function Profile() {
         </div>
         <a href='#' onClick={gosettings}>
           {' '}
-          <img className='gears' src={require('../components/icons/gear4.png')} />{' '}
+          <img data-testid="gear-image" className='gears' src={'images/gear4.png'} />{' '}
         </a>
         <div className='addfriend'>
           {profileUser?.username == sessionStorage.getItem('username') ? (
@@ -172,18 +211,17 @@ export default function Profile() {
             )}
           </div>
           <h2>Recent Matches</h2>
-          <div className='match'>
-            <h3>PoliceLettuce v LoserGuy</h3>
-            <h3 id='win'> Victory! </h3>
-          </div>
-          <div className='match'>
-            <h3>PoliceLettuce v WinnerGuy</h3>
-            <h3 id='lose'> Defeat! </h3>
-          </div>
-          <div className='match'>
-            <h3>PoliceLettuce v LoserGuy</h3>
-            <h3 id='win'> Victory! </h3>
-          </div>
+          {matchList?.map(Match => (
+                     <div className='match'>
+                     <h3>{profileUser?.username} v {Match.opponent.username}</h3>
+                     <h3 id='win'> {Match.outcome} </h3>
+                   </div>       
+
+
+            ))}
+          
+          
+          
         </div>
 
         <div style={{ display: isShown2 ? 'flex' : 'none' }} id='removeConfirm'>

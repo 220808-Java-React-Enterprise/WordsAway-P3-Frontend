@@ -1,7 +1,6 @@
 import { fireEvent, render, screen, cleanup } from '@testing-library/react';
 import WORDS_API from '../utils/ApiConfig';
 import Challengeboard from '../components/Challengeboard';
-import { json } from 'stream/consumers';
 
 jest.mock('../utils/ApiConfig');
 
