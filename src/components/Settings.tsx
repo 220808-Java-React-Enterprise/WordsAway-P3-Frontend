@@ -92,7 +92,7 @@ const SettingsPage = () => {
   }
 
   return (
-    <div>
+    <div className='settingsPage'>
       <h1> Settings</h1>
       <br />
       <section>

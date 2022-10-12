@@ -99,10 +99,14 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
     WORDS_API.post('addFriend', {}, { params }).catch((error) => {
       console.log(error)
     })
+    setIsShown(!isShown)
   }
 
   function rejectFR(name: string) {
     console.log('REJECT ' + name)
+    const params = { username: name }
+    WORDS_API.post('removeFriend', {}, { params })
+    setIsShown(!isShown)
   }
   function unfriendprompt(name: string) {
     setIsShown2(true)
@@ -113,6 +117,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
   function unfriend(name: string) {
     const params = { username: unfriendName }
     WORDS_API.post('removeFriend', {}, { params })
+    setIsShown(!isShown)
   }
 
   getFriends()
