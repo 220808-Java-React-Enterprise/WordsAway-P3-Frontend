@@ -90,8 +90,6 @@ const Home = () => {
       .then(() => (window.location.href = 'lobby'))
   }
 
- 
-
   return (
     <>
       <div className='logincontainer'>
@@ -103,9 +101,19 @@ const Home = () => {
           {isLogin ? (
             <>
               <form role='loginForm' className='form' onSubmit={login}>
-                <input data-testid='login-username-input' type='text' placeholder='Username' onChange={(event) => setUsername(event.target.value)} />
+                <input
+                  data-testid='login-username-input'
+                  type='text'
+                  placeholder='Username'
+                  onChange={(event) => setUsername(event.target.value)}
+                />
                 <br />
-                <input data-testid='login-password-input' type='password' placeholder='Password' onChange={(event) => setPassword(event.target.value)} />
+                <input
+                  data-testid='login-password-input'
+                  type='password'
+                  placeholder='Password'
+                  onChange={(event) => setPassword(event.target.value)}
+                />
                 <br />
                 <button data-testid='loginButton' type='submit'>
                   Login
@@ -146,7 +154,9 @@ const Home = () => {
                   onChange={(event) => setConfirm(event.target.value)}
                 />
                 <br />
-                <button data-testid='submit-signup' type='submit'>Signup</button>
+                <button data-testid='submit-signup' type='submit'>
+                  Signup
+                </button>
               </form>
               <button className='redirect-button' onClick={toggleLogin}>
                 Login

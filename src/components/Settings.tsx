@@ -23,8 +23,6 @@ const SettingsPage = () => {
     if (data != null) {
       setUser(JSON.parse(data))
       setIcon(user?.avatar?.toString())
-    } else {
-      navigate('/')
     }
   }, [])
 
