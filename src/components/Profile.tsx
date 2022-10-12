@@ -57,8 +57,8 @@ export default function Profile() {
   }, [profileUser])
 
   useEffect(() => { 
-    console.log("matches: " + JSON.stringify(matchList));
-    console.log(profileUser);
+    // console.log("matches: " + JSON.stringify(matchList));
+    // console.log(profileUser);
 
     
   },[matchList])
@@ -88,7 +88,7 @@ export default function Profile() {
       }
     })
   .then((response) => {
-    console.log(JSON.stringify(response.data));
+    // console.log(JSON.stringify(response.data));
     
     
     sessionStorage.removeItem('profileUsername');
@@ -115,7 +115,7 @@ export default function Profile() {
       }
     )
       .then((response) => {
-        console.log(profileUser?.username)
+        // console.log(profileUser?.username)
         window.location.reload()
       })
       .catch((response) => alert(response))
@@ -137,7 +137,7 @@ export default function Profile() {
 
   function removeFriendPrompt() {
     setIsShown2(true)
-    console.log('UNFRIEND Pending')
+    // console.log('UNFRIEND Pending')
   }
 
   async function cancelRequest() {

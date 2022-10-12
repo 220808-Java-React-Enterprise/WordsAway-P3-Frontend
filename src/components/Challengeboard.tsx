@@ -44,7 +44,7 @@ export default function Challengeboard({ userList, gameType }: BoardProps) {
         [i, friends.friends[i].username, friends.friends[i].elo, friends.friends[i].board_id]
       )
     }
-    console.log(friendslist)
+    // console.log(friendslist)
   }
 
   async function startGame(username: string, gameType: string) {

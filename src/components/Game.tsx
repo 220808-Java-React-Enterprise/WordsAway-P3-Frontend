@@ -52,7 +52,7 @@ const Game = () => {
   const [legalMove, setLegalMove] = useState(false)
 
     function waitForTurn(){
-        console.log('Wait for turn')
+        // console.log('Wait for turn')
     }
     
   async function getGame() {
@@ -99,7 +99,7 @@ const Game = () => {
   })
 
   function checkMove(themove: string[]) {
-    console.log(themove)
+    // console.log(themove)
 
     // send boardID, layout, replacedTray
 
@@ -109,7 +109,7 @@ const Game = () => {
       replacedTray: false
     })
     .then(async (response: AxiosResponse) => {
-      console.log(response.data)
+      // console.log(response.data)
       setLegalMove(response.data)
     })
     .catch((error) => {
@@ -119,7 +119,7 @@ const Game = () => {
   }
 
   function makeMove() {
-    console.log('makemove')
+    // console.log('makemove')
     setActive(false)
     WORDS_API.post('makeMove', {
       boardID: sessionStorage.board_id,
@@ -127,7 +127,7 @@ const Game = () => {
       replacedTray: false
     })
     .then(async (response: AxiosResponse) => {
-      console.log(response.data)
+      // console.log(response.data)
       setLegalMove(false)
       getGame()
       //updateState(response.data)
@@ -140,7 +140,7 @@ const Game = () => {
   }
 
   function swapTray() {
-    console.log('makemove')
+    // console.log('makemove')
     setActive(false)
     WORDS_API.post('makeMove', {
       boardID: sessionStorage.board_id,
@@ -148,7 +148,7 @@ const Game = () => {
       replacedTray: true
     })
     .then(async (response: AxiosResponse) => {
-      console.log(response.data)
+      // console.log(response.data)
 
       getGame()
     })
@@ -209,7 +209,7 @@ const Game = () => {
 
       setTray(NIn)
     } else if (outOb === 'fbtile' && inOb === 'empty') {
-      console.log('Working')
+      // console.log('Working')
 
       OIn = JSON.parse(sessionStorage.move)
 
