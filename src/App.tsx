@@ -70,21 +70,18 @@ function App() {
           case MessageType.START_CHAT:
           case MessageType.START_CHAT_ACK: {
             const chat = new Chat(message.id)
-            //chat.messages.push('Chat started with users: ' + message.data)
             chat.messages = [...chat.messages, 'Chat started with users: ' + message.data]
             setChats([...chats, chat])
             break
           }
           case MessageType.MESSAGE: {
             const chat = getChat(message.id)
-            //chat.messages.push(message.user + ': ' + message.data)
             chat.messages = [...chat.messages, message.user + ': ' + message.data]
             setChats([...chats])
             break
           }
           case MessageType.ADD_USER_ACK: {
             const chat = getChat(message.id)
-            //chat.messages.push(message.data + ' joined the chat.')
             chat.messages = [...chat.messages, message.data + ' joined the chat.']
             setChats([...chats])
             break

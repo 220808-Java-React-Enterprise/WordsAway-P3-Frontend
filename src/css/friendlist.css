@@ -89,9 +89,9 @@
 
 #flrow{
     display: flex;
-    margin-left: .25px;
-    margin-right: .25px;
-    /* width: 178%; */
+    margin-left: .5px;
+    margin-right: 1.5px;
+    width: auto;
     /*edited width to make it fill the box*/
 }
 
@@ -129,6 +129,7 @@
     height: 1.5rem;
     width: 1.5rem;
     display: flex;
+    float: right;
  }
 #flrow button svg {
     margin: auto;
@@ -207,14 +208,8 @@ margin-left: .25rem;
 font-size: 250%;
 }
 
-
-
-
-
 #flall2 ::-webkit-scrollbar {
     width: 10px;   
-
-
 }
 
 #flall2 ::-webkit-scrollbar-thumb {

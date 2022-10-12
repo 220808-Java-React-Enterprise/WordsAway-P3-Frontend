@@ -53,7 +53,7 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
       pendinglist.push(
         <div id='flrow' key={'IR' + i}>
           <div className='friend'>{friends.incomingRequests[i].username}</div>
-          <button id='acceptfr' onClick={() => acceptFR(friends.incomingRequests[i].username)}>
+          <button data-testid='acceptfr' id='acceptfr' onClick={() => acceptFR(friends.incomingRequests[i].username)}>
             {/* <CheckSVG style={{ fill: 'green', height: '90%' }} /> */}✔
           </button>
           <button id='rejectfr' onClick={() => rejectFR(friends.incomingRequests[i].username)}>
