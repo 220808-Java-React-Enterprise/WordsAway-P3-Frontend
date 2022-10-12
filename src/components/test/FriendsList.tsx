@@ -81,7 +81,6 @@ const FriendsList = ({ chats, sendMSG }: Props) => {
                   data: friends.friends[i].username
                 })
               )
-              alert('Chat starting...')
               setIsShown(false)
               setIsShown3(true)
             }}
