@@ -15,7 +15,7 @@ export default function Lobby() {
   async function getPlayers() {
     await WORDS_API.get('/getOpponents?type=human')
       .then((response: AxiosResponse<Opponent[]>) => {
-        console.log(response.data)
+        // console.log(response.data)
         setUsers(response.data)
         setGameType('ranked')
         setTableVis(true)
@@ -26,7 +26,7 @@ export default function Lobby() {
   async function getBots() {
     await WORDS_API.get('/getOpponents?type=bot')
       .then((response: AxiosResponse<Opponent[]>) => {
-        console.log(response.data)
+        // console.log(response.data)
         setUsers(response.data)
         setGameType('practice')
         setTableVis(true)

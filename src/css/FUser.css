@@ -1,9 +1,26 @@
-#searchUser{
-margin: auto;
+#searchUser {
+  margin: auto;
   width: 30%;
   border: 3px solid black;
   padding: 5px;
   align-items: center;
   align-content: center;
+  background-color: rgb(68, 138, 155);
+  margin-top: 3rem;
+
+}
+
+#searchUser form label {
+  font-size: x-large;
+}
+#searchUser div table tbody{
+  font-size: x-large;
+  border-style: solid;
+
+}
+#searchUser div table thead {
+  font-size: x-large;
+  border-style: solid;
+
 }
 

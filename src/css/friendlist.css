@@ -13,7 +13,7 @@
     right: 1rem;
     user-select: none;
     pointer-events: none;
-    z-index: 2;
+    z-index: 999;
 }
 #flall2 {
     position: fixed;
@@ -22,7 +22,7 @@
     right: 6rem;
     user-select: none;
     pointer-events: none;
-    z-index: 2;
+    z-index: 999;
 }
 
 #chat-c1{
@@ -150,6 +150,7 @@
     top: 0;
     left:0;
     display: flex;
+    z-index: 1000;
 }
 #flconfirm div{
     width: 50rem;
@@ -191,6 +192,7 @@
     height: 100vh;
     width: 100vw;
     top: 0;
+    z-index: 500;
 
 }
 

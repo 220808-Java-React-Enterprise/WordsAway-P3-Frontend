@@ -38,7 +38,7 @@ const Home = () => {
         storeUser()
       })
       .catch((response) => {
-        if (response.response.status === 401) alert('Incorrect username or password!')
+        if (response.status === 401) alert('Incorrect username or password!')
         else alert("Username doen't exist")
       })
   }

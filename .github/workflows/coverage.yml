@@ -24,4 +24,4 @@ jobs:
       run: npm install
 
     - name: Run the tests
-      run: npm test -- --coverage --collectCoverageFrom="components/**"
+      run: CI=false npm test -- --coverage --collectCoverageFrom="components/**"

@@ -47,7 +47,6 @@ function App() {
           console.log('Connection closed by Server.')
         } else {
           console.log('Connection closed by app component unmount.')
-          return
         }
         if (waitingToReconnect) return
         setIsOpen(false)
@@ -70,21 +69,23 @@ function App() {
           case MessageType.START_CHAT:
           case MessageType.START_CHAT_ACK: {
             const chat = new Chat(message.id)
-            chat.messages.push('Chat started with users: ' + message.data)
-            //chat.messages = [...chat.messages, 'Chat started with users: ' + message.data]
+            //chats.push(chat)
+            //chat.messages.push('Chat initializing...')
+            chat.messages = [...chat.messages, 'Chat initializing...']
             setChats([...chats, chat])
+            //setChats([...chats])
             break
           }
           case MessageType.MESSAGE: {
             const chat = getChat(message.id)
-            chat.messages = [...chat.messages, message.user + ': ' + message.data]
+            //chat.messages = [...chat.messages, message.user + ': ' + message.data]
+            chat.messages.push(message.user + ': ' + message.data)
             setChats([...chats])
             break
           }
           case MessageType.ADD_USER_ACK: {
-            const chat = getChat(message.id)
-            chat.messages = [...chat.messages, message.data + ' joined the chat.']
-            setChats([...chats])
+            // const chat = getChat(message.id)
+            // setChats([...chats])
             break
           }
           case MessageType.LEAVE_CHAT_ACK:
@@ -145,7 +146,7 @@ function App() {
     else {
       setTimeout(() => {
         sendToServer(message)
-      }, 100)
+      }, 10)
     }
   }
 

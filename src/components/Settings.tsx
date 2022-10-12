@@ -6,6 +6,7 @@ import '../css/settings.css'
 import { User } from '../types/User.type'
 import { useNavigate } from 'react-router-dom'
 
+
 const SettingsPage = () => {
   const [newEmail, setEmail] = useState('')
   const [newPassword, setPassword] = useState('')
@@ -35,7 +36,7 @@ const SettingsPage = () => {
   }, [user])
 
   async function handleUpdatePassword() {
-    console.log('here at handlePassword')
+    // console.log('here at handlePassword')
     let salt = ''
     await WORDS_API.get('salt', { params: { username: user?.username } }).then((response: AxiosResponse) => {
       salt = response.data
@@ -59,11 +60,11 @@ const SettingsPage = () => {
           })
           .catch((response) => console.log(response))
         alert('Change successful!')
-        console.log(response)
+        // console.log(response)
       })
       .catch((error: { response: { data: { message: any } } }) => {
         alert('Sorry something went wrong.')
-        console.log(error)
+        // console.log(error)
       })
   }
 
@@ -78,8 +79,8 @@ const SettingsPage = () => {
   }
 
   //function that takes a buttons value and sends a request to the server to update the user's settings
-  console.log(user)
-  console.log('icon: ' + icon)
+  // console.log(user)
+  // console.log('icon: ' + icon)
 
   const switchTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
@@ -92,7 +93,7 @@ const SettingsPage = () => {
   }
 
   return (
-    <div>
+    <div className='settingsPage'>
       <h1> Settings</h1>
       <br />
       <section>
