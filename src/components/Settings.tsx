@@ -6,6 +6,7 @@ import '../css/settings.css'
 import { User } from '../types/User.type'
 import { useNavigate } from 'react-router-dom'
 
+
 const SettingsPage = () => {
   const [newEmail, setEmail] = useState('')
   const [newPassword, setPassword] = useState('')
