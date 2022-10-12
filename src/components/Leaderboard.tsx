@@ -117,7 +117,7 @@ const Leaderboard = () => {
           <tr>
             <td className='rank'>{rank}</td>
             <td className='username'>{user?.username}</td>
-            <td className='mmr'>{user?.elo}</td>
+            <td className='mmr'>{Math.trunc(user?.elo as number)}</td>
             <td className='winstreak'>{user?.gamesWon}</td>
           </tr>
         </tbody>
