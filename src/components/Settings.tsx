@@ -4,7 +4,6 @@ import { AxiosResponse } from 'axios'
 import CryptoJS from 'crypto-js'
 import '../css/settings.css'
 import { User } from '../types/User.type'
-import { useNavigate } from 'react-router-dom'
 
 const SettingsPage = () => {
   const [newEmail, setEmail] = useState('')
@@ -16,7 +15,6 @@ const SettingsPage = () => {
   const [username, setUsername] = useState('')
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
   const [buttonText, setButtonText] = useState(localStorage.getItem('themeText') || 'Dark Mode')
-  const navigate = useNavigate()
 
   useEffect(() => {
     const data = window.sessionStorage.getItem('user')
