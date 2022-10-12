@@ -18,8 +18,8 @@ function App() {
   const [isOpen, setIsOpen] = useState(false)
   const [chats, setChats] = useState<Chat[]>([])
   const username = window.sessionStorage.getItem('username')
-  //const WS_URL = 'ws://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway/chat'
-  const WS_URL = 'ws://localhost:8080/wordsaway/chat'
+  const WS_URL = 'ws://backendcicd-env.eba-6jtmi298.us-east-1.elasticbeanstalk.com/wordsaway/chat'
+  //const WS_URL = 'ws://localhost:8080/wordsaway/chat'
 
   var [theme, getTheme] = useState('')
   useEffect(() => {
