@@ -23,12 +23,10 @@ const ChatWindow = ({ chatID, messages, sendMSG }: ChatProp) => {
 
   function addUser(playerToAdd: string) {
     sendMSG(JSON.stringify({ user: username, id: chatID, type: MessageType.ADD_USER, data: playerToAdd }))
-    alert('Added ' + friend + ' to the chat!')
   }
 
   function leaveChat() {
     sendMSG(JSON.stringify({ user: username, id: chatID, type: MessageType.LEAVE_CHAT, data: '' }))
-    alert('You left the chat!')
   }
 
   return (

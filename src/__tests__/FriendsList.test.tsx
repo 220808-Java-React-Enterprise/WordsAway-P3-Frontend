@@ -4,7 +4,6 @@ import FriendsList from '../components/test/FriendsList';
 
 import WORDS_API from '../utils/ApiConfig';
 
-afterEach(cleanup);
 jest.mock('../utils/ApiConfig');
 
 describe('Rendering FriendsList and Clicking Buttons', () => {
@@ -24,11 +23,18 @@ describe('Rendering FriendsList and Clicking Buttons', () => {
       friends: [{ username: 'nfielder2', elo: 1000, gamesPlayed: 0, gamesWon: 0, avatar: 0 }]
     }
   });
+  beforeEach(()=>{
+    render(<FriendsList sendMSG={jest.fn()} chats={[]}/>)
+  })
+  afterEach(()=>{
+    cleanup()
+  })
 
   test('test acceptFR', () => {
     
     const page = render(<FriendsList sendMSG={jest.fn()} chats={[]}/>);
-    const testbutton: any = page.container.querySelector('#acceptfr');
+  
+    const testbutton: any = page.getByTestId('acceptfr');
     // console.log(testbutton)
     fireEvent.click(testbutton);
   });
