@@ -25,3 +25,5 @@ jobs:
 
     - name: Run the tests
       run: npm test -- --coverage --collectCoverageFrom="components/**"
+      env:
+        CI: false
